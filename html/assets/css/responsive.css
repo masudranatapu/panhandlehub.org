@@ -1,0 +1,26 @@
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1120px;
+    }
+}
+
+@media (max-width: 767px) {
+    .single_product .swiper-button-next {
+        right: 6px;
+    }
+
+    .single_product .swiper-button-prev::after,
+    .single_product .swiper-button-next::after {
+        font-size: 24px;
+    }
+
+    .single_product .swiper-button-prev {
+        left: 6px;
+    }
+}

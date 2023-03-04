@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="icon" href="assets/images/favicon.png">
+    <!-- font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+
+
+
+    <header class="header sticky-top">
+        <div class="container-fluid">
+            <div class="row g-1">
+                <div class="col-lg-9">
+                    <form action="#" method="post">
+                        <a class="header_logo" name="logoLink" href="index.html">CL</a>
+                        <div class="d-inline">
+                            <select name="country" id="country">
+                                <option value="">Bangladesh</option>
+                                <option value="">India</option>
+                                <option value="">Pakistan</option>
+                                <option value="">China</option>
+                                <option value="">Jerusalem</option>
+                            </select>
+                        </div>
+                        <div class="d-inline">
+                            <select name="" id="">
+                                <option value="">Bangladesh</option>
+                                <option value="">India</option>
+                                <option value="">Pakistan</option>
+                                <option value="">China</option>
+                                <option value="">Jerusalem</option>
+                            </select>
+                        </div>
+                        <div class="d-inline">
+                            <select name="" id="">
+                                <option value="">Bangladesh</option>
+                                <option value="">India</option>
+                                <option value="">Pakistan</option>
+                                <option value="">China</option>
+                                <option value="">Jerusalem</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header_end float-lg-end">
+                        <ul>
+                            <li><a href="#" class="badge text-bg-warning"><i class="las la-star"></i> 2 favourites</a>
+                            </li>
+                            <li><a href="#" class="badge text-bg-danger"><i class="las la-times-circle"></i> 2
+                                    hidden</a></li>
+                            <li><a href="post/step1.html">post</a></li>
+                            <li><a href="login.html">account</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="main_template">
+        <div id="mySidenav" class="container-fluid sidenav sidebar_menu">
+            <div class="shop_filter">
+                <form action="#" method="post">
+                    <div class="filter_category mb-3">
+                        <h5>offices and activities trade</h5>
+                        <div class="form-check">
+                            <input class="form-check-input" name="category" type="checkbox" value="" id="category_1">
+                            <label class="form-check-label" for="category_1">
+                                search titles only
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="category" type="checkbox" value="" id="category_2">
+                            <label class="form-check-label" for="category_2">
+                                it has pictures
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="category" type="checkbox" value="" id="category_3">
+                            <label class="form-check-label" for="category_3">
+                                posted today
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter_wrap mb-3">
+                        <label for="" class="form-label">Price</label>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" name="min_price" id="min_price" placeholder="Min"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" name="min_price" id="min_price" placeholder="Max"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_wrap mb-3">
+                        <label for="" class="form-label">FT</label>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" name="min_price" id="min_price" placeholder="Min"
+                                        class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" name="min_price" id="min_price" placeholder="Max"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_wrap availabililty_select mb-3">
+                        <label for="" class="form-label">Availability</label>
+                        <select name="availability" id="availability" class="form-control">
+                            <option value="all dates">all dates</option>
+                            <option value="30 days">in 30 days</option>
+                            <option value="over 30 days">over 30 days</option>
+                        </select>
+                    </div>
+                    <div class="filter_wrap mb-3">
+                        <label for="" class="form-label">duration of the rental</label>
+                        <div class="form-check">
+                            <input class="form-check-input" name="duration" type="checkbox" value="" id="duration_1">
+                            <label class="form-check-label" for="duration_1">
+                                search titles only
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="duration" type="checkbox" value="" id="duration_2">
+                            <label class="form-check-label" for="duration_2">
+                                it has pictures
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="duration" type="checkbox" value="" id="duration_3">
+                            <label class="form-check-label" for="duration_3">
+                                posted today
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter_wrap mb-3">
+                        <button type="button" class="reset">Reset</button>
+                        <button type="submit" class="float-end">update search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="main" class="margin_left">
+            <div class="product_search mb-4">
+                <form action="#" method="post">
+                    <span class="navbar_btn" onclick="openNav()">
+                        <i class="las la-angle-double-left"></i>
+                    </span>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="text" name="search" id="search" class="form-control" required>
+                                <button type="submit" class="btn btn-primary"><i class="la la-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_1">
+                                <label class="form-check-label" for="wishlist_1"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/1.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_2">
+                                <label class="form-check-label" for="wishlist_2"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/2.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_3">
+                                <label class="form-check-label" for="wishlist_3"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/3.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_4">
+                                <label class="form-check-label" for="wishlist_4"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/1.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_5">
+                                <label class="form-check-label" for="wishlist_5"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/4.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_6">
+                                <label class="form-check-label" for="wishlist_6"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/3.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_7">
+                                <label class="form-check-label" for="wishlist_7"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/2.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_8">
+                                <label class="form-check-label" for="wishlist_8"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/1.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_9">
+                                <label class="form-check-label" for="wishlist_9"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/2.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_10">
+                                <label class="form-check-label" for="wishlist_10"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/3.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_11">
+                                <label class="form-check-label" for="wishlist_11"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/4.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_12">
+                                <label class="form-check-label" for="wishlist_12"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/2.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_13">
+                                <label class="form-check-label" for="wishlist_13"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/4.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_14">
+                                <label class="form-check-label" for="wishlist_14"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/3.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <div class="prodouct_wrap">
+                        <div class="favorite">
+                            <div class="form-check">
+                                <input class="form-check-input" name="wishlist" type="checkbox" id="wishlist_14">
+                                <label class="form-check-label" for="wishlist_14"></label>
+                            </div>
+                            <span>Jan, 20</span>
+                        </div>
+                        <div class="product_img">
+                            <a href="details.html"><img src="assets/images/1.jpg" class="w-100" alt="image"></a>
+                        </div>
+                        <div class="product_content">
+                            <h5>$55.55</h5>
+                            <h4><a href="details.html">Hotel Apartment for sale in the city center on an Upper Floor</a>
+                            </h4>
+                            <p>(Jeruselam, City Center) <a href="javascript:void(0)"><i class="la la-times"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="text-center footer_menu">
+            <div class="container">
+                <div class="p-2">
+                    <ul>
+                        <li class="list-item text-white">
+                            © 2023 craigslist
+                        </li>
+                        <li> <a href="#">hjælp |</a></li>
+                        <li><a href="#">sikkerhed |</a></li>
+                        <li><a href="#">privatliv |</a></li>
+                        <li><a href="#"> feedback |</a></li>
+                        <li><a href="#">vilkår |</a></li>
+                        <li><a href="#">vedr |</a></li>
+                        <li><a href="#">vedr |</a></li>
+                        <li><a href="#">vedr |</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+        function openNav() {
+            $('#mySidenav').toggleClass('sidebar_menu');
+            $('#main').toggleClass('margin_left');
+        }
+    </script>
+</body>
+
+</html>
