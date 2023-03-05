@@ -14,15 +14,14 @@
     {{-- custom style --}}
     @stack('style')
     <input type="hidden" id="base_url" value="{{ URL('/') }}" />
+
 </head>
 
 <body>
-    {{-- header --}}
-    @if ($nav != 'no')
-    <header class="header sticky-top">
+{{--    <div class="{{ Route::is('frontend.index') ? 'd-none d-md-block': '' }}">--}}
         @include('frontend.layouts.header')
-    </header>
-    @endif
+{{--    </div>--}}
+
     {{-- main content --}}
     @yield('content')
     {{-- footer script --}}
