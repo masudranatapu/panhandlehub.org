@@ -207,7 +207,7 @@
     </div>
 
 </div>
-@include('frontend.layouts.footer')
+
 </div>
 @endsection
 @push('script')

@@ -127,5 +127,5 @@
         </div>
     </div>
     <!-- footer -->
-    @include('frontend.layouts.footer')
+
 @endsection

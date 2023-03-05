@@ -382,7 +382,7 @@
         </div>
     </div>
     <!-- footer -->
-    @include('frontend.layouts.footer')
+
 
     </div>
 @endsection

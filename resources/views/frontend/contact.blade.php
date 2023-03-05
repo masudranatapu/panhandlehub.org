@@ -97,7 +97,7 @@
         </div>
         
     </div>
-       @include('frontend.layouts.footer')
+
 
     <!-- ======================= contact end  ============================ -->
 @endsection

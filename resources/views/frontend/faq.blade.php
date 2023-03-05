@@ -58,7 +58,7 @@
         </div>
     </div>
 </div>
-   @include('frontend.layouts.footer')
+
 
 <!-- ======================= faq end  ============================ -->
 @endsection

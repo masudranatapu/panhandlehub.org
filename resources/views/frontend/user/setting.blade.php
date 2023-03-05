@@ -86,7 +86,7 @@
         </div>
     </div>
 </div>
-   @include('frontend.layouts.footer')
+
 
 @endsection
 
