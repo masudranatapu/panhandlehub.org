@@ -27,6 +27,7 @@
     @yield('content')
     {{-- footer script --}}
     @include('frontend.layouts.footer_script')
+
     <script>
         function AddWishlist2(item, user) {
 
@@ -50,13 +51,13 @@
                         }
                     });
                 } else {
-                    // $(id).prop('checked', false)
+                    $('#wishlist_' + item).prop('checked', false)
                     toastr.error('Please login first');
                 }
             }
     </script>
     <script>
-         $(".select2").select2();
+        $(".select2").select2();
          $(".select_2").select2();
         function serachSubmit() {
 

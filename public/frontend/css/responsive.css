@@ -14,6 +14,24 @@
     .main_template .sidenav {
         top: 79px;
     }
+
+    .header_section {
+        padding: 10px 0px;
+    }
+
+    .header_section .nav-link {
+        font-size: 13px;
+        padding: 8px 9px !important;
+        margin: 5px 0px;
+        display: inline-block;
+        border-radius: 3px;
+    }
+
+    .header_section .navbar-toggler {
+        border: 1px solid #ddd;
+        outline: none !important;
+        box-shadow: none !important;
+    }
 }
 
 @media (max-width: 767px) {

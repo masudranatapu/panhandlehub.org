@@ -2,7 +2,7 @@
     <div class="container">
         <div class="p-3">
             <ul>
-                <li class="list-item text-white"> © {{ date('Y') }} ffuts |</li>
+                <li class="list-item text-white"> © {{ date('Y') }} panhandlehub |</li>
                 <li><a href="{{ route('frontend.faq') }}">{{ __('faq') }} |</a></li>
                 <li><a href="{{ route('frontend.search') }}">{{ __('Ads') }} |</a></li>
                 <li><a href="{{ route('frontend.privacy.policy') }}">{{ __('privacy') }} |</a></li>

@@ -3,7 +3,7 @@
         <div class="col-6 col-lg-9">
             @if (Route::is('frontend.search'))
             <div class="float-start">
-                <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">ffutS</a>
+                <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">panhandlehub</a>
             </div>
             @php
             $country_id = getCountryId();
@@ -56,7 +56,7 @@
                 </form>
             </div>
             @else
-            <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">ffutS</a>
+            <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">panhandlehub</a>
             <div class="breadcrumb">
                 @yield('breadcrumb')
             </div>

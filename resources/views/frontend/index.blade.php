@@ -23,7 +23,8 @@ $country = getCountryCode();
 @endphp
 
 @section('content')
-<div class="template_wrap mt-1 d-none d-md-block">
+
+{{-- <div class="template_wrap mt-1 d-none d-md-block">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-3">
@@ -51,7 +52,7 @@ $country = getCountryCode();
                                 <div class="input-group">
                                     <input type="text" name="search" id="search" class="form-control"
                                         placeholder="Search..." required>
-                                    <button type="submit" class="text-input-group"><i class="la la-search"></i></button>
+                                    <button type="submit" class="text-input-group"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -162,11 +163,10 @@ $country = getCountryCode();
                             <select name="language" id="language"
                                 class="form-control form-select language_dropdown mb-3" onchange="this.form.submit()">
                                 @foreach($languages as $key => $value)
-                                    <option value="{{ $value->code }}" @if (Session::get('locale')== $value->code) selected @endif>{{ $value->name }}</option>
+                                <option value="{{ $value->code }}" @if (Session::get('locale')==$value->code) selected
+                                    @endif>{{ $value->name }}</option>
                                 @endforeach
-                                {{-- <option value="en" @if (Session::get('locale')=='en' ) selected @endif>English
-                                </option>
-                                <option value="hi" @if (Session::get('locale')=='hi' ) selected @endif>Hindi</option> --}}
+
                             </select>
                         </form>
 
@@ -206,7 +206,284 @@ $country = getCountryCode();
         </div>
         @include('frontend.layouts.footer')
     </div>
+</div> --}}
+{{-- Header --}}
+
+
+<div class="desktop_view d-none d-md-block">
+
+    <header class="header_section sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg p-0">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{{ route('frontend.index') }}">
+                        <img src="{{ asset('frontend/images/logo.png') }}" width="124" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            @if (auth()->guard('user')->check() && userWishlist() > 0)
+                            <li class="nav-item">
+                                <a href="{{ route('user.favourite') }}" class="nav-link">
+                                    <i class="fa fa-star"></i> {{ userWishlist() }}
+                                    {{ userWishlist() > 1 ? 'favourites' : 'favourite' }}
+                                </a>
+                            </li>
+                            @endif
+                            @if (auth('user')->check())
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.profile') }}">
+                                    <i class="fas fa-user"></i>
+                                    My Account
+                                </a>
+                            </li>
+                            @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('signin') }}">
+                                    <i class="fa fa-user"></i>
+                                    Sign in / Register
+                                </a>
+                            </li>
+                            @endif
+                            <li class="nav-item">
+                                <a class="nav-link adpost_btn" href="{{ route('frontend.post.create') }}">
+                                    <i class="fas fa-plus-square"></i>
+                                    Place an ad
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    {{-- Header --}}
+
+    {{-- search banner --}}
+    <div class="search_banner">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <div class="banner_content">
+                        <div class="content mb-4">
+                            <h2>Find Your Perfect Match</h2>
+                        </div>
+                        <form action="{{ route('frontend.search') }}" method="get">
+                            <div class="input-group">
+                                <input type="text" name="search" id="search" class="form-control"
+                                    placeholder="Enter keywords..." required autocomplete="off">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>
+                                    Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- search banner --}}
+
+    {{-- top category --}}
+    <div class="category_section mt-5">
+        <div class="container">
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+                @foreach ($top_categoreis as $key => $item)
+                <div class="col">
+                    <div class="category_name text-center">
+                        <a href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug]) }}">
+                            <i class="icon {{ $item->icon }}"></i>
+                            <h6>{{ $item->name }}</h6>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    {{-- top category --}}
+
+    {{-- ads --}}
+    <div class="ads mt-5 mb-5">
+        <div class="container">
+            <a href="#" target="_blank">
+                <img src="{{ asset('frontend/images/ads.png') }}" class="w-100" alt="logo">
+            </a>
+        </div>
+    </div>
+    {{-- ads --}}
+
+
+    {{-- category --}}
+    <div class="category_section mb-5">
+        <div class="container">
+            @foreach ($categories as $key => $item)
+            <div class="heading mb-2">
+                <h3>
+                    <a href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug]) }}">
+                        {{ __($item->slug) }}</a>
+                </h3>
+            </div>
+            <div class="category_item mb-4">
+                <ul>
+                    @foreach ($item->subcategories as $scat)
+                    <li>
+                        <a
+                            href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
+                            __($scat->name) }} |
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+            @endforeach
+        </div>
+    </div>
+    {{-- category --}}
+
+
+    {{-- featured product --}}
+    <div class="featured_product">
+        <div class="container">
+            <div class="section_heading mb-4">
+                <h3>Recently viewed classifieds</h3>
+            </div>
+            <div class="row">
+                {{-- product --}}
+                @foreach ($ads as $key => $row)
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3 d-flex justify-content-strach">
+                    <div class="card product_wrapper">
+                        <div class="product_img">
+                            <a href="{{ route('frontend.details', $row->slug) }}">
+                                <img src="{{ asset($row->thumbnail ?? 'frontend/images/no-img.png') }}" class="w-100"
+                                    alt="image">
+                            </a>
+                        </div>
+                        <div class="card-body product_content d-flex flex-column">
+                            <h3>
+                                <a href="{{ route('frontend.details', $row->slug) }}">
+                                    {{ Str::limit($row->title, '32',
+                                    '...') }}
+                                </a>
+                            </h3>
+                            <div class="mb-4 mt-auto">
+                                <p class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    ({{ $row->city }}
+                                    {{ isset($row->countries->name) ? ', ' .
+                                    ucfirst(strtolower($row->countries->name)) : ''
+                                    }})
+                                </p>
+                                <p class="time">
+                                    <i class="fa fa-clock"></i>
+                                    {{ date('d Y', strtotime($row->created_at)) }}
+                                </p>
+                            </div>
+                            <div class="d-flex mt-auto">
+                                <div class="price">
+                                    @if($row->price)<h4>${{ $row->price }}</h4>@endif
+                                </div>
+                                <div class="features">
+                                    <div class="form-check">
+                                        <input class="form-check-input" name="wishlist" type="checkbox"
+                                            id="wishlist_{{ $row->id }}" {{ isWishlisted($row->id) ? 'checked' : ''
+                                        }}
+                                        onchange="AddWishlist2({{ $row->id }}, {{ Auth::user()->id ?? '' }})">
+                                        <label class="form-check-label" for="wishlist_{{ $row->id }}"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                {{-- product --}}
+            </div>
+        </div>
+    </div>
+    {{-- featured product --}}
+
+    {{-- footer --}}
+    <footer class="footer_section mt-5 pt-5 pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-4">
+                            <h3>PanHandleHub</h3>
+                        </div>
+                        <div class="infomation">
+                            <ul>
+                                <li>
+                                    <a href="mailto:info@gmail.com">
+                                        <i class="fas fa-phone-volume"></i>
+                                        123 - 456 - 789
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:info@gmail.com">
+                                        <i class="fas fa-envelope"></i>
+                                        info@gmail.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    1420 West Jalkuri Fatullah,
+                                    Narayanganj, BD
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-4">
+                            <h3>Quick Links</h3>
+                        </div>
+                        <div class="footer_links">
+                            <ul>
+                                <li><a href="{{ route('frontend.faq') }}">{{ __('faq') }}</a></li>
+                                <li><a href="{{ route('frontend.search') }}">{{ __('Ads') }}</a></li>
+                                <li><a href="{{ route('frontend.privacy.policy') }}">{{ __('privacy') }}</a></li>
+                                <li><a href="{{ route('frontend.terms.condition') }}">{{ __('terms_conditions') }}</a>
+                                </li>
+                                <li><a href="{{ route('frontend.contact') }}">{{ __('contact') }}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="footer_wrapper">
+                        <div class="footer_widget mb-4">
+                            <h3>Social Media</h3>
+                        </div>
+                        <div class="social_media">
+                            <ul>
+                                <li><a href="">Facebook</a></li>
+                                <li><a href="">Twitter</a></li>
+                                <li><a href="">Linkedin</a></li>
+                                <li><a href="">Whatsapp</a></li>
+                                <li><a href="">Pinterest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copyright pt-5 text-center">
+                    <p>Copyright © {{ date('Y') }} panhandlehub All rights reserved.</p>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+    {{-- footer --}}
 </div>
+
+
+
 
 
 {{-- mobile version --}}
@@ -217,7 +494,9 @@ $country = getCountryCode();
                 <div class="col-5">
                     <div class="mobile_heade_left">
                         <div class="site_logo">
-                            <a class="header_logo" name="logoLink" href="{{ route('frontend.index') }}">ffutS</a>
+                            <a class="navbar-brand" href="{{ route('frontend.index') }}">
+                                <img src="{{ asset('frontend/images/logo.png') }}" width="124" alt="logo">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -230,12 +509,6 @@ $country = getCountryCode();
                                     {{ userWishlist() > 1 ? 'favourites' : 'favourite' }}</a>
                             </li>
                             @endif
-                            {{-- <li>
-                                <a href="javascript:;" class="badge text-bg-danger">
-                                    <i class="las la-times-circle"></i> 2
-                                    hidden
-                                </a>
-                            </li> --}}
                             <li><a href="{{ route('frontend.post.create') }}">Post an Ad</a></li>
                             @if (auth('user')->check())
                             <li><a href="{{ route('user.profile') }}">My Account</a></li>
@@ -253,7 +526,7 @@ $country = getCountryCode();
             <form action="{{ route('frontend.search') }}" method="get" class="mb-3 mt-3 p-2">
                 <div class="input-group">
                     <input type="text" name="search" id="search" class="form-control" placeholder="Search..." required>
-                    <button type="submit" class="text-input-group"><i class="la la-search"></i></button>
+                    <button type="submit" class="text-input-group"><i class="fa fa-search"></i></button>
                 </div>
             </form>
             <div class="accordion_item mb-4">
@@ -321,13 +594,6 @@ $country = getCountryCode();
     @include('frontend.layouts.footer')
 </div>
 
-{{-- <div class="d-none">
-    <form action="{{ route('frontend.search') }}" method="get" id="eventForm">
-        <input type="hidden" name="category" value="event-class">
-        <input type="hidden" name="date" id="date_select">
-    </form>
-</div> --}}
-
 @endsection
 
 @push('script')
@@ -340,9 +606,6 @@ $country = getCountryCode();
                 dateFormat: 'dd-mm-yy',
                 onSelect: function(date, datepicker) {
                     if (date != "") {
-                        // alert("Selected Date: " + date);
-                        // $('#date_select').val(date);
-                        // $('#eventForm').submit();
                         var base_url = $('#base_url').val();
                         var country = $('#country').val();
                         var full_url = base_url + '/ads/' + country + '/events/?date=' + date
