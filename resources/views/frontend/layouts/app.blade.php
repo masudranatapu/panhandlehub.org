@@ -13,23 +13,24 @@
     @include('frontend.layouts.header_script')
     {{-- custom style --}}
     @stack('style')
-    <input type="hidden" id="base_url" value="{{ URL('/') }}"/>
+    <input type="hidden" id="base_url" value="{{ URL('/') }}" />
 
 </head>
 
 <body>
-{{--    <div class="{{ Route::is('frontend.index') ? 'd-none d-md-block': '' }}">--}}
-@include('frontend.layouts.header')
-{{--    </div>--}}
+    {{-- <div class="{{ Route::is('frontend.index') ? 'd-none d-md-block': '' }}">--}}
+        @include('frontend.layouts.header')
+        {{-- </div>--}}
 
-{{-- main content --}}
-@yield('content')
-@include('frontend.layouts.footer')
-{{-- footer script --}}
-@include('frontend.layouts.footer_script')
+    {{-- main content --}}
+    @yield('breadcrumb')
+    @yield('content')
+    @include('frontend.layouts.footer')
+    {{-- footer script --}}
+    @include('frontend.layouts.footer_script')
 
-<script>
-    function AddWishlist2(item, user) {
+    <script>
+        function AddWishlist2(item, user) {
 
         if (user) {
             $.ajax({
@@ -55,9 +56,9 @@
             toastr.error('Please login first');
         }
     }
-</script>
-<script>
-    $(".select2").select2();
+    </script>
+    <script>
+        $(".select2").select2();
     $(".select_2").select2();
 
     function serachSubmit() {
@@ -86,10 +87,10 @@
         // $('#searchForm').submit();
 
     }
-</script>
+    </script>
 
-{{-- custom script --}}
-@stack('script')
+    {{-- custom script --}}
+    @stack('script')
 </body>
 
 </html>

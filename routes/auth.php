@@ -17,6 +17,7 @@ Auth::routes(['login' => false, 'register' => false]);
 Route::get('sign-in', [LoginController::class, 'signIn'])->name('signin');
 Route::post('user-sign-in', [LoginController::class, 'userSignIn'])->name('user.signin');
 // register
+Route::get('user-sign-up', [RegisterController::class, 'userSignUpPage'])->name('user.signup');
 Route::post('user-sign-up', [RegisterController::class, 'userSignUp'])->name('user.signup');
 Route::get('user-verify/{token}', [RegisterController::class, 'userVerify'])->name('user.verify');
 Route::post('user-sign-up-success', [RegisterController::class, 'userSignUpSuccess'])->name('user.signup.success');

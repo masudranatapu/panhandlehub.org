@@ -47,6 +47,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function userSignUpPage()
+    {
+        return view('frontend.auth.register');
+    }
+
     public function userSignUp(Request $request)
     {
         $user = User::where('email', $request->email)->get();

@@ -1,7 +1,7 @@
 {{-- footer --}}
 <footer class="footer_section mt-5 pt-5 pb-2">
     <div class="container">
-        <div class="row">
+        <div class="row g-4">
             <div class="col-sm-6 col-md-4">
                 <div class="footer_wrapper">
                     <div class="footer_widget mb-4">

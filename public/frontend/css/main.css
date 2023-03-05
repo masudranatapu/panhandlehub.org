@@ -424,17 +424,28 @@ body {
 
 /* login */
 
-.signin_section {
+/* .signin_section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+} */
+.breadcrumb_section {
+    background: #efefef;
+    padding: 7px 0px;
+}
+
+.breadcrumb li {
+    display: inline-block;
+    font-size: 14px;
 }
 
 .signin_form .form-control {
     border: 1px solid #ddd;
     height: 50px;
 }
+
+
 
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
@@ -526,9 +537,40 @@ body {
     border-color: var(--primary) !important;
 }
 
+.faq_list .accordion-item {
+    border: 1px solid #EEE !important;
+    margin-bottom: 12px;
+    border-radius: 0px !important;
+}
 
+.faq_list .accordion-item button {
+    font-size: 16px;
+    font-weight: 500;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 26px 19px !important;
+    border: none !important;
+    color: #000 !important;
+    text-align: left;
+}
 
+.faq_list .accordion-body {
+    padding: 20px 20px !important;
+    background: none !important;
+}
 
+.faq_list .accordion-body p {
+    font-size: 14px;
+    line-height: 30px;
+    margin: 0;
+    color: #444;
+    padding: 0 !important;
+}
+
+.faq_list .accordion-button:not(.collapsed) {
+    color: #000 !important;
+    border-radius: 0px !important;
+}
 
 
 
@@ -1190,18 +1232,6 @@ body {
     border-radius: 2px;
 }
 
-.faq_sec .accordion-item {
-    margin-bottom: 8px;
-}
-
-.faq_sec .accordion-button {
-    border: 1px solid #EEE;
-    box-shadow: none !important;
-    outline: none !important;
-    font-size: 14px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-}
 
 .accordion-body p {
     margin: 0;

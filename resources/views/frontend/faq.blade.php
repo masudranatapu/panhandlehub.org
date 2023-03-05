@@ -13,29 +13,27 @@
 
 @push('style') @endpush
 @section('breadcrumb')
-    <ul>
-        <li>{{ __('faq') }}</li>
-    </ul>
-@endsection
-@section('content')
-<!-- ======================= breadcrumb start  ============================ -->
-<div class="breadcrumb_sec mt-5">
+<div class="breadcrumb_section">
     <div class="container">
-        <div class="breadcrumb_nav text-center">
-            {{-- <h5>{{ $title ?? 'Page header' }}</h5> --}}
-            <h2>Faq</h2>
-        </div>
+        <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item pe-2"><a href="{{ route('frontend.index') }}">Home</a></li>
+                |
+                <li class="breadcrumb-item active" aria-current="page">Faq</li>
+            </ol>
+        </nav>
     </div>
 </div>
-<!-- ======================= breadcrumb end  ============================ -->
+@endsection
+@section('content')
+
 
 <!-- ======================= faq start  ============================ -->
 <div class="faq_sec section mt-5 mb-5">
     <div class="container">
         <div class="row">
-            <div class="faq_question_wrap">
+            <div class="faq_list">
                 <div class="accordion" id="accordionExample">
-
                     @foreach ($faqs as $key => $row)
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="heading_{{ $key }}">
@@ -55,6 +53,7 @@
                     @endforeach
                 </div>
             </div>
+
         </div>
     </div>
 </div>
