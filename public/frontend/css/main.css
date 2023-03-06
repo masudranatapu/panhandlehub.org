@@ -544,7 +544,7 @@ body {
 }
 
 .faq_list .accordion-item button {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     outline: none !important;
     box-shadow: none !important;
@@ -573,28 +573,112 @@ body {
 }
 
 
+.breadcrumb_nav h2 {
+    font-size: 21px;
+    letter-spacing: 2px;
+}
 
+.contact_sec .form-control {
+    height: 50px;
+    border: 1px solid #DDD;
+    background: #f5f5f5;
+    border-radius: 2px;
+}
 
+.contact_sec .form-control::placeholder {
+    color: #BBB;
+}
 
+.contact_sec .btn-primary {
+    border-radius: 2px;
+    padding: 9px 30px;
+    background: var(--primary);
+    border: none !important;
+}
 
+.contact_sec .btn-primary:hover {
+    background: var(--black);
+}
 
+.shop_header {
+    background: #fff;
+    padding: 10px 10px;
+    border-radius: 0px;
+    border: 1px solid #f5f5f5;
+}
 
+.listing_ad h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+}
 
+.shop_header .filter_form .input-group-text {
+    background: transparent;
+    border: none !important;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+}
 
+.shop_header .filter_form .form-control {
+    border: 1px solid #DDD;
+    border-radius: 3px !important;
+}
 
+.shop_sidebar {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
 
+.shop_pagination .page-link {
+    width: 50px;
+    height: 50px;
+    margin: 0px 12px;
+    border-radius: 2px !important;
+    line-height: 38px;
+    font-size: 18px;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    color: #222;
+    border: 1px solid #ededed;
+    outline: none !important;
+    box-shadow: none !important;
+}
 
+.shop_pagination .page-link.active {
+    background: var(--primary);
+    color: #fff !important;
+}
 
+.filter_wrap .btn {
+    border-radius: 2px;
+    padding: 7px 12px;
+    font-size: 15px;
+    width: 100%;
+}
 
+.filter_wrap .btn-primary {
+    background: var(--primary);
+    font-size: 14px;
+}
 
+.filter_wrap .btn-primary:hover {
+    background: var(--bs-black);
+}
 
+.filter_heading {
+    margin-bottom: 20px;
+}
 
-
-
-
-
-
-
+.filter_heading h3 {
+    font-size: 15px;
+}
 
 
 
@@ -1281,16 +1365,15 @@ body {
 
 .shop_filter .form-control {
     background: #fff;
-    border: 1px solid #DDD;
+    border: 1px solid #efefef;
     outline: none !important;
     box-shadow: none !important;
-    height: 23px;
-    font-size: 12px;
-    border-radius: 0px;
+    height: 34px;
+    font-size: 14px;
     vertical-align: middle;
-    margin-left: 3px !important;
     align-items: center !important;
     padding: 0px 4px;
+    border-radius: 3px !important;
 }
 
 .shop_filter h5 {
@@ -1301,11 +1384,12 @@ body {
 }
 
 .shop_filter .input-group-text {
-    padding: 0;
     border: none !important;
-    background: transparent !important;
     font-size: 11px;
-    font-weight: 500;
+    text-align: center;
+    background: #f2f2f2;
+    padding: 0px 7px;
+    font-weight: bold;
 }
 
 .availabililty_select .form-control {
@@ -1314,8 +1398,12 @@ body {
     margin: 0 !important;
 }
 
+.shop_filter .form-check {
+    padding: 4px 19px;
+}
+
 .shop_filter .form-check label {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     color: #666;
     cursor: pointer;

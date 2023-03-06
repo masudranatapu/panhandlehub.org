@@ -10,7 +10,7 @@
                     <div class="infomation">
                         <ul>
                             <li>
-                                <a href="mailto:info@gmail.com">
+                                <a href="tel:123 - 456 - 789">
                                     <i class="fas fa-phone-volume"></i>
                                     123 - 456 - 789
                                 </a>
@@ -54,11 +54,11 @@
                     </div>
                     <div class="social_media">
                         <ul>
-                            <li><a href="">Facebook</a></li>
-                            <li><a href="">Twitter</a></li>
-                            <li><a href="">Linkedin</a></li>
-                            <li><a href="">Whatsapp</a></li>
-                            <li><a href="">Pinterest</a></li>
+                            <li><a href="#" target="_blank">Facebook</a></li>
+                            <li><a href="#" target="_blank">Twitter</a></li>
+                            <li><a href="#" target="_blank">Linkedin</a></li>
+                            <li><a href="#" target="_blank">Whatsapp</a></li>
+                            <li><a href="#" target="_blank">Pinterest</a></li>
                         </ul>
                     </div>
                 </div>
@@ -67,7 +67,6 @@
             <div class="copyright pt-5 text-center">
                 <p>Copyright © {{ date('Y') }} panhandlehub All rights reserved.</p>
             </div>
-
 
         </div>
     </div>

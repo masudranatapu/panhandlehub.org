@@ -16,35 +16,40 @@
 {{ __('Terms & Conditon') }}
 @endsection
 @section('breadcrumb')
-    <ul>
-        <li>{{ __('terms & conditions') }}</li>
-    </ul>
+<div class="breadcrumb_section">
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item pe-2"><a href="{{ route('frontend.index') }}">Home</a></li>
+                |
+                <li class="breadcrumb-item active" aria-current="page">{{ __('terms & conditions') }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
 @endsection
+
 
 @section('content')
 <div class="breadcrumb_sec mt-5">
-        <div class="container">
-            <div class="breadcrumb_nav text-center">
-                <h2>Terms & Condition</h2>
-            </div>
+    <div class="container">
+        <div class="breadcrumb_nav text-center">
+            <h2>Terms & Condition</h2>
         </div>
     </div>
-    <div class="main_template">
-        <div class="container">
-            <div class="single_product mt-5 mb-5">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="page_content">
-                            <div class="content">
-                                <p>{!! $cms->terms_body !!}</p>
-                            </div>
-                        </div>
-                    </div>
+</div>
+<div class="main_template">
+    <div class="container">
+        <div class="mt-5 mb-5">
+            <div class="page_content">
+                <div class="content">
+                    <p>{!! $cms->terms_body !!}</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- footer -->
+</div>
+<!-- footer -->
 
 
 @endsection

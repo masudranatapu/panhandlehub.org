@@ -27,6 +27,13 @@
 @endsection
 @section('content')
 
+<div class="breadcrumb_sec mt-5">
+    <div class="container">
+        <div class="breadcrumb_nav text-center">
+            <h2>Faq</h2>
+        </div>
+    </div>
+</div>
 
 <!-- ======================= faq start  ============================ -->
 <div class="faq_sec section mt-5 mb-5">

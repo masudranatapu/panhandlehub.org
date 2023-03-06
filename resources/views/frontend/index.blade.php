@@ -121,7 +121,7 @@ $country = getCountryCode();
             <div class="row">
                 {{-- product --}}
                 @foreach ($ads as $key => $row)
-                <div class="col-sm-6 col-md-4 col-lg-3 mb-3 d-flex justify-content-strach">
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-3 d-sm-flex justify-content-strach">
                     <div class="card product_wrapper">
                         <div class="product_img">
                             <a href="{{ route('frontend.details', $row->slug) }}">
