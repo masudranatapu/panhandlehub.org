@@ -7,40 +7,47 @@
 @section('title')
 {{ __('Sub Category') }}
 @endsection
+
 @section('breadcrumb')
-    <ul>
-        <li>{{ __($ad_type->slug) }} ></li>
-        <li>{{ __($category->slug) }}</li>
-    </ul>
+<div class="breadcrumb_section">
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">{{ __($ad_type->slug) }} </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ __($category->slug) }} </li>
+            </ol>
+        </nav>
+    </div>
+</div>
 @endsection
 
 @section('content')
-    <div class="main_template mt-5">
-        <div class="container">
-            <div class="ad_post_form">
-                <div class="mb-4">
-                    <h6><span>choose a Sub Category:</span> (see <a href="#">ban</a> list before posting.)
-                    </h6>
-                </div>
-                <form action="{{ route('frontend.post.create') }}" method="get" id="create-post-frm">
-                    <input type="hidden" value="{{ $ad_type->slug }}" name="ad_type" />
-                    <input type="hidden" value="{{ $category->slug }}" name="category" />
-                    @foreach($subCategory as $key => $value)
-                    <div class="form-check">
-            <input class="form-check-input" type="radio" value="{{ $value->slug}}" name="sub_category" id="category_{{ $value->id }}"
-                            required>
-                        <label class="form-check-label" for="category_{{ $value->id }}">
-                            {{ __($value->slug) }}
-                        </label>
-                    </div>
-                    @endforeach
-                    <div class="mt-5">
-                           <button type="button" class="btn btn-light">Continue</button>
-                    </div>
-                </form>
+<div class="main_template mt-5">
+    <div class="container">
+        <div class="ad_post_form">
+            <div class="mb-4">
+                <h6><span>choose a Sub Category:</span> (see <a href="#">ban</a> list before posting.)
+                </h6>
             </div>
+            <form action="{{ route('frontend.post.create') }}" method="get" id="create-post-frm">
+                <input type="hidden" value="{{ $ad_type->slug }}" name="ad_type" />
+                <input type="hidden" value="{{ $category->slug }}" name="category" />
+                @foreach($subCategory as $key => $value)
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" value="{{ $value->slug}}" name="sub_category"
+                        id="category_{{ $value->id }}" required>
+                    <label class="form-check-label" for="category_{{ $value->id }}">
+                        {{ __($value->slug) }}
+                    </label>
+                </div>
+                @endforeach
+                <div class="mt-5">
+                    <button type="button" class="btn btn-light">Continue</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 @endsection
 
 @push('script')

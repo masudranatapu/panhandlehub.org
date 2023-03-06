@@ -8,15 +8,19 @@
                 <div class="col-lg-4">
                     <div class="mb-1">
                         <label for="manufacturer" class="form-label">make / manufacturer </label>
-                        <input type="text" name="manufacturer" value="{{ $ad->manufacturer ?? old('manufacturer') }}" id="manufacturer" class="form-control">
+                        <input type="text" name="manufacturer" value="{{ $ad->manufacturer ?? old('manufacturer') }}"
+                            id="manufacturer" class="form-control">
                     </div>
                     <div class="mb-1">
                         <label for="model_name" class="form-label">model name / number </label>
-                        <input type="text" name="model_name" value="{{ $ad->model_name ?? old('model_name') }}" id="model_name" class="form-control">
+                        <input type="text" name="model_name" value="{{ $ad->model_name ?? old('model_name') }}"
+                            id="model_name" class="form-control">
                     </div>
                     <div class="mb-1">
                         <label for="dimension" class="form-label">size / dimensions </label>
-                        <input type="text" name="dimension" value="{{ $ad->dimension ?? old('dimension') }}" id="dimension" value="{{ $ad->dimension ?? old('dimension') }}" placeholder="length x width x height" class="form-control">
+                        <input type="text" name="dimension" value="{{ $ad->dimension ?? old('dimension') }}"
+                            id="dimension" value="{{ $ad->dimension ?? old('dimension') }}"
+                            placeholder="length x width x height" class="form-control">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -35,13 +39,14 @@
                         </div>
                     </div>
                     <div class="mb-1">
-                        <label for="phone" class="form-label"><small class="text-success">language of posting <small class="text-danger">*</small></small></label>
+                        <label for="phone" class="form-label"><small class="text-success">language of posting <small
+                                    class="text-danger">*</small></small></label>
                         <select name="language" id="language" class="form-control" required>
-                                <option value="english">english</option>
-                                <option value="dansk">dansk</option>
-                                <option value="espanol">espanol</option>
-                                <option value="suomi">suomi</option>
-                                <option value="francais">francais</option>
+                            <option value="english">english</option>
+                            <option value="dansk">dansk</option>
+                            <option value="espanol">espanol</option>
+                            <option value="suomi">suomi</option>
+                            <option value="francais">francais</option>
                         </select>
                     </div>
                 </div>
@@ -53,13 +58,15 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]" value="delivery available" id="delivery_available">
+                        <input class="form-check-input" type="checkbox" name="services[]" value="delivery available"
+                            id="delivery_available">
                         <label class="form-check-label" for="delivery_available">
                             delivery available
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]" value="include more ads by this user link" id="include_more">
+                        <input class="form-check-input" type="checkbox" name="services[]"
+                            value="include more ads by this user link" id="include_more">
                         <label class="form-check-label" for="include_more">
                             include "more ads by this user" link
                         </label>
@@ -78,32 +85,31 @@
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email <small class="text-danger">*</small></label>
-                        <input type="text" name="email" id="email" value="{{ Auth::user()->email ?? old('email') }}" class="form-control"
-                            placeholder="Your email address" required>
+                        <input type="text" name="email" id="email" value="{{ Auth::user()->email ?? old('email') }}"
+                            class="form-control" placeholder="Your email address" required>
                     </div>
                     <div class="mb-3">
-                        <span class="text-dark" style="font-weight:600;">replies use Ffuts mail relay</span><br>
+                        <span class="text-dark" style="font-weight:600;">replies use panhandlehub mail relay</span><br>
                         <a href="#" class="text-success">[?]</a>
                     </div>
                 </div>
                 <div class="col-md-8 inline_checkbox disabled_checked">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="show_phone"
-                            value="1" id="show_phone">
+                        <input class="form-check-input" type="checkbox" name="show_phone" value="1" id="show_phone">
                         <label class="form-check-label" for="show_phone">
                             show my phone number
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="phone_call"
-                            id="calls_ok" disabled value="1">
+                        <input class="form-check-input" type="checkbox" name="phone_call" id="calls_ok" disabled
+                            value="1">
                         <label class="form-check-label" for="calls_ok">
                             phone calls OK
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="phone_text"
-                            id="textorsms" disabled value="1">
+                        <input class="form-check-input" type="checkbox" name="phone_text" id="textorsms" disabled
+                            value="1">
                         <label class="form-check-label" for="textorsms">
                             text/sms OK
                         </label>
@@ -126,8 +132,8 @@
                         <div class="col-lg-6">
                             <div class="mb-1">
                                 <label for="contact_name" class="form-label">contact name </label>
-                                <input type="text" name="contact_name" value="{{ old('contact_name') }}" id="contact_name"
-                                    class="form-control" disabled>
+                                <input type="text" name="contact_name" value="{{ old('contact_name') }}"
+                                    id="contact_name" class="form-control" disabled>
                             </div>
                         </div>
                     </div>

@@ -149,21 +149,11 @@ class FrontendController extends Controller
             $query->whereDate('event_start_date', $date);
         }
 
-        $ads = $query->get();
+        $ads = $query->paginate(9);
 
 
         return view('frontend.shop', compact('ads', 'subcategories', 'categories'));
     }
-
-
-
-
-    public function shop()
-    {
-        $ads = Ad::active()->get();
-        return view('frontend.shop', compact('ads'));
-    }
-
     public function details($slug)
     {
         $ad_details = Ad::with('ad_type')->where('slug', $slug)->first();

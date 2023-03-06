@@ -8,7 +8,6 @@ use App\Http\Controllers\Frontend\LocalizationController;
 use Illuminate\Http\Request;
 Route::group(['as' => 'frontend.'], function () {
     Route::get('/', [FrontendController::class, 'index'])->name('index');
-    // Route::get('shop/', [FrontendController::class, 'shop'])->name('shop');
     Route::get('ads/{country?}/{category?}/{subcategory?}', [FrontendController::class, 'search'])->name('search');
     Route::get('details/{slug}', [FrontendController::class, 'details'])->name('details');
     Route::get('wishlist', [FrontendController::class, 'wishlistCreate'])->name('wishlist.create');

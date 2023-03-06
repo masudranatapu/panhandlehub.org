@@ -32,6 +32,8 @@
         outline: none !important;
         box-shadow: none !important;
     }
+
+
 }
 
 @media (max-width: 767px) {

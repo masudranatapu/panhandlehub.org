@@ -18,7 +18,7 @@
         <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item pe-2"><a href="{{ route('frontend.index') }}">Home</a></li>
-                |
+                >
                 <li class="breadcrumb-item active" aria-current="page">Faq</li>
             </ol>
         </nav>

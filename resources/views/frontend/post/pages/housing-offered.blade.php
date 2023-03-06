@@ -31,8 +31,8 @@
                     </div>
                     <div class="select_dropdown">
                         <label for="laundry" class="text-success">laundry <small class="text-danger">*</small></label>
-                        <select name="laundry" id="laundry" class="form-control" required
-                            <option value="" class="d-none">-</option>
+                        <select name="laundry" id="laundry" class="form-control" required <option value=""
+                            class="d-none">-</option>
                             <option value="w/d in unit">w/d in unit</option>
                             <option value="w/d hookups">w/d hookups</option>
                             <option value="laundry in bldg">laundry in bldg</option>
@@ -96,38 +96,36 @@
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]"
-                            id="cats_ok" value="cats ok">
+                        <input class="form-check-input" type="checkbox" name="services[]" id="cats_ok" value="cats ok">
                         <label class="form-check-label" for="cats_ok">cats ok</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]"
-                            id="dogs_ok" value="dogs ok">
+                        <input class="form-check-input" type="checkbox" name="services[]" id="dogs_ok" value="dogs ok">
                         <label class="form-check-label" for="dogs_ok">dogs ok</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]"
-                            id="furnished" value="furnished">
+                        <input class="form-check-input" type="checkbox" name="services[]" id="furnished"
+                            value="furnished">
                         <label class="form-check-label" for="furnished">furnished</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]"
-                            id="no_smoking" value="no smoking">
+                        <input class="form-check-input" type="checkbox" name="services[]" id="no_smoking"
+                            value="no smoking">
                         <label class="form-check-label" for="no_smoking">no smoking</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]"
-                            id="wheelchair_accessible" value="wheelchair accessible">
+                        <input class="form-check-input" type="checkbox" name="services[]" id="wheelchair_accessible"
+                            value="wheelchair accessible">
                         <label class="form-check-label" for="wheelchair_accessible">wheelchair accessible</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]"
-                            id="air_conditioning" value="air conditioning">
+                        <input class="form-check-input" type="checkbox" name="services[]" id="air_conditioning"
+                            value="air conditioning">
                         <label class="form-check-label" for="air_conditioning">air conditioning</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]"
-                            id="EV charging" value="EV charging">
+                        <input class="form-check-input" type="checkbox" name="services[]" id="EV charging"
+                            value="EV charging">
                         <label class="form-check-label" for="EV charging">EV charging</label>
                     </div>
                 </div>
@@ -150,23 +148,22 @@
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email <small class="text-danger">*</small></label>
-                        <input type="text" name="email" id="email" value="{{ Auth::user()->email ?? old('email') }}" class="form-control"
-                            placeholder="Your email address" required>
+                        <input type="text" name="email" id="email" value="{{ Auth::user()->email ?? old('email') }}"
+                            class="form-control" placeholder="Your email address" required>
                     </div>
                     <div class="mb-3">
                         <span class="text-dark" style="font-weight:600;">email privacy
                             options</span>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="email_privacy"
-                                id="privacy_1" value="ffuts mail relay (recommended)" checked>
+                            <input class="form-check-input" type="radio" name="email_privacy" id="privacy_1"
+                                value="panhandlehub mail relay (recommended)" checked>
                             <label class="form-check-label" for="privacy_1">
-                                Ffuts mail relay (recommended)
+                                panhandlehub mail relay (recommended)
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="email_privacy"
-                            value="no replies to this email"
-                                id="privacy_2">
+                                value="no replies to this email" id="privacy_2">
                             <label class="form-check-label" for="privacy_2">
                                 no replies to this email
                             </label>
@@ -175,22 +172,21 @@
                 </div>
                 <div class="col-md-8 inline_checkbox disabled_checked">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="show_phone"
-                            value="1" id="show_phone">
+                        <input class="form-check-input" type="checkbox" name="show_phone" value="1" id="show_phone">
                         <label class="form-check-label" for="show_phone">
                             show my phone number
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="phone_call"
-                            id="calls_ok" disabled value="1">
+                        <input class="form-check-input" type="checkbox" name="phone_call" id="calls_ok" disabled
+                            value="1">
                         <label class="form-check-label" for="calls_ok">
                             phone calls OK
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="phone_text"
-                            id="textorsms" disabled value="1">
+                        <input class="form-check-input" type="checkbox" name="phone_text" id="textorsms" disabled
+                            value="1">
                         <label class="form-check-label" for="textorsms">
                             text/sms OK
                         </label>
@@ -213,8 +209,8 @@
                         <div class="col-lg-6">
                             <div class="mb-1">
                                 <label for="contact_name" class="form-label">contact name </label>
-                                <input type="text" name="contact_name" value="{{ old('contact_name')}}" id="contact_name"
-                                    class="form-control" disabled>
+                                <input type="text" name="contact_name" value="{{ old('contact_name')}}"
+                                    id="contact_name" class="form-control" disabled>
                             </div>
                         </div>
                     </div>
