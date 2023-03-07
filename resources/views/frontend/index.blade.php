@@ -139,10 +139,10 @@ $country = getCountryCode();
                             <div class="mb-4 mt-auto">
                                 <p class="location">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    ({{ $row->city }}
+                                    {{ $row->city }}
                                     {{ isset($row->countries->name) ? ', ' .
                                     ucfirst(strtolower($row->countries->name)) : ''
-                                    }})
+                                    }}
                                 </p>
                                 <p class="time">
                                     <i class="fa fa-clock"></i>

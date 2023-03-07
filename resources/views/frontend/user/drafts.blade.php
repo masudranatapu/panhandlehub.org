@@ -1,7 +1,6 @@
 @extends('frontend.layouts.app', ['nav' => 'yes'])
 
 @push('style')
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 <style>
     td {
         border: 1px solid #EEE !important;
@@ -9,52 +8,32 @@
     }
 
     tr th {
-        border: 1px solid #cdc9c9 !important;
-        background: #d8d8d8 !important;
+        font-size: 13px;
+        text-align: center;
+        border: 1px solid #EEE;
     }
 </style>
 @endpush
 
 @section('breadcrumb')
-<ul>
-    <li>User Profile > </li>
-    <li>{!! $user->name !!}</li>
-</ul>
+<div class="breadcrumb_section">
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">User Profile</li>
+                >
+                <li class="breadcrumb-item active">{{ $user->name }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
 @endsection
 
 @section('content')
 <div class="main_template mt-5">
-    <div class="container-fluid">
-
-
+    <div class="container">
         <div class="user_dashboard mb-4">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="posting-tab" data-bs-toggle="tab" data-bs-target="#posting-tab-pane"
-                        type="button" role="tab" aria-controls="posting-tab-pane" aria-selected="true"><a
-                            href="{{ route('user.profile') }}">Published Ad</a></button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="drafts-tab" data-bs-toggle="tab"
-                        data-bs-target="#drafts-tab-pane" type="button" role="tab" aria-controls="drafts-tab-pane"
-                        aria-selected="false"><a href="{{ route('user.drafts') }}">Unpublished Ad</a></button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="searches-tab" data-bs-toggle="tab" data-bs-target="#searches-tab-pane"
-                        type="button" role="tab" aria-controls="searches-tab-pane" aria-selected="false"><a
-                            href="{{ route('user.favourite') }}">Favourites</a></button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="searches-tab" data-bs-toggle="tab" data-bs-target="#searches-tab-pane"
-                        type="button" role="tab" aria-controls="searches-tab-pane" aria-selected="false"><a
-                            href="{{ route('user.transaction') }}">Transaction</a></button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="setting-tab" data-bs-toggle="tab" data-bs-target="#setting-tab-pane"
-                        type="button" role="tab" aria-controls="setting-tab-pane" aria-selected="false"><a
-                            href="{{ route('user.setting') }}">Settings</a></button>
-                </li>
-            </ul>
+            @include('frontend.user.dashboard_nav')
         </div>
         <div class="user_dashboard_wrap">
             <div class="table-responsive">
@@ -73,42 +52,55 @@
                     </thead>
                     <tbody>
                         @forelse($ads as $key=> $ad)
-                            <tr>
-                                <td>{{ $ads->firstItem() + $key }}</td>
-                                <td>
-                                    <a href="{{route('frontend.details', $ad->slug)}}"> {{$ad->title}}</a>
-                                </td>
-                                <td>
-                                    {{$ad->ad_type->name}}
-                                </td>
-                                <td>
-                                    {{$ad->category->name}}
-                                </td>
-                                <td>
-                                    {{$ad->subCategory->name}}
-                                </td>
-                                <td>
-                                    {{$ad->city}} {{ isset($ad->countries->name) ? ', ' .ucfirst(strtolower($ad->countries->name)) : ''}}
-                                </td>
-                                <td>
-                                    @if($ad->is_payable == 1)
-                                        <a href="{{ route('frontend.payment.post', $ad->id) }}" onclick="return confirm('This ad is payable. Do you want to publish?')"  class="btn btn-sm btn-danger">Unpublished</a>
-                                    @else
-                                    <a href="{{ route('user.post.statusUpdate', [$ad->id, 'active']) }}"  class="btn btn-sm btn-danger">Unpublished</a>
-                                    @endif
-                                </td>
-                                <td>
-                                   {{-- <a href="{{route('frontend.details', $ad->slug)}}" class="btn btn-sm btn-success">View</a> --}}
-                                    <a href="{{ route('user.post.edit',$ad->slug) }}"  class="btn btn-sm btn-secondary">Edit</a>
-                                    <a href="{{ route('user.post.delete', $ad->id) }}" onclick="return confirm('Are you sure to delete?')" class="btn btn-sm btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="8" class="text-center">Not Found</td>
-                            </tr>
+                        <tr>
+                            <td>{{ $ads->firstItem() + $key }}</td>
+                            <td>
+                                <a href="{{route('frontend.details', $ad->slug)}}"> {{$ad->title}}</a>
+                            </td>
+                            <td>
+                                {{$ad->ad_type->name}}
+                            </td>
+                            <td>
+                                {{$ad->category->name}}
+                            </td>
+                            <td>
+                                {{$ad->subCategory->name}}
+                            </td>
+                            <td>
+                                {{$ad->city}} {{ isset($ad->countries->name) ? ', '
+                                .ucfirst(strtolower($ad->countries->name)) : ''}}
+                            </td>
+                            <td>
+                                @if($ad->is_payable == 1)
+                                <a href="{{ route('frontend.payment.post', $ad->id) }}"
+                                    onclick="return confirm('This ad is payable. Do you want to publish?')"
+                                    class="btn btn-sm btn-danger">Unpublished</a>
+                                @else
+                                <a href="{{ route('user.post.statusUpdate', [$ad->id, 'active']) }}"
+                                    class="btn btn-sm btn-danger">Unpublished</a>
+                                @endif
+                            </td>
+                            <td>
+                                {{-- <a href="{{route('frontend.details', $ad->slug)}}"
+                                    class="btn btn-sm btn-success">View</a> --}}
+                                <a href="{{ route('user.post.edit',$ad->slug) }}" title="Edit"
+                                    class="btn btn-sm btn-dark">
+                                    <i class="fa fa-pencil-alt"></i>
+                                </a>
 
-                            @endforelse
+                                <a href="{{ route('user.post.delete', $ad->id) }}"
+                                    onclick="return confirm('Are you sure to delete?')" title="Delete"
+                                    class="btn btn-sm btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td colspan="8" class="text-center">Not Found</td>
+                        </tr>
+
+                        @endforelse
                     </tbody>
                 </table>
             </div>
@@ -123,4 +115,3 @@
 
 
 @endsection
-

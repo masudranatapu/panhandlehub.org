@@ -33,7 +33,9 @@
         box-shadow: none !important;
     }
 
-
+    .user_dashboard li {
+        width: 25%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -52,6 +54,10 @@
 
     .main_template .sidenav {
         top: 112px;
+    }
+
+    .user_dashboard li {
+        width: 33%;
     }
 }
 
@@ -77,10 +83,13 @@
 }
 
 
-
 @media screen and (max-width:500px) {
     .user_dashboard ul li a {
         padding: 8px 18px;
+    }
+
+    .user_dashboard li {
+        width: 50%;
     }
 }
 
@@ -88,5 +97,11 @@
     .user_dashboard ul li a {
         padding: 6px 10px;
         font-size: 13px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .user_dashboard li {
+        width: 100%;
     }
 }

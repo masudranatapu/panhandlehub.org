@@ -297,4 +297,11 @@ class FrontendController extends Controller
         $transaction = Transaction::find($id);
         return view('frontend.post.payment-invoice',compact('transaction'));
     }
+
+    public function sellerShop(){
+        return view('frontend.seller_shop');
+    }
+
+
+
 }

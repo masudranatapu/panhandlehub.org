@@ -401,7 +401,7 @@
                 </div>
                 <!-- gallery -->
                 <div class="single_product mb-5">
-                    <div class="product-item__gallery mb-4">
+                    <div class="product-item__gallery">
                         <div class="swiper mySwiper2">
                             <div class="swiper-wrapper single_item" id="lightgallery">
                                 @foreach ($ad_galleies as $key => $value)
@@ -449,7 +449,8 @@
                                 <p>Registered for <strong>9+ months</strong></p>
                                 <p>Last online <strong>5 days ago</strong></p>
                                 <p>Total Listed Ads <strong>891</strong></p>
-                                <a href="#" class="btn btn-primary btn-sm mt-3" target="_blank">
+                                <a href="{{ route('frontend.seller.shop') }}" class="btn btn-primary btn-sm mt-3"
+                                    target="_blank">
                                     Seller profile
                                 </a>
                             </div>

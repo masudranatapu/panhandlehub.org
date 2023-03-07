@@ -17,6 +17,7 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('faq', [FrontendController::class, 'faq'])->name('faq');
     Route::get('price-plan', [FrontendController::class, 'pricePlan'])->name('price.plan');
     Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
+    Route::get('seller/shop', [FrontendController::class, 'sellerShop'])->name('seller.shop');
     Route::post('contact/submit', [FrontendController::class, 'contactSub'])->name('contact.submit');
     Route::get('payment/post/{id}', [FrontendController::class, 'postPayment'])->name('payment.post');
     Route::get('payment/invoice/{id}',[FrontendController::class,'paymentInvoice'])->name('payment.invoice');
@@ -57,6 +58,11 @@ Route::group(['as' => 'user.'], function () {
         Route::get('user/setting', [UserDashboardController::class, 'setting'])->name('setting');
         Route::get('user/passwordReset', [UserDashboardController::class, 'passwordReset'])->name('password.reset');
         Route::post('user-logout', [UserDashboardController::class, 'userLogOut'])->name('logout');
+
+
+        Route::get('user/message', [UserDashboardController::class, 'userMessage'])->name('message');
+        Route::get('user/review', [UserDashboardController::class, 'userReview'])->name('review');
+
     });
 });
 

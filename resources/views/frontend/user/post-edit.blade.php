@@ -2,7 +2,6 @@
 @section('meta')
 @endsection
 @push('style')
-<link rel="stylesheet" href="{{ asset('image_uploader/dist/image-uploader.min.css') }}">
 <style>
     .img-style {
         border: 1px solid #ddd;
@@ -29,11 +28,19 @@
 {{ __('Post') }}
 @endsection
 @section('breadcrumb')
-<ul>
-    <li><a href="#">{{ config('app.name') }} ></a></li>
-    <li><a href="#">{{ $ad->ad_type->slug }} ></a></li>
-    <li><a href="#">{{ $ad->category->slug }}</a></li>
-</ul>
+<div class="breadcrumb_section">
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">{{ config('app.name') }}</li>
+                >
+                <li class="breadcrumb-item active">{{ $ad->ad_type->slug }}</li>
+                >
+                <li class="breadcrumb-item active">{{ $ad->category->slug }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
 @endsection
 
 @section('content')

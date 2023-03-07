@@ -52,12 +52,12 @@ class UserDashboardController extends Controller
 
     public function transaction(){
         $transactions = Transaction::with('ad')->orderBy('id','desc')->paginate(10);
-        
+
         return view('frontend.user.transaction',compact('transactions'));
     }
 
     public function transactionDetails($id){
-        
+
         $transactionDetails = Transaction::find($id);
         return view('frontend.user.transaction-details',compact('transactionDetails'));
     }
@@ -288,5 +288,13 @@ class UserDashboardController extends Controller
         auth()->guard('user')->logout();
 
         return redirect()->route('frontend.index');
+    }
+
+    public function userMessage(){
+        return view('frontend.user.message');
+    }
+
+    public function userReview(){
+        return view('frontend.user.review');
     }
 }
