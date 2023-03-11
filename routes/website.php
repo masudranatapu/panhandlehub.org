@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Frontend\FrontendController;
-use App\Http\Controllers\Frontend\AdPostController;
-use App\Http\Controllers\Frontend\UserDashboardController;
-use App\Http\Controllers\Frontend\LocalizationController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MessangerController;
+use App\Http\Controllers\Frontend\AdPostController;
+use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\LocalizationController;
+use App\Http\Controllers\Frontend\UserDashboardController;
 Route::group(['as' => 'frontend.'], function () {
     Route::get('/', [FrontendController::class, 'index'])->name('index');
     Route::get('ads/{country?}/{category?}/{subcategory?}', [FrontendController::class, 'search'])->name('search');
@@ -60,8 +61,14 @@ Route::group(['as' => 'user.'], function () {
         Route::post('user-logout', [UserDashboardController::class, 'userLogOut'])->name('logout');
 
 
-        Route::get('user/message', [UserDashboardController::class, 'userMessage'])->name('message');
+        // Route::get('user/message', [UserDashboardController::class, 'userMessage'])->name('message');
         Route::get('user/review', [UserDashboardController::class, 'userReview'])->name('review');
+
+        Route::controller(MessangerController::class)->group(function () {
+           Route::get('user/message/{username?}', 'index')->name('message');
+            Route::post('message/{username}', 'sendMessage')->name('message.store');
+            Route::post('message/marks/read/{username}', 'messageMarkasRead')->name('message.markas.read');
+        });
 
     });
 });

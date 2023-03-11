@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         @if (auth()->guard('user')->check() && userWishlist() > 0)
-                            <li class="nav-item">
+                            <li class="nav-item" id="wishlist_count">
                                 <a href="{{ route('user.favourite') }}" class="nav-link">
                                     <i class="fa fa-star"></i> {{ userWishlist() }}
                                     {{ userWishlist() > 1 ? 'favourites' : 'favourite' }}

@@ -14,6 +14,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
+
         if (preg_match("@^/admin\b@", $request->getPathInfo())) {
             return route('admin.login');
         }

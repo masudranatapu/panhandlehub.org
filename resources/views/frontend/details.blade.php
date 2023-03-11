@@ -588,6 +588,7 @@
                             <img src="{{ asset('frontend/images/no-img.png') }}" class="w-100" alt="image">
                         </a>
                     </div>
+
                     <div class="card-body product_content d-flex flex-column">
                         <h3>
                             <a href="#">

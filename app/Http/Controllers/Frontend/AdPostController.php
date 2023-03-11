@@ -185,13 +185,13 @@ class AdPostController extends Controller
             foreach ($images as $key => $image) {
                 if ($key == 0 && $image && $image->isValid()) {
 
-                    $url = uploadResizedImage($image, 'addss_image', 850, 650, false);
+                    $url = uploadResizedImage($image, 'addss_image', 500, 450, false);
                     $ad->update(['thumbnail' => $url]);
                 }
 
                 if ($image && $image->isValid()) {
 
-                    $url = uploadResizedImage($image, 'adds_multiple', 850, 650, false);
+                    $url = uploadResizedImage($image, 'adds_multiple', 500, 450, false);
                     $ad->galleries()->create(['ad_id' => $ad->id, 'image' => $url]);
                 }
             }
