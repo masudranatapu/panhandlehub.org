@@ -9,7 +9,7 @@ use App\Http\Controllers\Frontend\LocalizationController;
 use App\Http\Controllers\Frontend\UserDashboardController;
 Route::group(['as' => 'frontend.'], function () {
     Route::get('/', [FrontendController::class, 'index'])->name('index');
-    Route::get('ads/{country?}/{category?}/{subcategory?}', [FrontendController::class, 'search'])->name('search');
+    Route::get('ads/{category?}/{subcategory?}', [FrontendController::class, 'search'])->name('search');
     Route::get('details/{slug}', [FrontendController::class, 'details'])->name('details');
     Route::get('wishlist', [FrontendController::class, 'wishlistCreate'])->name('wishlist.create');
     Route::get('about', [FrontendController::class, 'about'])->name('about');
@@ -18,11 +18,10 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('faq', [FrontendController::class, 'faq'])->name('faq');
     Route::get('price-plan', [FrontendController::class, 'pricePlan'])->name('price.plan');
     Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
-    Route::get('seller/shop', [FrontendController::class, 'sellerShop'])->name('seller.shop');
+    Route::get('seller/shop/{username}', [FrontendController::class, 'sellerShop'])->name('seller.shop');
     Route::post('contact/submit', [FrontendController::class, 'contactSub'])->name('contact.submit');
     Route::get('payment/post/{id}', [FrontendController::class, 'postPayment'])->name('payment.post');
     Route::get('payment/invoice/{id}',[FrontendController::class,'paymentInvoice'])->name('payment.invoice');
-
 
 
     //Localization

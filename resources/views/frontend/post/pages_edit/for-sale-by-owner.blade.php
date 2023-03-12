@@ -107,8 +107,7 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" {{ $ad->email_privacy == 'show my real email
-                            address' ? "checked" : ""}} name="email_privacy"
+                            <input class="form-check-input" type="radio" {{ $ad->email_privacy == 'show my real email address' ? "checked" : ""}} name="email_privacy"
                             id="privacy_2"
                             value="show my real email address">
                             <label class="form-check-label" for="privacy_2">

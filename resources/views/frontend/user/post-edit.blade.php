@@ -2,6 +2,7 @@
 @section('meta')
 @endsection
 @push('style')
+    <link rel="stylesheet" href="{{ asset('image_uploader/dist/image-uploader.min.css') }}">
 <style>
     .img-style {
         border: 1px solid #ddd;
@@ -23,6 +24,7 @@
         height: 35px !important;
     }
 </style>
+
 @endpush
 @section('title')
 {{ __('Post') }}

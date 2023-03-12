@@ -42,6 +42,7 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'last_seen' => 'datetime',
     ];
 
     /**
@@ -105,6 +106,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Ad::class);
     }
 
+    public function available_ads(): HasMany
+    {
+        return $this->ads()->where('status', 'active');
+    }
+
     /**
      * User Pricing Plan
      *
@@ -141,5 +147,5 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(UserDeviceToken::class, 'user_id', 'id');
     }
 
-    
+
 }

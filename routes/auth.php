@@ -42,11 +42,10 @@ Route::controller(SocialLoginController::class)->group(function () {
 Route::post('auth-logout', function (Request $request) {
     if ($request->auth === 'customer') {
         Auth::guard('user')->logout();
-        return redirect()->route('users.login');
+        return redirect()->route('signin');
     }
 })->name('auth.logout');
 
-Route::get('login', [App\Http\Controllers\Frontend\LoginController::class, 'showLoginForm'])->name('users.login');
 
 // Admin Authentication
 Route::controller(AdminLoginController::class)->prefix('admin')->group(function () {

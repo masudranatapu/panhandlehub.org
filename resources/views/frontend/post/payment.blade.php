@@ -11,11 +11,21 @@
     {{ __('Payment post') }}
 @endsection
 @section('breadcrumb')
-    <ul>
-        <li>{{ $ad->ad_type->name }} ></li>
-        <li>{{ $ad->category->name }} ></li>
-        <li>{{ $ad->subcategory->name }}</li>
-    </ul>
+    <div class="breadcrumb_section">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item pe-2"><a href="{{ route('frontend.index') }}">Home</a></li>
+                    >
+                    <li class="breadcrumb-item active" aria-current="page">{{ $ad->ad_type->name }}</li>
+                    >
+                    <li class="breadcrumb-item active" aria-current="page">{{ $ad->category->name }}</li>
+                    >
+                    <li class="breadcrumb-item active" aria-current="page">{{ $ad->subcategory->name }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
 @endsection
 
 @section('content')

@@ -8,6 +8,7 @@ use App\Models\AdType;
 use App\Models\Contact;
 use App\Models\AdGallery;
 use App\Models\Transaction;
+use App\Models\User;
 use Modules\Ad\Entities\Ad;
 use function Sodium\compare;
 use Illuminate\Http\Request;
@@ -69,12 +70,12 @@ class FrontendController extends Controller
         $country = getCountryCode();
         $categories = Category::orderBy('id', 'asc')->get();
         $subcategories = [];
-        if ($request->country) {
-            $country = $request->country;
-            $query->whereHas('countries', function ($q) use ($country) {
-                $q->where('iso', $country);
-            });
-        }
+//        if ($request->country) {
+//            $country = $request->country;
+//            $query->whereHas('countries', function ($q) use ($country) {
+//                $q->where('iso', $country);
+//            });
+//        }
         // if($request->ad_type) {
         //     $ad_type = $request->ad_type;
         //     $query->whereHas('ad_type', function ($q) use ($ad_type) {
@@ -102,8 +103,8 @@ class FrontendController extends Controller
         }
 
 
-        if ($request->city) {
-            $query->where('city', $request->city);
+        if ($request->location) {
+            $query->whereIn('city', $request->location);
         }
 
 
@@ -148,11 +149,13 @@ class FrontendController extends Controller
             $date = Carbon::parse($request->date);
             $query->whereDate('event_start_date', $date);
         }
+        $ads_count = $query->count();
 
         $ads = $query->paginate(9);
+        $country = \App\Models\Country::with('cities')->where('iso', strtoupper(getCountryCode()))->first();
 
 
-        return view('frontend.shop', compact('ads', 'subcategories', 'categories'));
+        return view('frontend.shop', compact('ads', 'subcategories', 'categories', 'ads_count', 'country'));
     }
     public function details($slug)
     {
@@ -298,8 +301,11 @@ class FrontendController extends Controller
         return view('frontend.post.payment-invoice',compact('transaction'));
     }
 
-    public function sellerShop(){
-        return view('frontend.seller_shop');
+    public function sellerShop($username)
+    {
+        $seller = User::where('username', $username)->first();
+        $ads = Ad::where('user_id', $seller->id)->paginate(9);
+        return view('frontend.seller_shop', compact('seller', 'ads'));
     }
 
 

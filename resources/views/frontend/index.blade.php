@@ -61,7 +61,7 @@ $country = getCountryCode();
                 @foreach ($top_categoreis as $key => $item)
                 <div class="col">
                     <div class="category_name text-center">
-                        <a href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug]) }}">
+                        <a href="{{ route('frontend.search', ['category' => $item->slug]) }}">
                             <i class="icon {{ $item->icon }}"></i>
                             <h6>{{ $item->name }}</h6>
                         </a>
@@ -90,7 +90,7 @@ $country = getCountryCode();
             @foreach ($categories as $key => $item)
             <div class="heading mb-2">
                 <h3>
-                    <a href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug]) }}">
+                    <a href="{{ route('frontend.search', ['category' => $item->slug]) }}">
                         {{ __($item->slug) }}</a>
                 </h3>
             </div>
@@ -99,7 +99,7 @@ $country = getCountryCode();
                     @foreach ($item->subcategories as $scat)
                     <li>
                         <a
-                            href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
+                            href="{{ route('frontend.search', ['category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
                             __($scat->name) }} |
                         </a>
                     </li>
@@ -176,7 +176,7 @@ $country = getCountryCode();
                                     @foreach ($item->subcategories as $scat)
                                     <li>
                                         <a
-                                            href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
+                                            href="{{ route('frontend.search', ['category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
                                             __($scat->name) }}</a>
                                     </li>
                                     @endforeach
@@ -203,7 +203,7 @@ $country = getCountryCode();
                                     @foreach ($item->subcategories as $scat)
                                     <li>
                                         <a
-                                            href="{{ route('frontend.search', ['country' => $country, 'category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
+                                            href="{{ route('frontend.search', ['category' => $item->slug, 'subcategory' => $scat->slug]) }}">{{
                                             __($scat->name) }}</a>
                                     </li>
                                     @endforeach

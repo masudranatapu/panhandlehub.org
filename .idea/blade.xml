@@ -31,6 +31,7 @@
       <data directive="@elsecurrencyleft" />
       <data directive="@elseguest" injection="true" prefix="&lt;?php elseif(auth()-&gt;guard(" suffix=")-&gt;guest()): ?&gt;" />
       <data directive="@elseif" injection="true" prefix="&lt;?php elseif(" suffix="): ?&gt;" />
+      <data directive="@elserole" injection="true" prefix="&lt;?php _bladeDirective(" suffix="); ?&gt;" />
       <data directive="@empty" injection="true" prefix="&lt;?php if(empty(" suffix=")): ?&gt;" />
       <data directive="@endauth" />
       <data directive="@endcan" />
