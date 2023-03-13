@@ -134,11 +134,11 @@
                         </div>
 
                         {{-- ads --}}
-                        <div class="ads mt-4">
+                        {{-- <div class="ads mt-4">
                             <a href="#" target="_blank">
                                 <img src="{{ asset('frontend/images/ads/ads-2.png') }}" class="w-100" alt="logo">
                             </a>
-                        </div>
+                        </div> --}}
                         {{-- ads --}}
                     </div>
                 </div>
@@ -158,19 +158,6 @@
                                         </div>
                                     </div>
                                 </div>
-{{--                                <div class="col-sm-6">--}}
-{{--                                    <div class="filter_form float-sm-end">--}}
-{{--                                        <div class="input-group">--}}
-{{--                                            <span class="input-group-text">Sort By:</span>--}}
-{{--                                            <select name="" id="" class="form-control">--}}
-{{--                                                <option value="">Recent Listings</option>--}}
-{{--                                                <option value="">Old Listings</option>--}}
-{{--                                                <option value="">Price low to high</option>--}}
-{{--                                                <option value="">Price high to low</option>--}}
-{{--                                            </select>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                             </div>
                         </div>
                         <div class="row">
@@ -194,9 +181,6 @@
         </div>
     </div>
 
-
-
-
     {{-- shop filter mobile device --}}
     <div class="filter_offcanvas offcanvas offcanvas-start d-block d-lg-none" tabindex="-1" id="shopFilter"
          aria-labelledby="shopFilterLabel">
@@ -210,7 +194,6 @@
                 <i class="las la-angle-double-left"></i>
             </span>
                 <form action="{{ route('frontend.search') }}" method="get" id="searchFrm">
-
                     <div class="mb-3">
                         <div class="filter_heading">
                             <h3>Keyword</h3>

@@ -77,8 +77,8 @@ class LoginController extends Controller
         } elseif($verified) {
             $details = [
                 'subject' => 'Welcome to ' . ' ' . config('app.name'),
-                'greeting' => 'Hi you just register on' . ' ' . config('app.name'),
-                'body' => 'Thanks for register ' . ' ' . config('app.name'),
+                'greeting' => 'Hi you have created account on' . ' ' . config('app.name'),
+                'body' => 'Thanks for registration with ' . ' ' . config('app.name'),
                 'email' => 'Your email is : ' . $request->email,
                 'thanks' => 'Thank you and stay with ' . ' ' . config('app.name'),
                 'actionText' => 'Click Here to Verify',
