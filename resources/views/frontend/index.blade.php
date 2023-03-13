@@ -116,7 +116,7 @@ $country = getCountryCode();
     <div class="featured_product">
         <div class="container">
             <div class="section_heading mb-4">
-                <h3>Recently viewed classifieds</h3>
+                <h3>Recently Viewed Classifieds</h3>
             </div>
             <div class="row">
                 {{-- product --}}

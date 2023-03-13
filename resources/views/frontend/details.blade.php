@@ -344,7 +344,7 @@
         <div class="related_product mt-5">
             <div class="container">
                 <div class="section_heading mb-4">
-                    <h3>Related items</h3>
+                    <h3>Related Items</h3>
                     <div class="slider-btn">
                         <button class="slider-btn--prev slick-arrow">
                             <i class="fa fa-arrow-left"></i>
