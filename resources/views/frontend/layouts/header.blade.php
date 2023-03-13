@@ -35,7 +35,7 @@
                         <li class="nav-item">
                             <a class="nav-link adpost_btn" href="{{ route('frontend.post.create') }}">
                                 <i class="fas fa-plus-square"></i>
-                                Place an ad
+                                Place an Ad
                             </a>
                         </li>
                     </ul>
