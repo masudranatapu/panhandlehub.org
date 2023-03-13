@@ -77,7 +77,7 @@ $country = getCountryCode();
     <div class="ads mt-5 mb-5">
         <div class="container">
             <a href="#" target="_blank">
-                <img src="{{ asset('frontend/images/ads/ad.gif') }}"  alt="logo">
+                <img src="{{ asset('frontend/images/ads/horizontal.png') }}"  alt="logo">
             </a>
         </div>
     </div>
@@ -137,7 +137,7 @@ $country = getCountryCode();
     <div class="ads mt-5 mb-5">
         <div class="container">
             <a href="#" target="_blank">
-                <img src="{{ asset('frontend/images/ads/ad.gif') }}" class="" alt="logo">
+                <img src="{{ asset('frontend/images/ads/horizontal.png') }}" class="" alt="logo">
             </a>
         </div>
     </div>
