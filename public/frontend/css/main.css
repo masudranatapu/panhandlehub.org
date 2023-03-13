@@ -1673,11 +1673,12 @@ body {
 .mobile_body .accordion-button {
     font-size: 13px;
     font-weight: 500;
+    text-transform: uppercase;
     box-shadow: none !important;
-    border: none !important;
+    border: 1px solid #ddd;
     padding: 16px 0px !important;
-    background: #494949 !important;
-    color: #fff !important;
+    background: #fff !important;
+    color: #000 !important;
     margin-bottom: 4px !important;
     border-radius: 3px !important;
 }
@@ -1690,8 +1691,10 @@ body {
     display: block;
     padding: 7px 0px;
     font-size: 13px;
-    color: #00E;
+    color: #000;
     font-weight: 400;
+    text-transform: capitalize;
+    border-bottom: 1px dotted #ddd;
 }
 
 
