@@ -2437,8 +2437,9 @@ body {
     top: 6px;
 }
 
-
-
+.ads.mt-5.mb-5 {
+    text-align: center !important;
+}
 
 
 
