@@ -108,7 +108,7 @@
                                     <a href="{{ route('frontend.seller.shop', $ad_details->customer->username) }}"
                                        class="btn btn-primary btn-sm mt-3"
                                        target="_blank">
-                                        Seller profile
+                                        Seller Profile
                                     </a>
                                 </div>
                             </div>
