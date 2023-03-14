@@ -4,22 +4,23 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Models\Faq;
 use App\Models\Seo;
+use App\Models\User;
 use App\Models\AdType;
 use App\Models\Contact;
 use App\Models\AdGallery;
 use App\Models\Transaction;
-use App\Models\User;
 use Modules\Ad\Entities\Ad;
 use function Sodium\compare;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Modules\Review\Entities\Review;
 use App\Http\Controllers\Controller;
 use Modules\Category\Entities\Category;
+use Modules\Language\Entities\Language;
 use Modules\Wishlist\Entities\Wishlist;
 use Google\Service\Dfareporting\Country;
 use Modules\Category\Entities\SubCategory;
-use Modules\Language\Entities\Language;
 
 class FrontendController extends Controller
 {
@@ -305,7 +306,10 @@ class FrontendController extends Controller
     {
         $seller = User::where('username', $username)->first();
         $ads = Ad::where('user_id', $seller->id)->paginate(9);
-        return view('frontend.seller_shop', compact('seller', 'ads'));
+        $reviews = Review::where('seller_id', $seller->id)->get();
+        $query = Ad::active()->where('user_id', $seller->id);
+        $ads_count = $query->count();
+        return view('frontend.seller_shop', compact('seller', 'ads', 'reviews', 'ads_count'));
     }
 
 

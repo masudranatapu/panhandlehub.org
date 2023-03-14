@@ -844,6 +844,22 @@ body {
     box-shadow: none !important;
 }
 
+.btn-primary {
+    border: none !important;
+    background: var(--primary);
+    border-radius: 2px;
+    padding: 10px 17px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 .seller_sort_info .btn-primary:hover {
     background: var(--black);
 }
@@ -1253,7 +1269,42 @@ body {
     margin: 0px 3px;
     font-size: 12px;
 }
+.seller_dashboard_shop .nav-pills {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
+.seller_dashboard_shop .nav-item {
+    display: block;
+    width: 33.33%;
+}
+
+.seller_dashboard_shop .nav-item button {
+    width: 100%;
+}
+
+.seller_dashboard_shop .nav-pills .nav-link {
+    font-size: 16px;
+    color: var(--bs-black);
+    border-radius: 0px;
+    padding: 13px 5px;
+    background: #e8e8e8;
+    outline: none !important;
+    box-shadow: none !important;
+    font-weight: 600;
+}
+
+.seller_dashboard_shop .nav-pills .nav-link.active {
+    background: var(--bs-primary) !important;
+    color: #fff;
+}
+.seller_dashboard_shop .shop_header {
+    border-bottom: 1px solid #e3e3e3;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    padding-bottom: 12px;
+}
 .chat_form .btn-primary {
     border: none !important;
     background: var(--primary);
@@ -1261,6 +1312,12 @@ body {
     padding: 10px 17px;
     font-size: 15px;
     font-weight: 600;
+}
+
+.chat_seller_btn {
+    position: absolute;
+    top: 31px;
+    right: 15px;
 }
 
 .chat_form {
