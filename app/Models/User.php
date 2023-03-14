@@ -82,11 +82,11 @@ class User extends Authenticatable implements JWTSubject
         });
     }
 
-    public function setNameAttribute($value)
-    {
-        $this->attributes['name'] = $value;
-        $this->attributes['username'] = Str::slug($value).'_'.time();
-    }
+//    public function setNameAttribute($value)
+//    {
+//        $this->attributes['name'] = $value;
+//        $this->attributes['username'] = Str::slug($value).'_'.time();
+//    }
 
     public function getImageUrlAttribute()
     {

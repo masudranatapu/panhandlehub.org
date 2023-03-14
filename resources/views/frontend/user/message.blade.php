@@ -46,7 +46,7 @@
                                                                             ({{ $chatuser->unread }})
                                                                         </span>
                                                                     @else
-                                                                        @if (Cache::has('isOnline' . $selected_user->id))
+                                                                        @if (isset($selected_user) && Cache::has('isOnline' . $selected_user->id))
                                                                             <span class="online">{{ __('online') }}</span>
                                                                         @else
                                                                             <span class="offline">{{ __('offline') }}</span>

@@ -24,6 +24,7 @@ class MessangerController extends Controller
      */
     public function index($username = null)
     {
+
         $data['messages'] = [];
         $data['user'] = auth()->user();
 
@@ -72,7 +73,6 @@ class MessangerController extends Controller
                 ->count() ?? 0;
             return $user;
         });
-//        dd($data['users']);
 
         if ($data['selected_user']) {
             $data['messages'] = $this->getMessages($data['selected_user']);

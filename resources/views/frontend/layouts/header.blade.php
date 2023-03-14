@@ -11,6 +11,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        @php
+                            if (Auth::check()) {
+                              $unread_message = \App\Models\Messenger::where('to_id', auth()->id())->where('read', 0)->count();
+                            }
+                        @endphp
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('user.message') }}">
+                                <i class="	far fa-comment"></i>
+                                Chat {{ isset($unread_message) ? "(" .$unread_message . ")"  : '' }}
+                            </a>
+                        </li>
                         <li class="nav-item" id="wishlist_count">
                             <a href="{{ route('user.favourite') }}" class="nav-link">
                                 <i class="fa fa-star"></i> {{ userWishlist() > 0 ? userWishlist() : '0' }}

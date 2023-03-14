@@ -54,17 +54,18 @@ class RegisterController extends Controller
 
     public function userSignUp(Request $request)
     {
-        $user = User::where('email', $request->email)->get();
 
-        if ($user->count() > 0) {
-            return redirect()->back()->with('info', 'Your email has already an account. Plase login to your account');
-        } else {
+        $request->validate([
+            'email' => 'required|unique:users,email',
+            'username' => 'required|unique:users,username',
+            'password' => 'required|min:8',
+            'confirm_password' => 'required|min:8|same:password'
+        ]);
+
             $random_token = Str::random(40);
-            $email = explode('@', $request->email);
-            $username = $email[0] . '_' . random_int(1111, 9999);
             User::insert([
                 'email' => $request->email,
-                'username' => $username,
+                'username' => $request->username,
                 'token' => $random_token,
                 'created_at' => Carbon::now(),
             ]);
@@ -84,7 +85,7 @@ class RegisterController extends Controller
 
             Mail::to($request->email)->send(new RegisterMail($details));
             return redirect()->back()->with('message', 'A verification link has been sent to your mail. Please Check Your mail.');
-        }
+
     }
 
     public function userVerify($token)

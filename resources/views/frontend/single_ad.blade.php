@@ -2,7 +2,7 @@
     <div class="card product_wrapper">
     <div class="product_img">
         <a href="{{ route('frontend.details', $item->slug) }}">
-            <img src="{{ asset(isset($item->thumbnail) && File::exists($item->thumbnail) ? $item->thumbnail : 'frontend/images/no-img.png') }}" class="w-100"
+            <img src="{{ asset(isset($item->thumbnail) && File::exists($item->thumbnail) ? $item->thumbnail : 'frontend/images/no-img.png') }}" class="ad_image w-100"
                 alt="image">
         </a>
     </div>

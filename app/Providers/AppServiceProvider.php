@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\AdType;
 use App\Models\Cms;
 use App\Models\Country;
+use App\Models\Messenger;
 use App\Models\Setting;
 use App\Models\ModuleSetting;
 use Illuminate\Pagination\Paginator;
@@ -62,6 +63,7 @@ class AppServiceProvider extends ServiceProvider
              $q->where('status', 1);
            })->get());
            view()->share('countries', Country::all());
+
            view()->share('ad_types', AdType::all());
            view()->share('settings', Setting::first());
            view()->share('cms', Cms::first());

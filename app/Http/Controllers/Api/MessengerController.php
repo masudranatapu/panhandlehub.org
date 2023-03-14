@@ -19,6 +19,7 @@ class MessengerController extends Controller
      */
     public function index($username = null)
     {
+
         $data['messages'] = [];
         $data['user'] = auth('api')->user();
 
