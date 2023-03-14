@@ -5,26 +5,25 @@
             <div class="col-sm-6 col-md-4">
                 <div class="footer_wrapper">
                     <div class="footer_widget mb-4">
-                        <h3>PanHandleHub</h3>
+                        <h3>{{ config('app.name')}}</h3>
                     </div>
                     <div class="infomation">
                         <ul>
                             <li>
                                 <a href="tel:123 - 456 - 789">
                                     <i class="fas fa-phone-volume"></i>
-                                    123 - 456 - 789
+                                    {{ $cms->contact_number }}
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:info@gmail.com">
                                     <i class="fas fa-envelope"></i>
-                                    info@gmail.com
+                                    {{ $cms->contact_email	 }}
                                 </a>
                             </li>
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
-                                1420 West Jalkuri Fatullah,
-                                Narayanganj, BD
+                                {{ $cms->contact_address }}
                             </li>
                         </ul>
                     </div>
@@ -54,18 +53,18 @@
                     </div>
                     <div class="social_media">
                         <ul>
-                            <li><a href="#" target="_blank">Facebook</a></li>
-                            <li><a href="#" target="_blank">Twitter</a></li>
-                            <li><a href="#" target="_blank">Linkedin</a></li>
-                            <li><a href="#" target="_blank">Whatsapp</a></li>
-                            <li><a href="#" target="_blank">Pinterest</a></li>
+                            <li><a href="{{ $setting->facebook }}" target="_blank">Facebook</a></li>
+                            <li><a href="{{ $setting->twitter }}" target="_blank">Twitter</a></li>
+                            <li><a href="{{ $setting->linkdin }}" target="_blank">Linkedin</a></li>
+                            <li><a href="{{ $setting->whatsapp }}" target="_blank">Whatsapp</a></li>
+                            <li><a href="{{ $setting->instagram }}" target="_blank">Instagram</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="copyright pt-5 text-center">
-                <p>Copyright © {{ date('Y') }} panhandlehub All rights reserved.</p>
+                <p>{!! $cms->footer_text !!}</p>
             </div>
 
         </div>

@@ -19,9 +19,9 @@
 
                     {{-- Website Setting --}}
                     <li class="nav-header">{{ __('website_setting') }}</li>
-                    {{-- <x-admin.sidebar-list :linkActive="Route::is('settings.system') ? true : false" route="settings.system" icon="fas fa-hashtag">
+                    <x-admin.sidebar-list :linkActive="Route::is('settings.system') ? true : false" route="settings.system" icon="fas fa-hashtag">
                         {{ __('preferences') }}
-                    </x-admin.sidebar-list> --}}
+                    </x-admin.sidebar-list>
                     {{-- <x-admin.sidebar-list :linkActive="Route::is('settings.social.login') ? true : false" route="settings.social.login" icon="fab fa-facebook">
                         {{ __('social_login') }}
                     </x-admin.sidebar-list> --}}

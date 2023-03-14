@@ -33,11 +33,11 @@
                                 href="#cms-home" role="tab" aria-controls="home"
                                 aria-selected="false">{{ __('home') }}</a>
                         </li> --}}
-                        <li class="nav-item border rounded mb-1" role="presentation">
+                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'about' ? 'active' : '' }}" id="about-tab" data-toggle="pill"
                                 href="#cms-about" role="tab" aria-controls="about"
                                 aria-selected="false">{{ __('about') }}</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'terms' ? 'active' : '' }}" id="terms-tab" data-toggle="pill"
                                 href="#cms-terms" role="tab" aria-controls="terms"
@@ -77,11 +77,11 @@
                                 href="#cms-ads" role="tab" aria-controls="ads"
                                 aria-selected="false">{{ __('ads') }}</a>
                         </li> --}}
-                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
+                        <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'contact' ? 'active' : '' }} " id="contact-tab"
                                 data-toggle="pill" href="#cms-contact" role="tab" aria-controls="contact"
                                 aria-selected="false">{{ __('contact') }}</a>
-                        </li> --}}
+                        </li>
                         {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'faq' ? 'active' : '' }}" id="faq-tab" data-toggle="pill"
                                 href="#cms-faq" role="tab" aria-controls="faq"
@@ -131,13 +131,13 @@
                         </div> --}}
 
                         {{-- About Settings --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'about' ? 'show active' : 'show active' }} " id="cms-about"
+                        {{-- <div class="tab-pane fade {{ $cms_tab == 'about' ? 'show active' : 'show active' }} " id="cms-about"
                             role="tabpanel" aria-labelledby="about-tab">
                             <x-backend.setting.cms.about-setting :aboutcontent="$cms->about_body" :aboutVideoThumb="$cms->about_video_thumb" :aboutBackground="$cms->about_background" />
-                        </div>
+                        </div> --}}
 
                         {{-- Terms Settings --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'terms' ? 'show active' : '' }}" id="cms-terms"
+                        <div class="tab-pane fade {{ $cms_tab == 'terms' ? 'show active' : 'show active' }}" id="cms-terms"
                             role="tabpanel" aria-labelledby="terms-tab">
                             <x-backend.setting.cms.terms-condition-setting :terms="$cms->terms_body" :termsContent="$term_page_content"
                                 :termsBackground="$cms->terms_background" />
@@ -177,10 +177,10 @@
                             <x-backend.setting.cms.ads :cms="$cms" />
                         </div> --}}
                         {{-- Contact --}}
-                        {{-- <div class="tab-pane fade {{ $cms_tab == 'contact' ? 'show active' : '' }}" id="cms-contact"
+                        <div class="tab-pane fade {{ $cms_tab == 'contact' ? 'show active' : '' }}" id="cms-contact"
                             role="tabpanel" aria-labelledby="contact-tab">
                             <x-backend.setting.cms.contact :cms="$cms" />
-                        </div> --}}
+                        </div>
                         {{-- Faq --}}
                         {{-- <div class="tab-pane fade {{ $cms_tab == 'faq' ? 'show active' : '' }}" id="cms-faq"
                             role="tabpanel" aria-labelledby="faqs-tab">

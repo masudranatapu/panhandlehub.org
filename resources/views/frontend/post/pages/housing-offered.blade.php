@@ -132,7 +132,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="mb-3">
                         <label for="available_on" class="form-label">available on</label>
-                        <input type="date" name="available_on" id="available_on" class="form-control">
+                        <input type="text" name="available_on" id="datepicker" class="form-control">
                     </div>
                 </div>
             </div>
