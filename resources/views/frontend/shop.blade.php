@@ -162,9 +162,9 @@
                         </div>
                         <div class="row">
                             {{-- product --}}
-                            @foreach ($ads as $key => $row)
+                            @foreach ($ads as $key => $item)
                                 <div class="col-sm-6 col-md-6 col-xl-4 mb-3 d-sm-flex justify-content-strach">
-                                    @include('frontend.single_ad', $row)
+                                    @include('frontend.single_ad', $item)
                                 </div>
                             @endforeach
                             {{-- product --}}

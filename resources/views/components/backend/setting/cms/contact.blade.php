@@ -26,7 +26,7 @@
                             value="{{ $cms->contact_address }}">
                     </div>
                 </div>
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <div class="form-group">
                         <x-forms.label name="contact_background" />
                         <input type="file" class="form-control dropify"
@@ -34,7 +34,7 @@
                             autocomplete="image" data-allowed-file-extensions="jpg png jpeg"
                             accept="image/png, image/jpg, image/jpeg">
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="row mb-3">
