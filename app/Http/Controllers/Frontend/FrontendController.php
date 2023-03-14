@@ -34,7 +34,6 @@ class FrontendController extends Controller
         if ($local_country) {
             $ads->where('country', $local_country);
         }
-
         $ads = $ads->get();
         $languages = Language::orderBy('name', 'asc')->get();
 
@@ -53,7 +52,7 @@ class FrontendController extends Controller
         $meta_keywords = $seo->contents->keywords;
         $meta_image = $seo->contents->image;
 
-        return view('frontend.index', compact('ads', 'ad_types', 'countries', 'cities', 'languages','meta_title', 'meta_description', 'meta_image', 'meta_keywords', 'categories', 'top_categoreis'));
+        return view('frontend.index', compact('ads', 'ad_types', 'countries', 'cities', 'languages', 'meta_title', 'meta_description', 'meta_image', 'meta_keywords', 'categories', 'top_categoreis'));
     }
 
     public function setCountry(Request $request)
@@ -66,17 +65,17 @@ class FrontendController extends Controller
 
     public function search(Request $request)
     {
-//        dd($request->country);
+        //        dd($request->country);
         $query = Ad::active();
         $country = getCountryCode();
         $categories = Category::orderBy('id', 'asc')->get();
         $subcategories = [];
-//        if ($request->country) {
-//            $country = $request->country;
-//            $query->whereHas('countries', function ($q) use ($country) {
-//                $q->where('iso', $country);
-//            });
-//        }
+        //        if ($request->country) {
+        //            $country = $request->country;
+        //            $query->whereHas('countries', function ($q) use ($country) {
+        //                $q->where('iso', $country);
+        //            });
+        //        }
         // if($request->ad_type) {
         //     $ad_type = $request->ad_type;
         //     $query->whereHas('ad_type', function ($q) use ($ad_type) {
@@ -162,18 +161,19 @@ class FrontendController extends Controller
     {
         $ad_details = Ad::with('ad_type')->where('slug', $slug)->first();
 
-        if($ad_details->status == 'active'){
+        $relative_ads  = Ad::where('user_id',$ad_details->user_id)->whereNotIn('id',[$ad_details->id])->get();
+        
+        if ($ad_details->status == 'active') {
 
-        // dd($ad_details->ad_type->slug);
-        $ad_galleies = AdGallery::where('ad_id', $ad_details->id)->get();
-        $seo = Seo::where('page_slug', 'home')->first();
-        $meta_title = $seo->contents->title;
-        $meta_description = $seo->contents->description;
-        $meta_keywords = $seo->contents->keywords;
-        $meta_image = $seo->contents->image;
+            $ad_galleies = AdGallery::where('ad_id', $ad_details->id)->get();
+            $seo = Seo::where('page_slug', 'home')->first();
+            $meta_title = $seo->contents->title;
+            $meta_description = $seo->contents->description;
+            $meta_keywords = $seo->contents->keywords;
+            $meta_image = $seo->contents->image;
 
-        return view('frontend.details', compact('ad_details', 'ad_galleies', 'meta_title', 'meta_description', 'meta_keywords', 'meta_image'));
-        }else{
+            return view('frontend.details', compact('ad_details', 'ad_galleies', 'relative_ads', 'meta_title', 'meta_description', 'meta_keywords', 'meta_image'));
+        } else {
             return redirect()->route('frontend.index');
         }
     }
@@ -294,12 +294,13 @@ class FrontendController extends Controller
     public function postPayment($id)
     {
         $ad = Ad::find($id);
-        return view('frontend.post.payment',compact('ad'));
+        return view('frontend.post.payment', compact('ad'));
     }
 
-    public function paymentInvoice($id){
+    public function paymentInvoice($id)
+    {
         $transaction = Transaction::find($id);
-        return view('frontend.post.payment-invoice',compact('transaction'));
+        return view('frontend.post.payment-invoice', compact('transaction'));
     }
 
     public function sellerShop($username)
@@ -311,7 +312,4 @@ class FrontendController extends Controller
         $ads_count = $query->count();
         return view('frontend.seller_shop', compact('seller', 'ads', 'reviews', 'ads_count'));
     }
-
-
-
 }

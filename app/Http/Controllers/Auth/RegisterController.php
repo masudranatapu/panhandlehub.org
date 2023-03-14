@@ -61,7 +61,7 @@ class RegisterController extends Controller
         } else {
             $random_token = Str::random(40);
             $email = explode('@', $request->email);
-            $username = $email[0]. '_' . random_int(1111,9999);
+            $username = $email[0] . '_' . random_int(1111, 9999);
             User::insert([
                 'email' => $request->email,
                 'username' => $username,
@@ -125,7 +125,7 @@ class RegisterController extends Controller
 
             Mail::to($user->email)->send(new UserLoginMail($details));
 
-            return redirect()->route('user.profile')->with('success', 'You are sucessfully login without you password');
+            return redirect()->route('user.setting')->with('success', 'You are sucessfully login without you password');
         } else {
             return redirect()->route('signin')->with('error', 'Someting went worng with your account. Please try again.');
         }
@@ -161,8 +161,7 @@ class RegisterController extends Controller
 
                 Mail::to($user->email)->send(new UserLoginMail($details));
 
-                return redirect()->route('user.profile')->with('success', 'You are sucessfully login with password');
-
+                return redirect()->route('user.setting')->with('success', 'You are sucessfully login with password');
             } else {
                 return redirect()->back()->with('error', 'Password do not match. Please confirm you password');
             }

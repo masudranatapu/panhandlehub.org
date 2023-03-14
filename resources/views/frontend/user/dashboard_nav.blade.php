@@ -1,5 +1,11 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
+        <button class="nav-link {{ request()->routeIs('user.setting') ? 'active' : "" }}" id="setting-tab"
+            data-bs-toggle="tab" data-bs-target="#setting-tab-pane" type="button" role="tab"
+            aria-controls="setting-tab-pane" aria-selected="false"><a
+                href="{{ route('user.setting') }}">Profile</a></button>
+    </li>
+    <li class="nav-item" role="presentation">
         <button class="nav-link {{ request()->routeIs('user.profile') ? 'active' : "" }}" id="posting-tab"
             data-bs-toggle="tab" data-bs-target="#posting-tab-pane" type="button" role="tab"
             aria-controls="posting-tab-pane" aria-selected="true"><a href="{{ route('user.profile') }}">Published
@@ -29,16 +35,5 @@
             aria-controls="searches-tab-pane" aria-selected="false"><a
                 href="{{ route('user.message') }}">Message</a></button>
     </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link {{ request()->routeIs('user.review') ? 'active' : "" }}" id="searches-tab"
-            data-bs-toggle="tab" data-bs-target="#searches-tab-pane" type="button" role="tab"
-            aria-controls="searches-tab-pane" aria-selected="false"><a href="{{ route('user.review') }}">Seller
-                Review</a></button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link {{ request()->routeIs('user.setting') ? 'active' : "" }}" id="setting-tab"
-            data-bs-toggle="tab" data-bs-target="#setting-tab-pane" type="button" role="tab"
-            aria-controls="setting-tab-pane" aria-selected="false"><a
-                href="{{ route('user.setting') }}">Settings</a></button>
-    </li>
+    
 </ul>

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
+
 use File;
 use Carbon\Carbon;
 use App\Models\User;
@@ -23,7 +24,7 @@ class UserDashboardController extends Controller
     public function profile()
     {
         $user = Auth::user();
-        $ads = Ad::active()->where('user_id', $user->id)->paginate(15);
+        $ads = Ad::active()->where('user_id', Auth::id())->paginate(15);
         return view('frontend.user.profile', compact('user', 'ads'));
     }
 
@@ -50,16 +51,18 @@ class UserDashboardController extends Controller
         return back()->with('message', 'Item successfully removed from favorite.');
     }
 
-    public function transaction(){
-        $transactions = Transaction::with('ad')->orderBy('id','desc')->paginate(10);
+    public function transaction()
+    {
+        $transactions = Transaction::with('ad')->where('user_id', Auth::id())->orderBy('id', 'desc')->paginate(10);
 
-        return view('frontend.user.transaction',compact('transactions'));
+        return view('frontend.user.transaction', compact('transactions'));
     }
 
-    public function transactionDetails($id){
+    public function transactionDetails($id)
+    {
 
         $transactionDetails = Transaction::find($id);
-        return view('frontend.user.transaction-details',compact('transactionDetails'));
+        return view('frontend.user.transaction-details', compact('transactionDetails'));
     }
 
     public function setting()
@@ -235,7 +238,7 @@ class UserDashboardController extends Controller
         }
         if ($ad->status == 'active') {
             flashSuccess('Post Updated successfully');
-            return redirect()->route('user.profile')->with('message', 'Post Updated successfully');
+            return redirect()->route('user.setting')->with('message', 'Post Updated successfully');
         }
     }
     public function deletePost($id)
@@ -290,12 +293,14 @@ class UserDashboardController extends Controller
         return redirect()->route('frontend.index');
     }
 
-    public function userMessage(){
+    public function userMessage()
+    {
         return view('frontend.user.message');
     }
 
-    public function userReview(){
-        
+    public function userReview()
+    {
+
         return view('frontend.user.review');
     }
 }

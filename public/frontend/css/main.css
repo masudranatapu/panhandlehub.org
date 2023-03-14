@@ -998,33 +998,15 @@ body {
     display: none;
 }
 
-.review_form {
-    background: #fcefde;
-    padding: 10px 15px;
-    border-radius: 6px;
-}
-
 .review_form .form-control {
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
+    background: #f7f7f7;
+    border: 1px solid #EEE;
+    padding: 10px 10px;
 }
 
-.review_form .btn.btn-primary {
-    width: 100%;
-    border-radius: 0px;
-    padding: 12px 0px;
-    background: var(--primary);
-    border: none !important;
-}
-
-.review_form .btn.btn-primary:hover {
-    background: var(--black);
-}
-
-
-.review_form .title h4 {
-    font-size: 16px;
-    color: #494949;
+.review_form {
+    background: #fff;
+    padding: 20px 20px;
 }
 
 .review_list {
@@ -1295,9 +1277,10 @@ body {
 }
 
 .seller_dashboard_shop .nav-pills .nav-link.active {
-    background: var(--bs-primary) !important;
+    background: #ff9800;
     color: #fff;
 }
+
 .seller_dashboard_shop .shop_header {
     border-bottom: 1px solid #e3e3e3;
     background-color: transparent;
@@ -1312,6 +1295,52 @@ body {
     padding: 10px 17px;
     font-size: 15px;
     font-weight: 600;
+}
+
+.feedback_list {
+    border: 1px solid #e8e8e8;
+    padding: 15px 15px;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.feedback_list .feedback_img img {
+    border-radius: 3px;
+}
+
+.feedback_content .star img {
+    width: 17px;
+    height: 17px;
+}
+
+.feedback_content h6 {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+
+.feedback_content .star {
+    margin-bottom: 9px;
+}
+
+.feedback_content p {
+    margin: 0;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 25px;
+    color: #555;
+}
+
+.review_form .form-control {
+    background: #f7f7f7;
+    border: 1px solid #EEE;
+    padding: 10px 10px;
+}
+
+.review_form {
+    background: #fff;
+    padding: 20px 20px;
 }
 
 .chat_seller_btn {
@@ -2332,10 +2361,10 @@ body {
     color: #888;
 }
 
-.login_form .form-control {
+/* .login_form .form-control {
     border: 1px solid #cac9c9;
     background: #dddd;
-}
+} */
 
 .login_form .btn-light {
     padding: 6px 16px;
@@ -2447,7 +2476,7 @@ body {
 }
 
 .user_dashboard li {
-    width: 14.28%;
+    width: 16.60%;
 }
 
 .user_dashboard ul li a {

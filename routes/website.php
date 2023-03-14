@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\AdPostController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\LocalizationController;
 use App\Http\Controllers\Frontend\UserDashboardController;
+use App\Http\Controllers\Frontend\SellerDashboardController;
 Route::group(['as' => 'frontend.'], function () {
     Route::get('/', [FrontendController::class, 'index'])->name('index');
     Route::get('ads/{category?}/{subcategory?}', [FrontendController::class, 'search'])->name('search');
@@ -32,7 +33,7 @@ Route::group(['as' => 'frontend.'], function () {
     Route::post('country', [FrontendController::class, 'setCountry'])->name('setCountry');
 
 
-
+   
 
     // Route::get('create-post/post-type', [AdPostController::class, 'postType'])->name('create-post.step_one');
     // Route::get('create-post/post-type/category', [AdPostController::class, 'postStepTwo'])->name('create-post.step_two');
@@ -41,6 +42,12 @@ Route::group(['as' => 'frontend.'], function () {
 
     Route::get('create-post/{type?}/{subcategory?}', [AdPostController::class, 'create'])->name('post.create');
     Route::post('store-post', [AdPostController::class, 'store'])->name('post.store');
+});
+
+// seller
+Route::group(['as' => 'seller.', 'prefix' => 'seller'], function () {
+    Route::get('profile/{username}', [SellerDashboardController::class, 'sellerProfile'])->name('profile');
+    Route::post('seller/review', [SellerDashboardController::class, 'storeReview'])->name('review.store');
 });
 
 Route::group(['as' => 'user.'], function () {

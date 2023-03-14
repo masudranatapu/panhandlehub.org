@@ -39,6 +39,7 @@
         </div>
         <div class="user_dashboard_wrap">
             <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Your Shop: </strong><a class="btn btn-primary" href="{{ route('frontend.seller.shop',$user->username) }}">View Shop</a><li>
                 <li class="list-group-item"><strong>Username</strong> : {{ $user->username ?? 'N/A' }}</li>
                 <li class="list-group-item"><strong>Email</strong> : {{ $user->email }}</li>
                 <li class="list-group-item">

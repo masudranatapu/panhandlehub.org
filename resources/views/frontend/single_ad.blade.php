@@ -1,4 +1,5 @@
-<div class="card product_wrapper">
+<div class="col mb-3">
+    <div class="card product_wrapper">
     <div class="product_img">
         <a href="{{ route('frontend.details', $item->slug) }}">
             <img src="{{ asset(isset($item->thumbnail) && File::exists($item->thumbnail) ? $item->thumbnail : 'frontend/images/no-img.png') }}" class="w-100"
@@ -41,3 +42,5 @@
         </div>
     </div>
 </div>
+</div>
+

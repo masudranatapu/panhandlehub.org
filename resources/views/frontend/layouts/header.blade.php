@@ -6,7 +6,7 @@
                     <img src="{{ asset('frontend/images/logo.png') }}" width="124" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -19,7 +19,7 @@
                         </li>
                         @if (auth('user')->check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.profile') }}">
+                                <a class="nav-link" href="{{ route('user.setting') }}">
                                     <i class="fas fa-user"></i>
                                     My Account
                                 </a>
@@ -33,7 +33,11 @@
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a class="nav-link adpost_btn" href="{{ route('frontend.post.create') }}">
+                            <a class="nav-link adpost_btn"
+                                href="
+                            @if (auth('user')->check()) {{ route('frontend.post.create') }}
+                            @else
+                                {{ route('signin') }} @endif">
                                 <i class="fas fa-plus-square"></i>
                                 Place an Ad
                             </a>

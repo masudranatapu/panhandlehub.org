@@ -24,33 +24,37 @@ class AdPostController extends Controller
     public function create($post_type = null, $subcategory = null)
     {
 
-        if ($post_type == null) {
-            $add_types = AdType::orderBy('id', 'asc')->get();
-            return view('frontend.post.step_one', compact('add_types'));
-        } else {
-
-            if ($subcategory) {
-
-                $ad_type = AdType::where('slug', $post_type)->first();
-                $subCategory = SubCategory::where('slug', $subcategory)->first();
-                $category = Category::where('id', $subCategory->category_id)->first();
-                $country = Country::with('cities')->where('iso', strtoupper(getCountryCode()))->first();
-                return view('frontend.post.step_four', compact('ad_type', 'category', 'subCategory', 'country'));
-
-
-                // if ($subcategory) {
-                // } else {
-                //     $ad_type = AdType::where('slug', $post_type)->first();
-                //     $category = Category::where('slug', $category)->first();
-                //     $subCategory = SubCategory::where('category_id', $category->id)->orderBy('id', 'desc')->get();
-                //     return view('frontend.post.step_three', compact('subCategory', 'category', 'ad_type'));
-                // }
-
+        if (Auth::check()) {
+            if ($post_type == null) {
+                $add_types = AdType::orderBy('id', 'asc')->get();
+                return view('frontend.post.step_one', compact('add_types'));
             } else {
-                $ad_type = AdType::where('slug', $post_type)->first();
-                $subCategory = SubCategory::where('ad_type_id', $ad_type->id)->orderBy('id', 'desc')->get();
-                return view('frontend.post.step_two', compact('subCategory', 'ad_type'));
+
+                if ($subcategory) {
+
+                    $ad_type = AdType::where('slug', $post_type)->first();
+                    $subCategory = SubCategory::where('slug', $subcategory)->first();
+                    $category = Category::where('id', $subCategory->category_id)->first();
+                    $country = Country::with('cities')->where('iso', strtoupper(getCountryCode()))->first();
+                    return view('frontend.post.step_four', compact('ad_type', 'category', 'subCategory', 'country'));
+
+
+                    // if ($subcategory) {
+                    // } else {
+                    //     $ad_type = AdType::where('slug', $post_type)->first();
+                    //     $category = Category::where('slug', $category)->first();
+                    //     $subCategory = SubCategory::where('category_id', $category->id)->orderBy('id', 'desc')->get();
+                    //     return view('frontend.post.step_three', compact('subCategory', 'category', 'ad_type'));
+                    // }
+
+                } else {
+                    $ad_type = AdType::where('slug', $post_type)->first();
+                    $subCategory = SubCategory::where('ad_type_id', $ad_type->id)->orderBy('id', 'desc')->get();
+                    return view('frontend.post.step_two', compact('subCategory', 'ad_type'));
+                }
             }
+        } else {
+            return redirect()->route('signin');
         }
     }
 
@@ -208,7 +212,7 @@ class AdPostController extends Controller
         }
         if ($ad->status == 'active') {
             flashSuccess('Post created successfully');
-            return redirect()->route('user.profile')->with('message', 'Post created successfully');
+            return redirect()->route('user.setting')->with('message', 'Post created successfully');
         } else {
             flashSuccess('Your Post is in drafted. Please verify email to publish this post.');
             return redirect()->route('signin')->with('message', 'Your Post is in drafted. Please verify email to publish this post.');

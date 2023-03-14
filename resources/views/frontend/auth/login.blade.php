@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <div class="password_forgot">
-                                <a href="#">Forgot password?</a>
+                                <a href="{{ route('user.password.reset') }}">Forgot password?</a>
                             </div>
                         </div>
 

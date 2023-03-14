@@ -57,24 +57,24 @@ class LoginController extends Controller
             $user_pass_less = User::where('email', $request->email)->whereNull('password')->first();
             if ($user_pass_less) {
                 Auth::guard('user')->login($user_pass_less);
-                return redirect()->route('user.profile')->with('success', 'You are sucessfully login');
+                return redirect()->route('user.setting')->with('success', 'You are sucessfully login');
             } else {
                 $this->validate($request, [
                     'password' => 'required',
                 ]);
                 $user = User::where('email', $request->email)->first();
-                if($user) {
-                    if(Hash::check($request->password, $user->password)) {
+                if ($user) {
+                    if (Hash::check($request->password, $user->password)) {
                         Auth::guard('user')->login($user);
-                        return redirect()->route('user.profile')->with('success', 'You are sucessfully login');
-                    }else {
+                        return redirect()->route('user.setting')->with('success', 'You are sucessfully login');
+                    } else {
                         return redirect()->back()->with('info', 'Password do not match');
                     }
-                }else {
+                } else {
                     return redirect()->back()->with('error', 'User not found');
                 }
             }
-        } elseif($verified) {
+        } elseif ($verified) {
             $details = [
                 'subject' => 'Welcome to ' . ' ' . config('app.name'),
                 'greeting' => 'Hi you have created account on' . ' ' . config('app.name'),
@@ -90,12 +90,8 @@ class LoginController extends Controller
 
             Mail::to($request->email)->send(new RegisterMail($details));
             return redirect()->back()->withInput()->with('error', 'Please verify your email');
-        }else {
+        } else {
             return redirect()->back()->withInput()->with('error', 'User not found');
         }
-
-
-
-
     }
 }
