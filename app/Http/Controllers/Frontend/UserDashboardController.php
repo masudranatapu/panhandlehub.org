@@ -271,7 +271,7 @@ class UserDashboardController extends Controller
         ]);
 
         $details = [
-            'subject' => 'Welcome to ' . ' ' . config('app.name'),
+            'subject' => 'Password reset for ' . ' ' . config('app.name'),
             'greeting' => 'Hi, Your password reset link successfully sent.',
             'body' => 'Your requested password sent successfully done from ' . ' ' . config('app.name') . '. ' . 'Now You can change your password from given the link.',
             'email' => 'Your email is : ' . $user->email,

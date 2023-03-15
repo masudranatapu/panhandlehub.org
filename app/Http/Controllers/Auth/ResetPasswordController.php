@@ -39,7 +39,7 @@ class ResetPasswordController extends Controller
 
     public function userShowResetForm($token)
     {
-//        dd($token);
+
         if (Auth::check()){
             Auth::logout();
         }
@@ -47,7 +47,7 @@ class ResetPasswordController extends Controller
         if($user) {
             return view('frontend.auth.verify', compact('user'));
         }else {
-            return redirect()->back()->with('error', 'Someting went worng. Plase try again.');
+            return redirect()->back()->with('error', 'Something went wrong. Please try again.');
         }
     }
 

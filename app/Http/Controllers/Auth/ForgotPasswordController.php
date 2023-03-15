@@ -37,20 +37,20 @@ class ForgotPasswordController extends Controller
 
         if($user) {
 
-            $remembertoken = Str::random(40);
+            $rememberToken = Str::random(40);
 
             User::where('id', $user->id)->update([
-                'remember_token' => $remembertoken,
+                'token' => $rememberToken,
             ]);
 
             $details = [
-                'subject' => 'Welcome to ' . ' ' . config('app.name'),
+                'subject' => 'Password reset for ' . ' ' . config('app.name'),
                 'greeting' => 'Hi, Your password reset link successfully sent.',
                 'body' => 'Your requested password sent successfully done from ' . ' ' . config('app.name'). '. '. 'Now You can change your password from given the link.',
                 'email' => 'Your email is : ' . $request->email,
                 'thanks' => 'Thank you and stay with ' . ' ' . config('app.name'),
                 'actionText' => 'Change Password',
-                'actionURL' => route('user.password.reset.store', $remembertoken),
+                'actionURL' => route('user.password.reset.store', $rememberToken),
                 'site_url' => route('frontend.index'),
                 'site_name' => config('app.name'),
                 'copyright' => ' © ' . ' ' . Carbon::now()->format('Y') . config('app.name') . ' ' . 'All rights reserved.',
