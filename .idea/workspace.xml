@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f503acb-f50d-4bf9-8892-93fce95ca4dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/panhandlehub.org.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/panhandlehub.org.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdTypesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdTypesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/ad-types/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ad-types/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/ad-types/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ad-types/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/ad-types/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ad-types/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/default-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/partials/default-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/setting-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/partials/setting-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/top-right-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/partials/top-right-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/settings/pages/general/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/settings/pages/general/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/payment.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +239,7 @@
       <workItem from="1678856275774" duration="12067000" />
       <workItem from="1678874120460" duration="2367000" />
       <workItem from="1678877514208" duration="1472000" />
-      <workItem from="1678881365063" duration="4529000" />
+      <workItem from="1678881365063" duration="4982000" />
     </task>
     <servers />
   </component>
