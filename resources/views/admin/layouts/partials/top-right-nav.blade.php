@@ -39,22 +39,22 @@ $user = auth()->user();
         <div class="dropdown-divider"></div>
     </div>
 </li>
-@if ($language_enable)
-    <li class="nav-item dropdown">
-        <a class="nav-link d-flex justify-content-center align-items-center" data-toggle="dropdown" href="#"
-            aria-expanded="false">
-            <i class="fas fa-language" style="font-size: 22px"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right" style="left: inherit; right: 0px;">
-            @foreach ($languages as $lang)
-                <a class="dropdown-item {{ session('set_lang') === $lang->code ? 'active' : '' }}"
-                    href="{{ route('changeLanguage', $lang->code) }}">
-                    <i class="flag-icon {{ $lang->icon }}"></i> {{ $lang->name }}
-                </a>
-            @endforeach
-        </div>
-    </li>
-@endif
+{{--@if ($language_enable)--}}
+{{--    <li class="nav-item dropdown">--}}
+{{--        <a class="nav-link d-flex justify-content-center align-items-center" data-toggle="dropdown" href="#"--}}
+{{--            aria-expanded="false">--}}
+{{--            <i class="fas fa-language" style="font-size: 22px"></i>--}}
+{{--        </a>--}}
+{{--        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right" style="left: inherit; right: 0px;">--}}
+{{--            @foreach ($languages as $lang)--}}
+{{--                <a class="dropdown-item {{ session('set_lang') === $lang->code ? 'active' : '' }}"--}}
+{{--                    href="{{ route('changeLanguage', $lang->code) }}">--}}
+{{--                    <i class="flag-icon {{ $lang->icon }}"></i> {{ $lang->name }}--}}
+{{--                </a>--}}
+{{--            @endforeach--}}
+{{--        </div>--}}
+{{--    </li>--}}
+{{--@endif--}}
 <li class="nav-item">
     <a class="nav-link d-flex justify-content-center align-items-center" data-widget="fullscreen" href="#"
         role="button">

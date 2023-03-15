@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('style')
-    
+
 @endsection
 @section('title')
     {{ __('Ad Type') }}
@@ -22,7 +22,7 @@
                             <form class="form-horizontal" action="{{ route('adtypes.store') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
-                                
+
                                 <div class="form-group row">
                                     <x-forms.label name="Ad Type Name" required="true" class="col-sm-3 col-form-label" />
                                     <div class="col-sm-9">

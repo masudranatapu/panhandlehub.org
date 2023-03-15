@@ -51,7 +51,7 @@
                             {{ __('all_listings') }}
                         </x-sidebar-list>
                     @endif
-                    <x-sidebar-list :linkActive="Route::is('adtypes.*') ? true : false" route="adtypes.index" icon="fa fa-bars">
+                    <x-sidebar-list :linkActive="Route::is('adtypes..*') ? true : false" route="adtypes.index" icon="fa fa-bars">
                         {{ __('Ad Types') }}
                     </x-sidebar-list>
 

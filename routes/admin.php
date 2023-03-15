@@ -221,7 +221,7 @@ Route::prefix('admin')->group(function () {
             Route::delete('/delete/{id}',[CityController::class,'delete'])->name('city.delete');
         });
 
-        //FAQ 
+        //FAQ
         Route::prefix('faq')->group(function(){
             Route::get('/', [FaqController::class, 'index'])->name('faq.index');
             Route::get('/create', [FaqController::class, 'create'])->name('faq.create');

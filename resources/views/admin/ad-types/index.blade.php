@@ -18,7 +18,7 @@
                             <h3 class="card-title" style="line-height: 36px;">{{ __('Ad Types list') }}</h3>
                             <div>
                                 {{-- @dd(Auth::user()) --}}
-                                @if (Auth::user()->can('adtypes.create'))
+                                @if (Auth::user()->can('adtypes..create'))
                                     <a href="{{ route('adtypes.create') }}"
                                         class="btn bg-primary float-right d-flex align-items-center justify-content-center"><i
                                             class="fas fa-plus"></i>&nbsp; {{ __('Add Adtype') }}</a>
@@ -56,11 +56,11 @@
                                         </td>
                                         <td>{{ date('d M Y', strtotime($value->created_at)) }}</td>
                                         <td>
-{{--                                            @if (Auth::user()->can('adtypes.update'))--}}
+{{--                                            @if (Auth::user()->can('adtypes..update'))--}}
                                                 <a href="{{ route('adtypes.edit', $value->slug) }}"
                                                     class="btn btn-secondary"><i class="fas fa-edit"></i></a>
 {{--                                            @endif--}}
-                                            @if (Auth::user()->can('adtypes.delete'))
+                                            @if (Auth::user()->can('adtypes..delete'))
                                                 <form action="{{ route('adtypes.delete', $value->id) }}" method="POST"
                                                     class="d-inline">
                                                     @method('DELETE')

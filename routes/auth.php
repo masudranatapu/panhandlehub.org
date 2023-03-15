@@ -23,7 +23,6 @@ Route::get('user-verify/{token}', [RegisterController::class, 'userVerify'])->na
 Route::post('user-sign-up-success', [RegisterController::class, 'userSignUpSuccess'])->name('user.signup.success');
 Route::post('user-sign-up-success-with-out-password', [RegisterController::class, 'userSignUpSuccesswithOurPassword'])->name('user.signup.success.withoutpassword');
 
-Route::post('/customer/login', [App\Http\Controllers\Frontend\LoginController::class, 'login'])->name('frontend.login')->middleware('auth_logout');
 
 // Reset Password
 Route::get('user/forgot/password', [ForgotPasswordController::class, 'userResetPasswordForm'])->name('user.forgot.password');

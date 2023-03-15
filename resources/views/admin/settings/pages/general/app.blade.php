@@ -25,21 +25,21 @@
                             @enderror
                         </select>
                     </div>
-                    <div class="form-group">
-                        <x-forms.label name="{{ __('set_default_language') }}" />
-                        <select class="select2bs4 form-control @error('code') is-invalid @enderror" name="code"
-                            id="default_language">
-                            @foreach ($languages as $language)
-                            <option {{ $language->code == env('APP_DEFAULT_LANGUAGE') ? 'selected' : '' }}
-                                value="{{ $language->code }}">
-                                {{ $language->name }}({{ $language->code }})
-                            </option>
-                            @endforeach
-                            @error('code')
-                            <span class="invalid-feedback" role="alert"><span>{{ $message }}</span></span>
-                            @enderror
-                        </select>
-                    </div>
+{{--                    <div class="form-group">--}}
+{{--                        <x-forms.label name="{{ __('set_default_language') }}" />--}}
+{{--                        <select class="select2bs4 form-control @error('code') is-invalid @enderror" name="code"--}}
+{{--                            id="default_language">--}}
+{{--                            @foreach ($languages as $language)--}}
+{{--                            <option {{ $language->code == env('APP_DEFAULT_LANGUAGE') ? 'selected' : '' }}--}}
+{{--                                value="{{ $language->code }}">--}}
+{{--                                {{ $language->name }}({{ $language->code }})--}}
+{{--                            </option>--}}
+{{--                            @endforeach--}}
+{{--                            @error('code')--}}
+{{--                            <span class="invalid-feedback" role="alert"><span>{{ $message }}</span></span>--}}
+{{--                            @enderror--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
                     {{-- <div class="form-group">
                         <x-forms.label name="{{ __('set_default_currency') }}" for="inlineFormCustomSelect" />
                         <select name="currency" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
@@ -86,17 +86,17 @@
 
 
                 <div class="col-6">
-                    <div class="form-group">
-                        <x-forms.label name="{{ __('app_debug') }}" />
-                        <div>
-                            <input type="hidden" name="app_debug" value="0" />
-                            <input type="checkbox" id="app_debug" {{ env('APP_DEBUG') ? 'checked' : '' }}
-                                name="app_debug" data-bootstrap-switch data-on-color="success"
-                                data-on-text="{{ __('on') }}" data-off-color="default" data-off-text="{{ __('off') }}"
-                                data-size="small" value="1">
-                            <x-forms.error name="app_debug" />
-                        </div>
-                    </div>
+{{--                    <div class="form-group">--}}
+{{--                        <x-forms.label name="{{ __('app_debug') }}" />--}}
+{{--                        <div>--}}
+{{--                            <input type="hidden" name="app_debug" value="0" />--}}
+{{--                            <input type="checkbox" id="app_debug" {{ env('APP_DEBUG') ? 'checked' : '' }}--}}
+{{--                                name="app_debug" data-bootstrap-switch data-on-color="success"--}}
+{{--                                data-on-text="{{ __('on') }}" data-off-color="default" data-off-text="{{ __('off') }}"--}}
+{{--                                data-size="small" value="1">--}}
+{{--                            <x-forms.error name="app_debug" />--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     {{-- <div class="form-group">
                         <x-forms.label name="{{ __('frontend_language_switcher') }}" :required="true" />
                         <div>
@@ -119,17 +119,18 @@
                             <x-forms.error name="currency_changing" />
                         </div>
                     </div> --}}
-                    <div class="form-group">
-                        <x-forms.label name="{{ __('customer_email_verification') }}" :required="true" />
-                        <div>
-                            <input type="hidden" name="email_verification" value="0" />
-                            <input type="checkbox" id="email_verification"
-                                {{ $setting->email_verification ? 'checked' : '' }} name="email_verification"
-                                data-on-color="success" data-bootstrap-switch data-on-text="{{ __('on') }}"
-                                data-off-color="default" data-off-text="{{ __('off') }}" data-size="small" value="1">
-                            <x-forms.error name="email_verification" />
-                        </div>
-                    </div>
+{{--                    @dd($setting->email_verification)--}}
+{{--                    <div class="form-group">--}}
+{{--                        <x-forms.label name="{{ __('customer_email_verification') }}" :required="true" />--}}
+{{--                        <div>--}}
+{{--                            <input type="hidden" name="email_verification" value="0" />--}}
+{{--                            <input type="checkbox" id="email_verification"--}}
+{{--                                {{ $setting->email_verification == 1 ? 'checked' : '' }} name="email_verification"--}}
+{{--                                data-on-color="success" data-bootstrap-switch data-on-text="{{ __('on') }}"--}}
+{{--                                data-off-color="default" data-off-text="{{ __('off') }}" data-size="small" value="1">--}}
+{{--                            <x-forms.error name="email_verification" />--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     {{-- <div class="form-group">
                         <x-forms.label name="website_loader" required="true" class="d-block" />
                         <input type="checkbox" name="website_loader" {{ $setting->website_loader ? 'checked' : '' }}
