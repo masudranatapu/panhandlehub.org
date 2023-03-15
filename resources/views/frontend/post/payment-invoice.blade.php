@@ -13,11 +13,17 @@
     {{ __('Payment Invoice') }}
 @endsection
 @section('breadcrumb')
-    <ul>
-        <li>{{ $transaction->ad->ad_type->name }} ></li>
-        <li>{{ $transaction->ad->category->name }} ></li>
-        <li>{{ $transaction->ad->subcategory->name }}</li>
-    </ul>
+    <div class="breadcrumb_section">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item pe-2"><a href="{{ route('frontend.index') }}">Home</a></li>
+                    >
+                    <li class="breadcrumb-item active" aria-current="page">Invoice</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
 @endsection
 
 @section('content')
