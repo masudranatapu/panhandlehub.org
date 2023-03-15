@@ -1110,6 +1110,7 @@ body {
     border-radius: 3px;
     padding: 3px;
 }
+
 .card.product_wrapper {
     width: 100%;
 }
@@ -1251,6 +1252,7 @@ body {
     margin: 0px 3px;
     font-size: 12px;
 }
+
 .seller_dashboard_shop .nav-pills {
     max-width: 600px;
     margin: 0 auto;
@@ -1282,12 +1284,14 @@ body {
 }
 
 .seller_dashboard_shop .shop_header {
+    border: none;
     border-bottom: 1px solid #e3e3e3;
     background-color: transparent;
     border-radius: 0;
     padding: 0;
     padding-bottom: 12px;
 }
+
 .chat_form .btn-primary {
     border: none !important;
     background: var(--primary);
@@ -1306,6 +1310,13 @@ body {
 
 .feedback_list .feedback_img img {
     border-radius: 3px;
+}
+
+.feedback_content h3 a {
+    font-size: 18px;
+    color: #212121;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .feedback_content .star img {
@@ -2486,15 +2497,15 @@ body {
     color: #212121;
     background: #ff98001f;
     font-weight: 600;
-    border: 1px solid #ff9800 !important;
     width: 100%;
+    margin-bottom: 6px;
 }
 
 .user_dashboard ul li button {
     padding: 0px;
     border-radius: 0px !important;
     border: none !important;
-    width: 100%;
+    width: 98%;
 }
 
 .user_dashboard .nav-tabs {

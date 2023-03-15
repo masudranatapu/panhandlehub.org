@@ -59,6 +59,12 @@
     .user_dashboard li {
         width: 33%;
     }
+
+    .chat_seller_btn {
+        top: 9px;
+        left: 58px;
+        position: inherit;
+    }
 }
 
 @media screen and (max-width:575px) {
