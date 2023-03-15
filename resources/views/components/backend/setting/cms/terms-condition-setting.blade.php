@@ -15,7 +15,7 @@
                             accept="image/png, image/jpg, image/jpeg">
                     </div>
                 </div> --}}
-                <div class="col-md-12 -mt--5">
+                <div class="col-md-12 mt-3">
                     {{-- <div class="form-group">
                         <x-forms.label name="" :required="false" />
                         <input type="hidden" class="d-none" value="{{ request('lang_query') }}" name="language_code"

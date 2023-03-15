@@ -50,7 +50,7 @@ class ForgotPasswordController extends Controller
                 'email' => 'Your email is : ' . $request->email,
                 'thanks' => 'Thank you and stay with ' . ' ' . config('app.name'),
                 'actionText' => 'Change Password',
-                'actionURL' => route('user.password.reset', $remembertoken),
+                'actionURL' => route('user.password.reset.store', $remembertoken),
                 'site_url' => route('frontend.index'),
                 'site_name' => config('app.name'),
                 'copyright' => ' © ' . ' ' . Carbon::now()->format('Y') . config('app.name') . ' ' . 'All rights reserved.',

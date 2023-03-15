@@ -39,9 +39,13 @@ class ResetPasswordController extends Controller
 
     public function userShowResetForm($token)
     {
-        $user = User::where('remember_token', $token)->first();
+//        dd($token);
+        if (Auth::check()){
+            Auth::logout();
+        }
+        $user = User::where('token', $token)->first();
         if($user) {
-            return view('frontend.auth.resetpassword', compact('user'));
+            return view('frontend.auth.verify', compact('user'));
         }else {
             return redirect()->back()->with('error', 'Someting went worng. Plase try again.');
         }

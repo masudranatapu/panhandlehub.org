@@ -39,15 +39,16 @@
                                 aria-selected="false">{{ __('about') }}</a>
                         </li> --}}
                         <li class="nav-item border rounded mb-1" role="presentation">
-                            <a class="nav-link {{ $cms_tab == 'terms' ? 'active' : '' }}" id="terms-tab" data-toggle="pill"
-                                href="#cms-terms" role="tab" aria-controls="terms"
-                                aria-selected="false">{{ __('terms_condition') }}
+                            <a class="nav-link {{ $cms_tab == 'terms' ? 'active' : '' }}" id="terms-tab"
+                               data-toggle="pill"
+                               href="#cms-terms" role="tab" aria-controls="terms"
+                               aria-selected="false">{{ __('terms_condition') }}
                             </a>
                         </li>
                         <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'privacy' ? 'active' : '' }}" id="privacy-tab"
-                                data-toggle="pill" href="#cms-privacy" role="tab" aria-controls="privacy"
-                                aria-selected="false">{{ __('privacy_policy') }}
+                               data-toggle="pill" href="#cms-privacy" role="tab" aria-controls="privacy"
+                               aria-selected="false">{{ __('privacy_policy') }}
                             </a>
                         </li>
                         {{-- <li class="nav-item border rounded mb-1" role="presentation">
@@ -79,8 +80,8 @@
                         </li> --}}
                         <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'contact' ? 'active' : '' }} " id="contact-tab"
-                                data-toggle="pill" href="#cms-contact" role="tab" aria-controls="contact"
-                                aria-selected="false">{{ __('contact') }}</a>
+                               data-toggle="pill" href="#cms-contact" role="tab" aria-controls="contact"
+                               aria-selected="false">{{ __('contact') }}</a>
                         </li>
                         {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'faq' ? 'active' : '' }}" id="faq-tab" data-toggle="pill"
@@ -113,15 +114,16 @@
                                 data-toggle="pill" href="#cms-errorpages" role="tab" aria-controls="errorpages"
                                 aria-selected="false">{{ __('error_pages') }}</a>
                         </li> --}}
-                        {{-- <li class="nav-item border rounded mb-1" role="presentation">
+                        <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'footer_text' ? 'active' : '' }}" id="footer_text-tab"
-                                data-toggle="pill" href="#cms-footer_text" role="tab" aria-controls="footer_text"
-                                aria-selected="false">
+                               data-toggle="pill" href="#cms-footer_text" role="tab" aria-controls="footer_text"
+                               aria-selected="false">
                                 {{ __('footer_text') }}
                             </a>
-                        </li> --}}
+                        </li>
                     </ul>
                 </div>
+{{--                @dd($cms_tab);--}}
                 <div class="col-12 col-sm-12 col-md-10">
                     <div class="tab-content" id="cms-pills-tabContent">
                         {{-- Home Settings --}}
@@ -137,17 +139,20 @@
                         </div> --}}
 
                         {{-- Terms Settings --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'terms' ? 'show active' : 'show active' }}" id="cms-terms"
-                            role="tabpanel" aria-labelledby="terms-tab">
-                            <x-backend.setting.cms.terms-condition-setting :terms="$cms->terms_body" :termsContent="$term_page_content"
-                                :termsBackground="$cms->terms_background" />
+                        <div class="tab-pane fade {{ $cms_tab == 'terms' ? 'show active' : '' }}"
+                             id="cms-terms"
+                             role="tabpanel" aria-labelledby="terms-tab">
+                            <x-backend.setting.cms.terms-condition-setting :terms="$cms->terms_body"
+                                                                           :termsContent="$term_page_content"
+                                                                           :termsBackground="$cms->terms_background"/>
                         </div>
 
                         {{-- Privacy Settings --}}
                         <div class="tab-pane fade {{ $cms_tab == 'privacy' ? 'show active' : '' }}" id="cms-privacy"
-                            role="tabpanel" aria-labelledby="posting-tab">
-                            <x-backend.setting.cms.privacy-policy-setting :privacy="$cms->privacy_body" :privacyContent="$privacy_page_content"
-                                :privacyBackground="$cms->privacy_background" />
+                             role="tabpanel" aria-labelledby="posting-tab">
+                            <x-backend.setting.cms.privacy-policy-setting :privacy="$cms->privacy_body"
+                                                                          :privacyContent="$privacy_page_content"
+                                                                          :privacyBackground="$cms->privacy_background"/>
                         </div>
 
                         {{-- Posting Rules Settings --}}
@@ -178,8 +183,8 @@
                         </div> --}}
                         {{-- Contact --}}
                         <div class="tab-pane fade {{ $cms_tab == 'contact' ? 'show active' : '' }}" id="cms-contact"
-                            role="tabpanel" aria-labelledby="contact-tab">
-                            <x-backend.setting.cms.contact :cms="$cms" />
+                             role="tabpanel" aria-labelledby="contact-tab">
+                            <x-backend.setting.cms.contact :cms="$cms"/>
                         </div>
                         {{-- Faq --}}
                         {{-- <div class="tab-pane fade {{ $cms_tab == 'faq' ? 'show active' : '' }}" id="cms-faq"
@@ -212,10 +217,10 @@
                             <x-backend.setting.cms.errorpages :cms="$cms" />
                         </div> --}}
                         <!-- Footer Text-->
-                        {{-- <div class="tab-pane fade {{ $cms_tab == 'footer_text' ? 'show active' : '' }}"
+                         <div class="tab-pane fade {{ $cms_tab == 'footer_text' ? 'show active' : '' }}"
                             id="cms-footer_text" role="tabpanel" aria-labelledby="footer_text-tab">
                             <x-backend.setting.cms.footer_text :cms="$cms" />
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -224,13 +229,14 @@
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('backend') }}/css/dropify.min.css" />
+    <link rel="stylesheet" href="{{ asset('backend') }}/css/dropify.min.css"/>
 
     <style>
         .ck-editor__editable_inline {
             min-height: 170px;
         }
-        .-mt--5{
+
+        .-mt--5 {
             margin-top: -26px;
         }
     </style>

@@ -162,7 +162,7 @@ class FrontendController extends Controller
         $ad_details = Ad::with('ad_type')->where('slug', $slug)->first();
 
         $relative_ads  = Ad::where('user_id',$ad_details->user_id)->whereNotIn('id',[$ad_details->id])->get();
-        
+
         if ($ad_details->status == 'active') {
 
             $ad_galleies = AdGallery::where('ad_id', $ad_details->id)->get();

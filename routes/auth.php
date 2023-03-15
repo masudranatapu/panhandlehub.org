@@ -29,7 +29,7 @@ Route::post('/customer/login', [App\Http\Controllers\Frontend\LoginController::c
 Route::get('user/forgot/password', [ForgotPasswordController::class, 'userResetPasswordForm'])->name('user.forgot.password');
 Route::post('user/forgot/password/mail', [ForgotPasswordController::class, 'userResetPasswordMail'])->name('user.password.mail');
 // password update
-Route::get('user/password-reset/{token}', [ResetPasswordController::class, 'userShowResetForm'])->name('user.password.reset');
+Route::get('user/password-reset/{token}', [ResetPasswordController::class, 'userShowResetForm'])->name('user.password.reset.store');
 Route::post('user/password-change', [ResetPasswordController::class, 'passwordUpdate'])->name('user.password.update');
 
 // Social Authentication

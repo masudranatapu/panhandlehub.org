@@ -33,7 +33,7 @@ Route::group(['as' => 'frontend.'], function () {
     Route::post('country', [FrontendController::class, 'setCountry'])->name('setCountry');
 
 
-   
+
 
     // Route::get('create-post/post-type', [AdPostController::class, 'postType'])->name('create-post.step_one');
     // Route::get('create-post/post-type/category', [AdPostController::class, 'postStepTwo'])->name('create-post.step_two');
@@ -62,7 +62,7 @@ Route::group(['as' => 'user.'], function () {
         Route::get('user/favouriteDelete/{id}', [UserDashboardController::class, 'favouriteDelete'])->name('favourite.delete');
         Route::get('user/transaction',[UserDashboardController::class, 'transaction'])->name('transaction');
         Route::get('user/transaction/details/{id}',[UserDashboardController::class, 'transactionDetails'])->name('transaction.details');
-        Route::get('user/setting', [UserDashboardController::class, 'setting'])->name('setting');
+        Route::get('user/dashboard', [UserDashboardController::class, 'setting'])->name('setting');
         Route::get('user/passwordReset', [UserDashboardController::class, 'passwordReset'])->name('password.reset');
         Route::post('user-logout', [UserDashboardController::class, 'userLogOut'])->name('logout');
 

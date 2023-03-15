@@ -263,10 +263,11 @@ class UserDashboardController extends Controller
     public function passwordReset()
     {
         $user = User::find(Auth::id());
-        $remembertoken = Str::random(40);
 
-        $user->update([
-            'remember_token' => $remembertoken,
+        $rememberToken = Str::random(40);
+
+        $update = $user->update([
+            'token' => $rememberToken,
         ]);
 
         $details = [
@@ -276,7 +277,7 @@ class UserDashboardController extends Controller
             'email' => 'Your email is : ' . $user->email,
             'thanks' => 'Thank you and stay with ' . ' ' . config('app.name'),
             'actionText' => 'Change Password',
-            'actionURL' => route('user.password.reset', $remembertoken),
+            'actionURL' => route('user.password.reset.store', $rememberToken),
             'site_url' => route('frontend.index'),
             'site_name' => config('app.name'),
             'copyright' => ' © ' . ' ' . Carbon::now()->format('Y') . config('app.name') . ' ' . 'All rights reserved.',

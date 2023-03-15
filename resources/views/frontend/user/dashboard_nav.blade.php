@@ -26,7 +26,7 @@
         <button class="nav-link {{ request()->routeIs('user.favourite') ? 'active' : "" }}" id="searches-tab"
                 data-bs-toggle="tab" data-bs-target="#searches-tab-pane" type="button" role="tab"
                 aria-controls="searches-tab-pane" aria-selected="false"><a
-                href="{{ route('user.favourite') }}">Favourites</a></button>
+                href="{{ route('user.favourite') }}">Saved</a></button>
     </li>
     <li class="nav-item" role="presentation">
         <button class="nav-link {{ request()->routeIs('user.transaction') ? 'active' : "" }}" id="searches-tab"
@@ -38,7 +38,7 @@
         <button class="nav-link {{ request()->routeIs('user.message') ? 'active' : "" }}" id="searches-tab"
                 data-bs-toggle="tab" data-bs-target="#searches-tab-pane" type="button" role="tab"
                 aria-controls="searches-tab-pane" aria-selected="false"><a
-                href="{{ route('user.message') }}">Message {{ $unread_message ? "(" .$unread_message . ")" : '' }}  </a></button>
+                href="{{ route('user.message') }}">Chat {{ $unread_message ? "(" .$unread_message . ")" : '' }}  </a></button>
     </li>
 
 </ul>

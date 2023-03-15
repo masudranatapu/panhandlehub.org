@@ -66,6 +66,7 @@ class RegisterController extends Controller
             User::insert([
                 'email' => $request->email,
                 'username' => $request->username,
+                'password' => Hash::make($request->password),
                 'token' => $random_token,
                 'created_at' => Carbon::now(),
             ]);
@@ -84,7 +85,7 @@ class RegisterController extends Controller
             ];
 
             Mail::to($request->email)->send(new RegisterMail($details));
-            return redirect()->back()->with('message', 'A verification link has been sent to your mail. Please Check Your mail.');
+            return redirect()->route('signin')->with('message', 'A verification link has been sent to your mail. Please Check Your mail.');
 
     }
 
@@ -92,10 +93,12 @@ class RegisterController extends Controller
     {
         $user = User::where('token', $token)->first();
         if ($user) {
-            if (isset($user->email_verified_at)) {
-                return redirect()->route('signin')->with('success', 'You are already verified. Please login.');
-            }
-            return view('frontend.auth.verify', compact('user'));
+            $user->update([
+                'email_verified_at' => now(),
+            ]);
+            Auth::login($user);
+            return redirect()->route('user.setting')->with('message', 'You have successfully verified.');
+
         } else {
             return redirect()->route('signin')->with('error', 'Someting went worng with your verify token. Please try again.');
         }
@@ -136,7 +139,6 @@ class RegisterController extends Controller
     public function userSignUpSuccess(Request $request)
     {
         $user = User::where('id', $request->user_id)->first();
-
         if ($user) {
             if ($request->password == $request->password_confirmation) {
 
