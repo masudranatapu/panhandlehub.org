@@ -24,7 +24,7 @@ class RegisterController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
+    | validation and creation. By default, this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
     */
@@ -108,7 +108,7 @@ class RegisterController extends Controller
             return redirect()->route('signin')->with('message', 'You have successfully verified. Please login.');
 
         } else {
-            return redirect()->route('signin')->with('error', 'Someting went worng with your verify token. Please try again.');
+            return redirect()->route('signin')->with('error', 'Something went wrong with your verify token. Please try again.');
         }
     }
 
@@ -125,7 +125,7 @@ class RegisterController extends Controller
             $details = [
                 'subject' => 'Welcome to ' . ' ' . config('app.name'),
                 'greeting' => 'Hi you just login on' . ' ' . config('app.name'),
-                'body' => 'Thanks for Login on ' . ' ' . config('app.name') . ' without set password. Please change your password as soon as possible. For security reasons you can change your password from your proifle setting',
+                'body' => 'Thanks for Login on ' . ' ' . config('app.name') . ' without set password. Please change your password as soon as possible. For security reasons you can change your password from your profile setting',
                 'email' => 'Your email is : ' . $user->email,
                 'password' => 'Your password is : N/L ',
                 'thanks' => 'Thank you and stay with ' . ' ' . config('app.name'),
@@ -137,9 +137,9 @@ class RegisterController extends Controller
 
             Mail::to($user->email)->send(new UserLoginMail($details));
 
-            return redirect()->route('user.setting')->with('message', 'You are sucessfully login without you password');
+            return redirect()->route('user.setting')->with('message', 'You are successfully login.');
         } else {
-            return redirect()->route('signin')->with('error', 'Someting went worng with your account. Please try again.');
+            return redirect()->route('signin')->with('error', 'Something went wrong with your account. Please try again.');
         }
     }
 
@@ -172,12 +172,12 @@ class RegisterController extends Controller
 
                 Mail::to($user->email)->send(new UserLoginMail($details));
 
-                return redirect()->route('user.setting')->with('message', 'You are sucessfully login with password');
+                return redirect()->route('user.setting')->with('message', 'You are successfully login with password');
             } else {
                 return redirect()->back()->with('error', 'Password do not match. Please confirm you password');
             }
         } else {
-            return redirect()->route('signin')->with('error', 'Someting went worng. Please try again.');
+            return redirect()->route('signin')->with('error', 'Something went wrong. Please try again.');
         }
     }
 }

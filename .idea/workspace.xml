@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4f503acb-f50d-4bf9-8892-93fce95ca4dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Setting/GeneralSettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Setting/GeneralSettingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/SellerDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/SellerDashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/ContactComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/ContactComponent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Admin/Settings/AppConfigService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Admin/Settings/AppConfigService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/settings/pages/general/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/settings/pages/general/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +241,7 @@
       <workItem from="1678874120460" duration="2367000" />
       <workItem from="1678877514208" duration="1472000" />
       <workItem from="1678881365063" duration="4982000" />
-      <workItem from="1678939577492" duration="2292000" />
+      <workItem from="1678939577492" duration="2841000" />
     </task>
     <servers />
   </component>
