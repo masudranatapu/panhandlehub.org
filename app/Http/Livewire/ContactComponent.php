@@ -29,7 +29,7 @@ class ContactComponent extends Component
         $this->reset();
         $this->success = "Message Send Successfully";
 
-        return redirect()->route('frontend.contact')->with('success', 'Message Send Successfully');
+        return redirect()->route('frontend.contact')->with('message', 'Message Send Successfully');
     }
 
     public function render()

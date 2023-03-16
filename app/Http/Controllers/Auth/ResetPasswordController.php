@@ -78,7 +78,7 @@ class ResetPasswordController extends Controller
 
                 Mail::to($user->email)->send(new UserLoginMail($details));
 
-                return redirect()->route('signin')->with('success', 'Password successfully done. Please login to your account');
+                return redirect()->route('signin')->with('message', 'Password successfully done. Please login to your account');
 
             } else {
                 return redirect()->back()->with('error', 'Password do not match. Please confirm you password');

@@ -89,6 +89,7 @@ class GeneralSettingController extends Controller
      */
     public function appConfigUpdate(Request $request, AppConfigService $appConfigService)
     {
+//        dd($request->all());
         $appConfigService->update($request);
 
         flashSuccess('App Configuration Updated!');

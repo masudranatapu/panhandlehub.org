@@ -58,7 +58,7 @@ class FrontendController extends Controller
     public function setCountry(Request $request)
     {
         session()->put('local_country', strtolower($request->country));
-        return redirect()->back()->with('success', 'Coutry change successfully');
+        return redirect()->back()->with('success', 'Country change successfully');
     }
 
 

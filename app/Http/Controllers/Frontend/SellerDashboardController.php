@@ -51,6 +51,6 @@ class SellerDashboardController extends Controller
         $review->user_id =  $user->id;
         $review->created_at = now();
         $review->save();
-        return back()->with('success', "Thanks for your review. It's submitted successfully.");
+        return back()->with('message', "Thanks for your review. It's submitted successfully.");
     }
 }

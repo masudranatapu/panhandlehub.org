@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -54,7 +55,6 @@ class RegisterController extends Controller
 
     public function userSignUp(Request $request)
     {
-
         $request->validate([
             'email' => 'required|unique:users,email',
             'username' => 'required|unique:users,username',
@@ -63,7 +63,7 @@ class RegisterController extends Controller
         ]);
 
             $random_token = Str::random(40);
-            User::insert([
+            $new_user = User::create([
                 'email' => $request->email,
                 'username' => $request->username,
                 'password' => Hash::make($request->password),
@@ -71,20 +71,28 @@ class RegisterController extends Controller
                 'created_at' => Carbon::now(),
             ]);
 
-            $details = [
-                'subject' => 'Welcome to ' . ' ' . config('app.name'),
-                'greeting' => 'Hi you just register on' . ' ' . config('app.name'),
-                'body' => 'Thanks for register ' . ' ' . config('app.name'),
-                'email' => 'Your email is : ' . $request->email,
-                'thanks' => 'Thank you and stay with ' . ' ' . config('app.name'),
-                'actionText' => 'Click Here to Verify',
-                'actionURL' => route('user.verify', $random_token),
-                'site_url' => route('frontend.index'),
-                'site_name' => config('app.name'),
-                'copyright' => ' © ' . ' ' . Carbon::now()->format('Y') . config('app.name') . ' ' . 'All rights reserved.',
-            ];
+            $setting = Setting::first();
+            if ($setting->email_verification == 1) {
+                $details = [
+                    'subject' => 'Welcome to ' . ' ' . config('app.name'),
+                    'greeting' => 'Hi you just register on' . ' ' . config('app.name'),
+                    'body' => 'Thanks for register ' . ' ' . config('app.name'),
+                    'email' => 'Your email is : ' . $request->email,
+                    'thanks' => 'Thank you and stay with ' . ' ' . config('app.name'),
+                    'actionText' => 'Click Here to Verify',
+                    'actionURL' => route('user.verify', $random_token),
+                    'site_url' => route('frontend.index'),
+                    'site_name' => config('app.name'),
+                    'copyright' => ' © ' . ' ' . Carbon::now()->format('Y') . config('app.name') . ' ' . 'All rights reserved.',
+                ];
 
-            Mail::to($request->email)->send(new RegisterMail($details));
+                Mail::to($request->email)->send(new RegisterMail($details));
+            }else{
+                $new_user->email_verified_at = now();
+                $new_user->save();
+                Auth::login($new_user);
+                return redirect()->route('user.setting')->with('message', 'You have successfully registered.');
+            }
             return redirect()->route('signin')->with('message', 'A verification link has been sent to your mail. Please Check Your mail.');
 
     }
@@ -96,8 +104,8 @@ class RegisterController extends Controller
             $user->update([
                 'email_verified_at' => now(),
             ]);
-            Auth::login($user);
-            return redirect()->route('user.setting')->with('message', 'You have successfully verified.');
+//            Auth::login($user);
+            return redirect()->route('signin')->with('message', 'You have successfully verified. Please login.');
 
         } else {
             return redirect()->route('signin')->with('error', 'Someting went worng with your verify token. Please try again.');
@@ -129,7 +137,7 @@ class RegisterController extends Controller
 
             Mail::to($user->email)->send(new UserLoginMail($details));
 
-            return redirect()->route('user.setting')->with('success', 'You are sucessfully login without you password');
+            return redirect()->route('user.setting')->with('message', 'You are sucessfully login without you password');
         } else {
             return redirect()->route('signin')->with('error', 'Someting went worng with your account. Please try again.');
         }
@@ -164,7 +172,7 @@ class RegisterController extends Controller
 
                 Mail::to($user->email)->send(new UserLoginMail($details));
 
-                return redirect()->route('user.setting')->with('success', 'You are sucessfully login with password');
+                return redirect()->route('user.setting')->with('message', 'You are sucessfully login with password');
             } else {
                 return redirect()->back()->with('error', 'Password do not match. Please confirm you password');
             }

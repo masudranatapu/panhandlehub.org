@@ -120,17 +120,17 @@
                         </div>
                     </div> --}}
 {{--                    @dd($setting->email_verification)--}}
-{{--                    <div class="form-group">--}}
-{{--                        <x-forms.label name="{{ __('customer_email_verification') }}" :required="true" />--}}
-{{--                        <div>--}}
+                    <div class="form-group">
+                        <x-forms.label name="{{ __('customer_email_verification') }}" :required="true" />
+                        <div>
 {{--                            <input type="hidden" name="email_verification" value="0" />--}}
-{{--                            <input type="checkbox" id="email_verification"--}}
-{{--                                {{ $setting->email_verification == 1 ? 'checked' : '' }} name="email_verification"--}}
-{{--                                data-on-color="success" data-bootstrap-switch data-on-text="{{ __('on') }}"--}}
-{{--                                data-off-color="default" data-off-text="{{ __('off') }}" data-size="small" value="1">--}}
-{{--                            <x-forms.error name="email_verification" />--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                            <input type="checkbox" id="email_verification"
+                                {{ $setting->email_verification == 1 ? 'checked' : '' }} name="email_verification"
+                                data-on-color="success" data-bootstrap-switch data-on-text="{{ __('on') }}"
+                                data-off-color="default" data-off-text="{{ __('off') }}" data-size="small" value="1">
+                            <x-forms.error name="email_verification" />
+                        </div>
+                    </div>
                     {{-- <div class="form-group">
                         <x-forms.label name="website_loader" required="true" class="d-block" />
                         <input type="checkbox" name="website_loader" {{ $setting->website_loader ? 'checked' : '' }}
@@ -180,6 +180,9 @@
         right: auto;
         border-left-width: 0;
         border-right: inherit;
+    }
+    span.bootstrap-switch-handle-off.bootstrap-switch-default{
+        height: 35px !important;
     }
 </style>
 @endsection

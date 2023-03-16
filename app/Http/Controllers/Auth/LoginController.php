@@ -57,7 +57,7 @@ class LoginController extends Controller
         if (isset($verified) && isset($verified->email_verified_at)) {
             if (Hash::check($request->password, $verified->password)) {
                 Auth::guard('user')->login($verified);
-                return redirect()->route('user.setting')->with('success', 'You are sucessfully login');
+                return redirect()->route('user.setting')->with('message', 'You are sucessfully login');
             } else {
                 return redirect()->back()->withInput()->with('error', 'Password does not match');
             }
