@@ -43,13 +43,14 @@
                     <x-admin.sidebar-list :linkActive="Route::is('settings.general') || Route::is('settings.general.*') ? true : false" route="settings.general" icon="fas fa-cog">
                         {{ __('general') }}
                     </x-admin.sidebar-list>
-{{--                    @if ($language_enable)--}}
-{{--                        @if (Auth::user()->can('setting.view') || Auth::user()->can('setting.update'))--}}
-{{--                            <x-admin.sidebar-list :linkActive="Route::is('language.*') ? true : false" route="language.index" icon="fas fa-globe-asia">--}}
-{{--                                {{ __('language') }}--}}
-{{--                            </x-admin.sidebar-list>--}}
-{{--                        @endif--}}
-{{--                    @endif--}}
+
+                   {{-- @if ($language_enable)
+                       @if (Auth::user()->can('setting.view') || Auth::user()->can('setting.update'))
+                           <x-admin.sidebar-list :linkActive="Route::is('language.*') ? true : false" route="language.index" icon="fas fa-globe-asia">
+                               {{ __('language') }}
+                           </x-admin.sidebar-list>
+                       @endif
+                   @endif --}}
                     {{-- <x-admin.sidebar-list :linkActive="Route::is('settings.theme') ? true : false" route="settings.theme" icon="fas fa-swatchbook">
                         {{ __('theme') }}
                     </x-admin.sidebar-list> --}}

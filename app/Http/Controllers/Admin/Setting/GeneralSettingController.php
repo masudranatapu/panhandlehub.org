@@ -47,6 +47,7 @@ class GeneralSettingController extends Controller
         }
 
         $setting = Setting::first();
+
         if ($request->hasFile('logo_image')) {
             $setting['logo_image'] = uploadFileToPublic($request->logo_image, 'app/logo');
             deleteFile($setting->logo_image);
@@ -61,7 +62,7 @@ class GeneralSettingController extends Controller
             $setting['favicon_image'] = uploadFileToPublic($request->favicon_image, 'app/logo');
             deleteFile($setting->favicon_image);
         }
-
+        $setting->frontend_primary_color = $request->frontend_primary_color;
         $setting->save();
         SetupGuide::where('task_name', 'app_setting')->update(['status' => 1]);
 

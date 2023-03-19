@@ -3,7 +3,7 @@
       $unread_message = \App\Models\Messenger::where('to_id', auth()->id())->where('read', 0)->count();
     }
 @endphp
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+<ul class="nav nav-tabs mynav-link-hover" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link {{ request()->routeIs('user.setting') ? 'active' : "" }}" id="setting-tab"
                 data-bs-toggle="tab" data-bs-target="#setting-tab-pane" type="button" role="tab"

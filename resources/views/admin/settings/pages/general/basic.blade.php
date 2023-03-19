@@ -1,19 +1,26 @@
 @extends('admin.settings.pages.general.layout')
 
 @section('general-setting')
-<div class="card">
-    <form class="form-horizontal" action="{{ route('settings.general.update') }}" method="POST" enctype="multipart/form-data">
-        @method('PUT')
-        @csrf
-        <div class="card-body">
-            <h6>{{ __('brand_information') }}</h6>
-            <hr>
+    <div class="card">
+        <form class="form-horizontal" action="{{ route('settings.general.update') }}" method="POST"
+            enctype="multipart/form-data">
+            @method('PUT')
+            @csrf
+            <div class="card-body">
+                <h6>{{ __('brand_information') }}</h6>
+                <hr>
                 <div class="row ">
                     <div class="col-6">
                         <div class="form-group">
                             <label class="" for="site_name"> {{ __('site_name') }} </label>
-                            <input value="{{ config('app.name') }}" name="name" type="text"
-                                class="form-control " placeholder="{{ __('enter') }} {{ __('site_name') }}">
+                            <input value="{{ config('app.name') }}" name="name" type="text" class="form-control "
+                                placeholder="{{ __('enter') }} {{ __('site_name') }}">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Site Primary Color</label>
+                            <input value="{{ $setting->frontend_primary_color }}" name="frontend_primary_color" type="color" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -40,17 +47,17 @@
                             data-max-file-size="1M">
                     </div>
                 </div>
-        </div>
-        @if (userCan('setting.update'))
-            <div class="card-footer text-center">
-                <button type="submit" class="btn btn-primary w-25">
-                    <i class="fas fa-sync"></i>
-                    {{ __('update') }}
-                </button>
             </div>
-        @endif
-    </form>
-</div>
+            @if (userCan('setting.update'))
+                <div class="card-footer text-center">
+                    <button type="submit" class="btn btn-primary w-25">
+                        <i class="fas fa-sync"></i>
+                        {{ __('update') }}
+                    </button>
+                </div>
+            @endif
+        </form>
+    </div>
 @endsection
 
 @section('style')
