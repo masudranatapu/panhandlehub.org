@@ -139,7 +139,7 @@
                         </div> --}}
 
                         {{-- Terms Settings --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'terms' ? 'show active' : '' }}"
+                        <div class="tab-pane fade {{ $cms_tab == 'terms' ? 'show active' : 'show active' }}"
                              id="cms-terms"
                              role="tabpanel" aria-labelledby="terms-tab">
                             <x-backend.setting.cms.terms-condition-setting :terms="$cms->terms_body"

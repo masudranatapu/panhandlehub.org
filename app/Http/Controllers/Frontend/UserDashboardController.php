@@ -108,7 +108,7 @@ class UserDashboardController extends Controller
         if (!Auth::check()) {
             $user = User::where('email', $request->email)->first();
             if (!$user) {
-                $status = 'pending';
+                // $status = 'pending';
                 $random_token = Str::random(40);
                 $email = explode('@', $request->email);
                 $username = $email[0] . '_' . random_int(1111, 9999);
@@ -146,7 +146,7 @@ class UserDashboardController extends Controller
         $ad->country            = $country;
         $ad->title              = $request->title;
         $ad->user_id            = Auth::user()->id ?? $user->id;
-        $ad->status             = $status ?? 'active';
+        // $ad->status             = $status ?? 'active';
         $ad->city               = $request->city;
         $ad->postcode           = $request->postcode;
         $ad->description        = $request->description;
@@ -236,10 +236,10 @@ class UserDashboardController extends Controller
                 }
             }
         }
-        if ($ad->status == 'active') {
+        // if ($ad->status == 'active') {
             flashSuccess('Post Updated successfully');
-            return redirect()->route('user.setting')->with('message', 'Post Updated successfully');
-        }
+            return redirect()->route('user.profile')->with('message', 'Post Updated successfully');
+        // }
     }
     public function deletePost($id)
     {

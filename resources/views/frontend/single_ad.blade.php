@@ -13,7 +13,7 @@
                 '...') }}
             </a>
         </h3>
-        <div class="mb-4 mt-auto">
+        <div class="mb-4 mt-auto" style="">
             <p class="location">
                 <i class="fas fa-map-marker-alt"></i>
                 {{ $item->city }}

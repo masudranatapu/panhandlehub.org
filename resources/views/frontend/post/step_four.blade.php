@@ -97,8 +97,7 @@
                     </div>
                     @endif
                     <div class="
-                                @if (
-                                    $ad_type->slug == 'service-offered' ||
+                                @if ($ad_type->slug == 'service-offered' ||
                                         $ad_type->slug == 'housing-wanted' ||
                                         $ad_type->slug == 'housing-offered' ||
                                         $ad_type->slug == 'engagement-offered' ||
@@ -108,13 +107,13 @@
                                 @else
                                     col-md-4 @endif
                             ">
-                        <div class="mb-3">
-                            <label for="city" class="form-label">city ​​or neighborhood </label>
-                            <select name="city" id="city" class="form-control select2">
-                                @foreach ($country->cities as $value)
-                                <option value="{{ $value->slug }}">{{ $value->name }}</option>
-                                @endforeach
-                            </select>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">city ​​or neighborhood</label>
+                                <select name="city" id="city" class="form-control">
+                                    @foreach ($country->cities as $value)
+                                    <option value="{{ $value->slug }}">{{ $value->name }}</option>
+                                    @endforeach
+                                </select>
                         </div>
                     </div>
                     <div class="col-md-2">

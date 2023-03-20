@@ -55,7 +55,7 @@
                         <tr>
                             <td>{{ $ads->firstItem() + $key }}</td>
                             <td>
-                                <a href="{{route('frontend.details', $ad->slug)}}"> {{$ad->title}}</a>
+                                <a href="{{route('frontend.details', $ad->slug)}}"> {{Str::limit($ad->title,35,'....')}}</a>
                             </td>
                             <td>
                                 {{$ad->ad_type->name}}

@@ -55,7 +55,7 @@
                         <tr>
                             <td>{{ $ads->firstItem() + $key }}</td>
                             <td>
-                                <a href="{{route('frontend.details', $ad->slug)}}"> {{$ad->title}}</a>
+                                <a href="{{route('frontend.details', $ad->slug)}}"> {{Str::limit($ad->title,35,'.....')}}</a>
                             </td>
                             <td>
                                 {{$ad->ad_type->name}}
@@ -76,8 +76,9 @@
                                     class="btn btn-sm btn-success">Published</a>
                             </td>
                             <td>
+                                
                                 <a href="{{route('frontend.details', $ad->slug)}}" title="View"
-                                    class="btn btn-sm btn-primary">
+                                    class="btn btn-sm btn-dark">
                                     <i class="fa fa-eye"></i>
                                 </a>
                                 <a href="{{ route('user.post.edit',$ad->slug) }}" title="Edit"

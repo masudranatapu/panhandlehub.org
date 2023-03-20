@@ -212,7 +212,7 @@ class AdPostController extends Controller
         }
         if ($ad->status == 'active') {
             flashSuccess('Post created successfully');
-            return redirect()->route('user.setting')->with('message', 'Post created successfully');
+            return redirect()->route('user.profile')->with('message', 'Post created successfully');
         } else {
             flashSuccess('Your Post is in drafted. Please verify email to publish this post.');
             return redirect()->route('signin')->with('message', 'Your Post is in drafted. Please verify email to publish this post.');

@@ -31,7 +31,7 @@
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="event_duration" class="form-label">event duration </label>
-                            <select type="text" name="event_duration" id="event_duration" class="form-control select2">
+                            <select type="text" name="event_duration" id="event_duration" class="form-control ">
                                 @for ($i = 1; $i <= 14; $i++) <option value="{{ $i }}" {{ $ad->event_duration == $i . '
                                     days' ? "selected" : ""}}>{{ $i }} Days</option>
                                     @endfor
