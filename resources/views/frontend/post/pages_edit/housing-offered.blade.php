@@ -157,7 +157,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="mb-3">
                         <label for="available_on" class="form-label">available on</label>
-                        <input type="text"  name="available_on" {{ date('d M Y',strtotime($ad->available_on)) }}
+                        <input type="text"  name="available_on" value="{{ date('d M Y',strtotime($ad->available_on)) }}"
                         id="datepicker" class="form-control">
                     </div>
                 </div>
