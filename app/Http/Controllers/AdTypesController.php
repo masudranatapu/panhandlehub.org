@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class AdTypesController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         // $data = DB::table('sub_categories')->get();
         // foreach ($data as $key => $value) {
@@ -22,11 +23,12 @@ class AdTypesController extends Controller
         // }
         // dd($data);
 
-        $ad_types = AdType::orderBy('id','desc')->paginate(20);
+        $ad_types = AdType::orderBy('id', 'desc')->paginate(20);
         return view('admin.ad-types.index', compact('ad_types'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.ad-types.create');
     }
 
@@ -62,17 +64,17 @@ class AdTypesController extends Controller
         return view('admin.ad-types.edit', compact('ad_type'));
     }
 
-    public function update(Request $request, $slug){
+    public function update(Request $request, $slug)
+    {
 
         $ad_type = AdType::where('slug', $slug)->first();
         $this->validate($request, [
-            'name'  => 'required|unique:ad_types,name,'. $ad_type->id,
+            'name'  => 'required|unique:ad_types,name,' . $ad_type->id,
         ]);
         DB::beginTransaction();
         try {
 
             $ad_type->name = $request->name;
-            $ad_type->slug = Str::slug($request->name);
             $ad_type->amount = $request->amount;
             $ad_type->is_paid = $request->is_paid;
             $ad_type->save();
@@ -86,12 +88,12 @@ class AdTypesController extends Controller
         return redirect()->route('adtypes.index');
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         DB::beginTransaction();
         try {
             $ad_type = AdType::find($id);
             $ad_type->delete();
-
         } catch (\Exception $e) {
             DB::rollback();
             flashSuccess('Data not Deleted');
@@ -101,5 +103,4 @@ class AdTypesController extends Controller
         flashSuccess('Data Deleted Successfully');
         return redirect()->route('adtypes.index');
     }
-
 }

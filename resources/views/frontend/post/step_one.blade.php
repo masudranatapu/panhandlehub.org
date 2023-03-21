@@ -29,7 +29,7 @@
                     <input class="form-check-input" type="radio" value="{{ $value ->slug}}" name="ad_type"
                         id="category_{{ $value->id }}" required>
                     <label class="form-check-label" for="category_{{ $value->id }}">
-                        {{ __($value->slug) }} <small><strong>
+                        {{ __($value->name) }} <small><strong>
                                 @if($value->is_paid == 1)
                                 (${{ $value->amount }} Per Post)
                                 @endif

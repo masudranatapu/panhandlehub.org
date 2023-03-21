@@ -1,4 +1,4 @@
-<div class="row">
+{{-- <div class="row">
     <div class="col-12 mb-4">
         <!-- Contact Form -->
         <div class="form_wrapper">
@@ -103,4 +103,4 @@
             </label>
         </div>
     </div>
-</div>
+</div> --}}

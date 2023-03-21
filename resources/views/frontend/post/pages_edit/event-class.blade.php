@@ -179,7 +179,7 @@
         </div>
     </div>
 
-    <div class="col-12 mb-4">
+    {{-- <div class="col-12 mb-4">
         <!-- Contact Form -->
         <div class="form_wrapper">
             <div class="title mb-3">
@@ -265,9 +265,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <div class="col-12">
+    {{-- <div class="col-12">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="term_condition" {{ $ad->other_contact == "1"? "checked"
             : "" }} name="other_contact" value="1"
@@ -276,7 +276,7 @@
                 ok for others to contact you about other services, products or commercial interests
             </label>
         </div>
-    </div>
+    </div> --}}
 </div>
 
 @push('script')

@@ -13,8 +13,8 @@
     <div class="container">
         <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item">{{ __($ad_type->slug) }} </li>
-                <li class="breadcrumb-item active" aria-current="page">{{ __($category->slug) }} </li>
+                <li class="breadcrumb-item">{{ __($ad_type->name) }} </li>
+                <li class="breadcrumb-item active" aria-current="page">{{ __($category->name) }} </li>
             </ol>
         </nav>
     </div>
@@ -37,7 +37,7 @@
                     <input class="form-check-input" type="radio" value="{{ $value->slug}}" name="sub_category"
                         id="category_{{ $value->id }}" required>
                     <label class="form-check-label" for="category_{{ $value->id }}">
-                        {{ __($value->slug) }}
+                        {{ __($value->name) }}
                     </label>
                 </div>
                 @endforeach

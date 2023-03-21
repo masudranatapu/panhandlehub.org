@@ -78,7 +78,7 @@
         <input type="text" name="company_name" id="company_name" value="{{ old('company_name') }}" class="form-control">
     </div>
 </div>
-<div class="col-12 mb-4">
+{{-- <div class="col-12 mb-4">
     <!-- Contact Form -->
     <div class="form_wrapper">
         <div class="title mb-3">
@@ -170,4 +170,4 @@
             job open to people with disabilities
         </label>
     </div>
-</div>
+</div> --}}

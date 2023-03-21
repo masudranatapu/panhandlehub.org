@@ -158,7 +158,7 @@ class AdPostController extends Controller
         $ad->parking            = $request->parking;
         $ad->bedrooms           = $request->bedrooms;
         $ad->bathrooms          = $request->bathrooms;
-        $ad->available_on       = $request->available_on;
+        $ad->available_on       = $request->available_on ? Carbon::parse($request->available_on) : null;
         // for-sale-by-owner
         $ad->conditions         = $request->condition;
         $ad->model_name         = $request->model_name;

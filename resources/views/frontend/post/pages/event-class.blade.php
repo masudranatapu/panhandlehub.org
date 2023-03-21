@@ -156,7 +156,7 @@
         </div>
     </div>
 
-    <div class="col-12 mb-4">
+    {{-- <div class="col-12 mb-4">
         <!-- Contact Form -->
         <div class="form_wrapper">
             <div class="title mb-3">
@@ -235,16 +235,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <div class="col-12">
+    {{-- <div class="col-12">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="term_condition" name="other_contact" value="1" required>
             <label class="form-check-label" for="term_condition" style="font-size: 14px;">
                 ok for others to contact you about other services, products or commercial interests
             </label>
         </div>
-    </div>
+    </div> --}}
 </div>
 
 @push('script')
