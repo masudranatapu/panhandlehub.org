@@ -24,7 +24,7 @@ class UserDashboardController extends Controller
     public function profile()
     {
         $user = Auth::user();
-        $ads = Ad::active()->where('user_id', Auth::id())->paginate(15);
+        $ads = Ad::active()->where('user_id', Auth::id())->orderBY('id','desc')->paginate(15);
         return view('frontend.user.profile', compact('user', 'ads'));
     }
 
@@ -33,14 +33,14 @@ class UserDashboardController extends Controller
     public function drafts()
     {
         $user = Auth::user();
-        $ads = Ad::pending()->where('user_id', $user->id)->paginate(15);
+        $ads = Ad::pending()->where('user_id', $user->id)->orderBy('id','desc')->paginate(15);
         return view('frontend.user.drafts', compact('user', 'ads'));
     }
 
     public function favourite()
     {
         $user = Auth::user();
-        $wishlist = Wishlist::where('user_id', Auth::user()->id)->paginate(15);
+        $wishlist = Wishlist::where('user_id', Auth::user()->id)->orderBy('id','desc')->paginate(15);
 
         return view('frontend.user.search', compact('user', 'wishlist'));
     }
@@ -186,7 +186,7 @@ class UserDashboardController extends Controller
         // event class
         $ad->event_start_date   = $event_start_date ?? null;
         $ad->event_end_date     = $event_end_date ?? null;
-        $ad->event_duration     = $request->event_duration . ' days';
+        $ad->event_duration     = $request->event_duration ? $request->event_duration . ' days' : null;
         $ad->venue              = $request->venue;
         // House wanted
         $ad->broker_fee                 = $request->broker_fee ?? 0;
@@ -201,8 +201,6 @@ class UserDashboardController extends Controller
             $thumbnail = uploadResizedImage($request->thumbnail, 'addss_image', 850, 650, false);
             $ad->thumbnail = $thumbnail;
         }
-
-        // dd($ad);
         $ad->save();
 
 

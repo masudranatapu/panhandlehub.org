@@ -1,15 +1,15 @@
 @push('style')
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<style>
-    .select2-selection--single {
-        height: 35px !important;
-    }
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .select2-selection--single {
+            height: 35px !important;
+        }
 
-    .select2-selection__arrow {
-        height: 35px !important;
-    }
-</style>
+        .select2-selection__arrow {
+            height: 35px !important;
+        }
+    </style>
 @endpush
 <div class="row">
     <div class="col-12 mb-4">
@@ -20,7 +20,8 @@
             <div class="row mb-3">
                 <div class="mb-3">
                     <label for="venue" class="form-label">venue </label>
-                    <input type="text" name="venue" id="venue" value="{{ $ad->venue }}" class="form-control">
+                    <input type="text" name="venue" id="venue" value="{{ $ad->venue }}"
+                        class="form-control">
                 </div>
                 <div class="col-md-6">
                     <div class="row">
@@ -32,9 +33,11 @@
                         <div class="mb-3 col-md-6">
                             <label for="event_duration" class="form-label">event duration </label>
                             <select type="text" name="event_duration" id="event_duration" class="form-control ">
-                                @for ($i = 1; $i <= 14; $i++) <option value="{{ $i }}" {{ $ad->event_duration == $i . '
-                                    days' ? "selected" : ""}}>{{ $i }} Days</option>
-                                    @endfor
+                                @for ($i = 1; $i <= 14; $i++)
+                                    <option value="{{ $i }}"
+                                        {{ $ad->event_duration == $i . ' days' ? 'selected' : '' }}>{{ $i }}
+                                        Days</option>
+                                @endfor
                             </select>
                         </div>
                     </div>
@@ -45,130 +48,129 @@
                     </div>
                     <div class="row mb-3 px-2">
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" {{ isset($ad->services) &&
-                            in_array('art/film', $ad->services) ? 'checked' : '' }}
-                            value="art/film"
-                            id="art/film">
+                            <input class="form-check-input" type="checkbox" name="services[]"
+                                {{ isset($ad->services) && in_array('art/film', $ad->services) ? 'checked' : '' }}
+                                value="art/film" id="art/film">
                             <label class="form-check-label" for="art/film">
                                 art/film
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="fest/fair" {{
-                                isset($ad->services) && in_array('fest/fair', $ad->services) ? 'checked' : '' }}
-                            id="fest/fair">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="fest/fair"
+                                {{ isset($ad->services) && in_array('fest/fair', $ad->services) ? 'checked' : '' }}
+                                id="fest/fair">
                             <label class="form-check-label" for="fest/fair">
                                 fest/fair
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="literary" {{
-                                isset($ad->services) && in_array('literary', $ad->services) ? 'checked' : '' }}
-                            id="literary">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="literary"
+                                {{ isset($ad->services) && in_array('literary', $ad->services) ? 'checked' : '' }}
+                                id="literary">
                             <label class="form-check-label" for="literary">
                                 literary
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="sustainability" {{
-                                isset($ad->services) && in_array('sustainability', $ad->services) ? 'checked' : '' }}
-                            id="sustainability">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="sustainability"
+                                {{ isset($ad->services) && in_array('sustainability', $ad->services) ? 'checked' : '' }}
+                                id="sustainability">
                             <label class="form-check-label" for="sustainability">
                                 sustainability
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="career" {{
-                                isset($ad->services) && in_array('career', $ad->services) ? 'checked' : '' }}
-                            id="career">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="career"
+                                {{ isset($ad->services) && in_array('career', $ad->services) ? 'checked' : '' }}
+                                id="career">
                             <label class="form-check-label" for="career">
                                 career
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="fitness/health" {{
-                                isset($ad->services) && in_array('fitness/health', $ad->services) ? 'checked' : '' }}
-                            id="fitness/health">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="fitness/health"
+                                {{ isset($ad->services) && in_array('fitness/health', $ad->services) ? 'checked' : '' }}
+                                id="fitness/health">
                             <label class="form-check-label" for="fitness/health">
                                 fitness/health
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="music" {{
-                                isset($ad->services) && in_array('music', $ad->services) ? 'checked' : '' }}
-                            id="music">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="music"
+                                {{ isset($ad->services) && in_array('music', $ad->services) ? 'checked' : '' }}
+                                id="music">
                             <label class="form-check-label" for="music">
                                 music
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="tech" {{
-                                isset($ad->services) && in_array('tech', $ad->services) ? 'checked' : '' }}
-                            id="tech">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="tech"
+                                {{ isset($ad->services) && in_array('tech', $ad->services) ? 'checked' : '' }}
+                                id="tech">
                             <label class="form-check-label" for="tech">
                                 tech
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="charitable" {{
-                                isset($ad->services) && in_array('charitable', $ad->services) ? 'checked' : '' }}
-                            id="charitable">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="charitable"
+                                {{ isset($ad->services) && in_array('charitable', $ad->services) ? 'checked' : '' }}
+                                id="charitable">
                             <label class="form-check-label" for="charitable">
                                 charitable
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="food/drink" {{
-                                isset($ad->services) && in_array('food/drink', $ad->services) ? 'checked' : '' }}
-                            id="food/drink">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="food/drink"
+                                {{ isset($ad->services) && in_array('food/drink', $ad->services) ? 'checked' : '' }}
+                                id="food/drink">
                             <label class="form-check-label" for="food/drink">
                                 food/drink
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="outdoor" {{
-                                isset($ad->services) && in_array('outdoor', $ad->services) ? 'checked' : '' }}
-                            id="outdoor">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="outdoor"
+                                {{ isset($ad->services) && in_array('outdoor', $ad->services) ? 'checked' : '' }}
+                                id="outdoor">
                             <label class="form-check-label" for="outdoor">
                                 outdoor
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="competition" {{
-                                isset($ad->services) && in_array('competition', $ad->services) ? 'checked' : '' }}
-                            id="competition">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="competition"
+                                {{ isset($ad->services) && in_array('competition', $ad->services) ? 'checked' : '' }}
+                                id="competition">
                             <label class="form-check-label" for="competition">
                                 competition
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="free" {{
-                                isset($ad->services) && in_array('free', $ad->services) ? 'checked' : '' }}
-                            id="free">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="free"
+                                {{ isset($ad->services) && in_array('free', $ad->services) ? 'checked' : '' }}
+                                id="free">
                             <label class="form-check-label" for="free">
                                 free
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="sale" {{
-                                isset($ad->services) && in_array('sale', $ad->services) ? 'checked' : '' }}
-                            id="sale">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="sale"
+                                {{ isset($ad->services) && in_array('sale', $ad->services) ? 'checked' : '' }}
+                                id="sale">
                             <label class="form-check-label" for="sale">
                                 sale
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="dance" {{
-                                isset($ad->services) && in_array('dance', $ad->services) ? 'checked' : '' }}
-                            id="dance">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="dance"
+                                {{ isset($ad->services) && in_array('dance', $ad->services) ? 'checked' : '' }}
+                                id="dance">
                             <label class="form-check-label" for="dance">
                                 dance
                             </label>
                         </div>
                         <div class="form-check col-md-3">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="singles" {{
-                                isset($ad->services) && in_array('singles', $ad->services) ? 'checked' : '' }}
-                            id="singles">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="singles"
+                                {{ isset($ad->services) && in_array('singles', $ad->services) ? 'checked' : '' }}
+                                id="singles">
                             <label class="form-check-label" for="singles">
                                 singles
                             </label>
@@ -280,18 +282,18 @@
 </div>
 
 @push('script')
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-    $(function() {
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(function() {
             $("#datepicker").datepicker({
                 minDate: 'today',
                 // maxDate: '+10D',
             });
         });
         $(document).ready(function() {
-        $(".select2").select2();
+            $(".select2").select2();
         });
-</script>
+    </script>
 @endpush

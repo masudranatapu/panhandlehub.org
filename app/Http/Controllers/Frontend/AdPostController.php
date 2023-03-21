@@ -168,7 +168,7 @@ class AdPostController extends Controller
         // event class
         $ad->event_start_date   = $event_start_date ?? null;
         $ad->event_end_date     = $event_end_date ?? null;
-        $ad->event_duration     = $request->event_duration . ' days';
+        $ad->event_duration     = $request->event_duration ? $request->event_duration . ' days' : null;
         $ad->venue              = $request->venue;
         // House wanted
         $ad->broker_fee                 = $request->broker_fee ?? 0;
