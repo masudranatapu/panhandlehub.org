@@ -39,8 +39,8 @@ class FrontendController extends Controller
 
         $countries =  DB::table('country')->orderBy('name', 'asc')->get();
         $ad_types   = AdType::orderBy('id', 'asc')->get();
-        $categories = Category::whereHas('subcategories')->orderBy('id', 'desc')->get();
-        $top_categoreis = Category::orderBy('id', 'desc')->get();
+        $categories = Category::whereHas('subcategories')->orderBy('order', 'asc')->get();
+        $top_categoreis = Category::orderBy('order', 'asc')->get();
         $coutry_iso = strtoupper(getCountryCode());
 
         $country = DB::table('country')->where('iso', $coutry_iso)->first();
@@ -68,7 +68,7 @@ class FrontendController extends Controller
         //        dd($request->country);
         $query = Ad::active();
         $country = getCountryCode();
-        $categories = Category::orderBy('id', 'asc')->get();
+        $categories = Category::orderBy('order', 'asc')->get();
         $subcategories = [];
         //        if ($request->country) {
         //            $country = $request->country;

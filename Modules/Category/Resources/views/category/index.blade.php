@@ -84,8 +84,8 @@ $user = auth()->user();
                                         @if (userCan('category.update') || userCan('category.delete'))
                                             <td class="text-center">
                                                 @if (userCan('category.update'))
-                                                    {{-- <div class="handle btn btn-success mt-0"><i
-                                                            class="fas fa-hand-rock"></i></div> --}}
+                                                    <div class="handle btn btn-success mt-0"><i
+                                                            class="fas fa-hand-rock"></i></div>
                                                     <a title="{{ __('edit_category') }}"
                                                         href="{{ route('module.category.edit', $category->id) }}"
                                                         class="btn bg-info mr-1">
