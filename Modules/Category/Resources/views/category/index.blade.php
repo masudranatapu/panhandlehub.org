@@ -47,7 +47,7 @@ $user = auth()->user();
                                 <tr class="text-center">
                                     <th>{{ __('name') }} ({{ __('ads_count') }})</th>
                                     <th>{{ __('icon') }}</th>
-                                    <th>{{ __('custom_field') }}</th>
+                                    {{-- <th>{{ __('custom_field') }}</th> --}}
                                     @if (userCan('category.update') || userCan('category.delete'))
                                         <th width="10%">{{ __('status') }}</th>
                                         <th width="10%">{{ __('actions') }}</th>
@@ -66,11 +66,11 @@ $user = auth()->user();
                                         <td class="text-center"><i
                                                 class="{{ $category->icon }}"></i>&nbsp;&nbsp;&nbsp;({{ $category->icon }})
                                         </td>
-                                        <td class="text-center">
+                                        {{-- <td class="text-center">
                                             <a href="{{ route('module.category.custom.field.add', $category->id) }}">
                                                 {{ $category->custom_fields_count }} {{ __('custom_field') }}
                                             </a>
-                                        </td>
+                                        </td> --}}
                                         <td class="text-center">
                                             <div>
                                                 <label class="switch ">
@@ -84,8 +84,8 @@ $user = auth()->user();
                                         @if (userCan('category.update') || userCan('category.delete'))
                                             <td class="text-center">
                                                 @if (userCan('category.update'))
-                                                    <div class="handle btn btn-success mt-0"><i
-                                                            class="fas fa-hand-rock"></i></div>
+                                                    {{-- <div class="handle btn btn-success mt-0"><i
+                                                            class="fas fa-hand-rock"></i></div> --}}
                                                     <a title="{{ __('edit_category') }}"
                                                         href="{{ route('module.category.edit', $category->id) }}"
                                                         class="btn bg-info mr-1">
