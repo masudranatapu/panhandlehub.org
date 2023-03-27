@@ -29,7 +29,7 @@ class FrontendController extends Controller
     {
 
         $local_country = session()->get('local_country');
-        $ads = Ad::orderBy('id', 'desc')->take(10);
+        $ads = Ad::where('status',1)->orderBy('id', 'desc')->take(10);
 
         if ($local_country) {
             $ads->where('country', $local_country);

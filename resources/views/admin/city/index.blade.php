@@ -57,7 +57,7 @@ $user = auth()->user();
                                             @if(Auth::user()->can('city.edit'))
                                                 <a href="{{ route('city.edit',$value->id) }}" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
                                             @endif
-                                            @if(Auth::user()->can('city.delete'))
+                                            {{-- @if(Auth::user()->can('city.delete'))
                                                 <form action="{{ route('city.delete', $value->id) }}"
                                                         method="POST" class="d-inline">
                                                         @method('DELETE')
@@ -67,7 +67,7 @@ $user = auth()->user();
                                                             onclick="return confirm('{{ __('Are you sure want to delete this item?') }}');"
                                                             class="btn bg-danger mr-1"><i class="fas fa-trash"></i></button>
                                                 </form>
-                                            @endif
+                                            @endif --}}
                                         </td>
                                     </tr>
                                 @endforeach

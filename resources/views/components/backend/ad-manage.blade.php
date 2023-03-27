@@ -25,7 +25,7 @@
                     <img src="{{ $ad->image_url }}" class="rounded" height="50px" width="50px" alt="image">
                 </td>
                 <td class="text-center">
-                    {{ $ad->title }}
+                    {{ Str::limit($ad->title, 45, '...') }}
                     @if ($ad->featured)
                         <span class="badge badge-warning">
                             {{ __('featured') }}
@@ -124,14 +124,14 @@
                             </a>
                         </li> --}}
                         <li>
-                            <form action="{{ route('module.ad.destroy', $ad->id) }}" method="POST" class="d-inline">
+                            {{-- <form action="{{ route('module.ad.destroy', $ad->id) }}" method="POST" class="d-inline">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="dropdown-item"
                                     onclick="return confirm('{{ __('are_you_sure_want_to_delete_this_item') }}?');">
                                     <i class="fas fa-trash text-danger"></i> {{ __('delete_ad') }}
                                 </button>
-                            </form>
+                            </form> --}}
                         </li>
                     </ul>
                 </td>

@@ -112,7 +112,7 @@
                                                                 {{ __('view_customer_ads') }}
                                                             </a></li>
                                                         <li>
-                                                            <form
+                                                            {{-- <form
                                                                 action="{{ route('module.customer.destroy', $customer->username) }}"
                                                                 method="POST" class="d-inline">
                                                                 @method('DELETE')
@@ -122,7 +122,7 @@
                                                                     <i class="fas fa-trash text-danger"></i>
                                                                     {{ __('delete_customer') }}
                                                                 </button>
-                                                            </form>
+                                                            </form> --}}
                                                         </li>
                                                     </ul>
                                                 </td>

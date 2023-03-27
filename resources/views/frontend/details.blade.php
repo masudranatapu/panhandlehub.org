@@ -56,7 +56,9 @@
                                 </div>
                             </div>
                         </div>
-                        <span>Posted {{ $ad_details->created_at->diffForHumans() }}</span>
+                        @if($ad_details->created_at)
+                        <span>Posted {{ $ad_details->created_at->diffForHumans()?? "" }}</span>
+                        @endif
                     </div>
                     <!-- gallery -->
                     <div class="single_product mb-5">
@@ -99,10 +101,15 @@
                                     <h3><a href="{{ route('frontend.seller.shop', $ad_details->customer->username) }}"
                                            target="_blank">{{ $ad_details->customer->name ??
                                     $ad_details->customer->username }} </a></h3>
-                                    <p>Registered for
-                                        <strong>{{ $ad_details->customer->created_at->diffForHumans() }}</strong></p>
-                                    <p>Last online
-                                        <strong>{{ $ad_details->customer->last_seen->diffForHumans() }}</strong></p>
+                                    @if ($ad_details->customer->created_at)
+                                        <p>Registered for
+                                        <strong>{{ $ad_details->customer->created_at->diffForHumans()?? "" }}</strong></p>
+                                    @endif
+                                    @if($ad_details->customer->last_seen)
+                                        <p>Last online
+                                        <strong>{{ $ad_details->customer->last_seen->diffForHumans()?? "" }}</strong></p>
+                                    @endif
+                                    
                                     <p>Total Listed Ads
                                         <strong>{{ $ad_details->customer->available_ads->count() }}</strong></p>
                                     <a href="{{ route('frontend.seller.shop', $ad_details->customer->username) }}"
