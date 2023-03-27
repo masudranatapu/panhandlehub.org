@@ -261,7 +261,7 @@
                                 @foreach ($latestTransactionUsers as $transaction)
                                     <tr>
                                         <td>
-                                            {{ $transaction->customer->username }}
+                                            {{ $transaction->customer->username ?? "" }}
                                         </td>
                                         <td class="text-muted">
                                             <a href="{{ route('frontend.details', $transaction->ad->slug?? "") }}">
