@@ -168,7 +168,7 @@ class UserDashboardController extends Controller
         $ad->education          = $request->education;
         $ad->is_license         = $request->is_license ?? 0;
         $ad->license_info       = $request->license_info;
-        $ad->other_contact      = $request->other_contact ?? 0;
+        // $ad->other_contact      = $request->other_contact ?? 0;
         // House offered
         $ad->sqft               = $request->sqft;
         $ad->houssing_type      = $request->houssing_type;

@@ -319,7 +319,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                {{-- <div class="col-12">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="term_condition" {{ $ad->other_contact == "1"? "checked":
                         "" }} name="other_contact" value="1" required>
@@ -327,7 +327,7 @@
                             ok for others to contact you about other services, products or commercial interests
                         </label>
                     </div>
-                </div>
+                </div> --}}
                 <div class="mt-5 text-center">
                     <button type="submit" class="btn btn-light">Update Post</button>
                 </div>
