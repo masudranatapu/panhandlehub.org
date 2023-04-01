@@ -247,6 +247,17 @@ class FrontendController extends Controller
         return view('frontend.faq', compact('faqs', 'meta_title', 'meta_description', 'meta_keywords', 'meta_image'));
     }
 
+    public function ban()
+    {
+
+        $seo = Seo::where('page_slug', 'home')->first();
+        $meta_title = $seo->contents->title;
+        $meta_description = $seo->contents->description;
+        $meta_keywords = $seo->contents->keywords;
+        $meta_image = $seo->contents->image;
+        return view('frontend.ban', compact('meta_title', 'meta_description', 'meta_keywords', 'meta_image'));
+    }
+
     public function pricePlan()
     {
         return view('frontend.price_plan');

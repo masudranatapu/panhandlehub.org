@@ -30,8 +30,16 @@
                         </li>
                         @if (auth('user')->check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.setting') }}">
-                                    <i class="fas fa-user"></i>
+                                <a class="nav-link" href="{{ route('user.setting') }}" style="margin-top: -10px">
+                                    @if(Auth::user()->image)
+                                    <img src="{{ asset(Auth::user()->image) }}" alt="" class="rounded-circle" style="border: 1px solid #ddd;
+                                    border-radius: 4px;
+                                    padding: 1px;width: 50px; height:54px; margin-top:-8px">
+                                    @else
+                                    <img src="{{ asset('default-user.png') }}" alt="" class="rounded-circle" style="border: 1px solid #ddd;
+                                    border-radius: 4px;
+                                    padding: 1px;width: 50px; height:54px;margin-top:-8px">
+                                    @endif
                                     My Account
                                 </a>
                             </li>

@@ -774,7 +774,7 @@ CREATE TABLE `contacts` (
   `email` varchar(255) NOT NULL,
   `phone` int(11) NOT NULL DEFAULT 0,
   `reason` varchar(255) NOT NULL DEFAULT '0',
-  `message` text NOT NULL DEFAULT 0,
+  `message` text DEFAULT NULL,
   `status` int(3) NOT NULL DEFAULT 0 COMMENT '0 = inactive,\r\n1 = Active',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()

@@ -497,6 +497,20 @@ class CmsSettingController extends Controller
         return redirect()->back()->with('success', 'Contact Settings update successfully!');
     }
 
+    public function updateBan(Request $request)
+    {
+        if (!userCan('setting.update')) {
+            return abort(403);
+        }
+        session(['cms_part' => 'ban_text']);
+
+        $cms =  Cms::first();
+        $cms->ban_text = $request->ban_text;
+        $cms->save();
+
+        return redirect()->back()->with('success', 'Ban Settings update successfully!');
+    }
+
     public function updateAuthContent(Request $request)
     {
         if (!userCan('setting.update')) {

@@ -39,7 +39,7 @@
                             <form action="{{ route('frontend.search') }}" method="get">
                                 <div class="input-group">
                                     <input type="text" name="search" id="search" class="form-control"
-                                        placeholder="Enter keywords..." required autocomplete="off">
+                                        placeholder="Search Classifieds..." required autocomplete="off">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>
                                         Search</button>
                                 </div>

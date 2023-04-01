@@ -302,4 +302,34 @@ class UserDashboardController extends Controller
 
         return view('frontend.user.review');
     }
+
+    public function userProfile(){
+        return view('frontend.user.profile-update');
+    }
+
+    public function profileUpdate(Request $request)
+    {
+
+        $user = Auth::user();
+        // $request->validate([
+        //     'email' => 'required|email|unique:users,email,' . $user->id,
+        //     'phone' => 'required|unique:users,phone,' . $user->id,
+        // ]);
+
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->phone = $request->phone;
+        // $user->address = $request->address;
+
+        $image = $request->file('image');
+
+        if ($image) {
+            $image_url = uploadImage($image, 'profile');
+            $user->image = $image_url;
+        }
+
+        $user->save();
+
+        return redirect()->route('user.setting')->with('message', 'Your profile Picture is updated successfully.');
+    }
 }

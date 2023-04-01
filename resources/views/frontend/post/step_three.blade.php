@@ -26,7 +26,7 @@
     <div class="container">
         <div class="ad_post_form">
             <div class="mb-4">
-                <h6><span>choose a Sub Category:</span> (see <a href="#">ban</a> list before posting.)
+                <h6><span>choose a Sub Category:</span> (see <a href="{{ route('frontend.ban') }}">ban</a> list before posting.)
                 </h6>
             </div>
             <form action="{{ route('frontend.post.create') }}" method="get" id="create-post-frm">

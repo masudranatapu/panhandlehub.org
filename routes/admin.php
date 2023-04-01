@@ -166,6 +166,7 @@ Route::prefix('admin')->group(function () {
             Route::put('/blog', 'updateBlog')->name('admin.blog.update');
             Route::put('/ads', 'updateAds')->name('admin.ads.update');
             Route::put('/contact', 'updateContact')->name('admin.contact.update');
+            Route::put('/ban', 'updateBan')->name('admin.ban.update');
             Route::put('/faq', 'updateFaq')->name('admin.faq.update');
             Route::put('/dashboard', 'updateDashboard')->name('admin.dashboard.update');
             Route::put('/auth-content', 'updateAuthContent')->name('admin.authcontent.update');

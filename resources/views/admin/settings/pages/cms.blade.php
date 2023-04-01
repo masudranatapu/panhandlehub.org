@@ -83,6 +83,11 @@
                                data-toggle="pill" href="#cms-contact" role="tab" aria-controls="contact"
                                aria-selected="false">{{ __('contact') }}</a>
                         </li>
+                        <li class="nav-item border rounded mb-1" role="presentation">
+                            <a class="nav-link {{ $cms_tab == 'ban_text' ? 'active' : '' }} " id="ban-tab"
+                               data-toggle="pill" href="#cms-ban" role="tab" aria-controls="ban"
+                               aria-selected="false">{{ __('Ban') }}</a>
+                        </li>
                         {{-- <li class="nav-item border rounded mb-1" role="presentation">
                             <a class="nav-link {{ $cms_tab == 'faq' ? 'active' : '' }}" id="faq-tab" data-toggle="pill"
                                 href="#cms-faq" role="tab" aria-controls="faq"
@@ -139,7 +144,7 @@
                         </div> --}}
 
                         {{-- Terms Settings --}}
-                        <div class="tab-pane fade {{ $cms_tab == 'terms' ? 'show active' : 'show active' }}"
+                        <div class="tab-pane fade {{ $cms_tab == 'terms' ? 'show active' : '' }}"
                              id="cms-terms"
                              role="tabpanel" aria-labelledby="terms-tab">
                             <x-backend.setting.cms.terms-condition-setting :terms="$cms->terms_body"
@@ -185,6 +190,12 @@
                         <div class="tab-pane fade {{ $cms_tab == 'contact' ? 'show active' : '' }}" id="cms-contact"
                              role="tabpanel" aria-labelledby="contact-tab">
                             <x-backend.setting.cms.contact :cms="$cms"/>
+                        </div>
+
+                        {{-- Contact --}}
+                        <div class="tab-pane fade {{ $cms_tab == 'ban_text' ? 'show active' : '' }}" id="cms-ban"
+                             role="tabpanel" aria-labelledby="ban-tab">
+                            <x-backend.setting.cms.ban :cms="$cms"/>
                         </div>
                         {{-- Faq --}}
                         {{-- <div class="tab-pane fade {{ $cms_tab == 'faq' ? 'show active' : '' }}" id="cms-faq"
@@ -251,7 +262,7 @@
             .catch(error => {
                 console.error(error);
             });
-
+            
         ClassicEditor
             .create(document.querySelector('#terms_ck'))
             .catch(error => {
@@ -265,6 +276,11 @@
             });
         ClassicEditor
             .create(document.querySelector('#privacy_ck'))
+            .catch(error => {
+                console.error(error);
+            });
+            ClassicEditor
+            .create(document.querySelector('#ban_text'))
             .catch(error => {
                 console.error(error);
             });

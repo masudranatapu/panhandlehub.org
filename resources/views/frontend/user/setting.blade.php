@@ -12,6 +12,13 @@
             text-align: center;
             border: 1px solid #EEE;
         }
+        .img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 100px;
+        height: 90px;
+        }
     </style>
 @endpush
 
@@ -36,9 +43,17 @@
                 @include('frontend.user.dashboard_nav')
             </div>
             <div class="user_dashboard_wrap">
+                @if (Auth::user()->image)
+                <img src="{{ asset(Auth::user()->image) }}" alt="Paris" class="img mb-2">
+                @else 
+                <img src="{{ asset('default-user.png') }}" alt="Paris" class="img mb-2">
+                @endif
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong>Your Shop: </strong><a
                             href="{{ route('frontend.seller.shop', $user->username) }}">[Visit your shop]</a>
+                    <li>
+                        <li class="list-group-item"><strong>Update Profile: </strong><a
+                            href="{{ route('user.userProfile') }}">[Update Your Profile Picture]</a>
                     <li>
                     <li class="list-group-item"><strong>Username</strong> : {{ $user->username ?? 'N/A' }}</li>
                     <li class="list-group-item"><strong>Email</strong> : {{ $user->email }}</li>

@@ -26,7 +26,7 @@
         @if($subCategory && $subCategory->count() > 0)
         <div class="ad_post_form choose_category">
             <div class="mb-4">
-                <h6><span>choose a category:</span> (see <a href="#">ban</a> list before posting.)
+                <h6><span>choose a category:</span> (see <a href="{{ route('frontend.ban') }}">ban</a> list before posting.)
                 </h6>
             </div>
             <form action="{{ route('frontend.post.create') }}" method="get" id="create-post-frm">

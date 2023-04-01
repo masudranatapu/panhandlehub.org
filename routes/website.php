@@ -17,6 +17,7 @@ Route::group(['as' => 'frontend.'], function () {
     Route::get('terms-conditons', [FrontendController::class, 'termsCondition'])->name('terms.condition');
     Route::get('privacy-policy', [FrontendController::class, 'privacyPolicy'])->name('privacy.policy');
     Route::get('faq', [FrontendController::class, 'faq'])->name('faq');
+    Route::get('ban', [FrontendController::class, 'ban'])->name('ban');
     Route::get('price-plan', [FrontendController::class, 'pricePlan'])->name('price.plan');
     Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
     Route::get('seller/shop/{username}', [FrontendController::class, 'sellerShop'])->name('seller.shop');
@@ -65,6 +66,9 @@ Route::group(['as' => 'user.'], function () {
         Route::get('user/dashboard', [UserDashboardController::class, 'setting'])->name('setting');
         Route::get('user/passwordReset', [UserDashboardController::class, 'passwordReset'])->name('password.reset');
         Route::post('user-logout', [UserDashboardController::class, 'userLogOut'])->name('logout');
+        Route::get('user/profile',[UserDashboardController::class,'userProfile'])->name('userProfile');
+        Route::post('user/profile/picture/update', [UserDashboardController::class, 'profileUpdate'])->name('userProfile.update');
+
 
 
         // Route::get('user/message', [UserDashboardController::class, 'userMessage'])->name('message');

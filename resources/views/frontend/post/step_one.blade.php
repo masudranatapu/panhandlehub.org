@@ -20,7 +20,7 @@
         <div class="ad_post_form choose_category">
             <div class="mb-5">
                 <p>please limit each posting to a single area and category, once per 48 hours</p>
-                <h6><span>what type of posting is this:</span> (see <a href="#">ban</a> list before posting.)
+                <h6><span>what type of posting is this:</span> (see <a href="{{ route('frontend.ban') }}">ban</a> list before posting.)
                 </h6>
             </div>
             <form action="{{ route('frontend.post.create') }}" method="get" id="create-post-frm">
