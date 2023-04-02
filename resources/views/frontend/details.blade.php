@@ -148,15 +148,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ad_wrap mb-3">
+                        <div class="ad_wrap mb-4">
                             <div class="share-content">
-                                <h2 class="share-content__title text--body-3">
+                                <h2 class="share-content__title text--body-3 mb-3">
                                     <span class="icon">
                                         <x-svg.share-icon />
                                     </span>
                                     {{ __('share') }}
                                 </h2>
-                                <ul class="share">
+                                <ul class="share" style="margin-left:-28px">
                                     <li class="share__item">
                                         <a target="_blank"
                                             href="{{ socialMediaShareLinks(url()->current(),'whatsapp') }}"
@@ -198,18 +198,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            @push('ad_scripts')
-                                <script>
-                                    function copyToClipboard() {
-                                        let temp = $("<input>");
-                                        $("body").append(temp);
-                                        temp.val(window.location).select();
-                                        document.execCommand("copy");
-                                        temp.remove();
-                                        alert("Copied to clipboard!");
-                                    }
-                                </script>
-                            @endpush
+                            {{-- @push('ad_scripts')
+                               
+                            @endpush --}}
                         </div>
                     </div>
                 </div>
@@ -570,5 +561,15 @@
                 swiper: swiper,
             },
         });
+    </script>
+     <script>
+        function copyToClipboard() {
+            let temp = $("<input>");
+            $("body").append(temp);
+            temp.val(window.location).select();
+            document.execCommand("copy");
+            temp.remove();
+            alert("Copied to clipboard!");
+        }
     </script>
 @endpush
