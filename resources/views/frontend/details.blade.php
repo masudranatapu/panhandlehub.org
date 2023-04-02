@@ -1,13 +1,13 @@
 @extends('frontend.layouts.app', ['nav' => 'yes'])
 
 @section('meta')
-    <meta property="title" content="{{ $meta_title }}"/>
-    <meta property="description" content="{{ $meta_description }}"/>
+    <meta property="title" content="{{ $og_title }}"/>
+    <meta property="description" content="{{ $og_description }}"/>
     <meta property="keywords" content="{{ $meta_keywords }}"/>
-    <meta property="og:title" content="{{ $meta_title }}"/>
-    <meta property="og:description" content="{{ $meta_description }}"/>
+    {{-- <meta property="og:title" content="{{ $meta_title }}"/> --}}
+    {{-- <meta property="og:description" content="{{ $meta_description }}"/> --}}
     <meta property="og:keywords" content="{{ $meta_keywords }}"/>
-    <meta property="og:image" content="{{ asset($meta_image) }}"/>
+    <meta property="og:image" content="{{ asset($og_url) }}"/>
 @endsection
 
 @push('style')

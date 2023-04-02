@@ -171,8 +171,11 @@ class FrontendController extends Controller
             $meta_description = $seo->contents->description;
             $meta_keywords = $seo->contents->keywords;
             $meta_image = $seo->contents->image;
+            $og_title = $ad_details->title;
+            $og_description = $ad_details->description;
+            $og_url = $ad_details->thumbnail;
 
-            return view('frontend.details', compact('ad_details', 'ad_galleies', 'relative_ads', 'meta_title', 'meta_description', 'meta_keywords', 'meta_image'));
+            return view('frontend.details', compact('ad_details', 'ad_galleies', 'og_title', 'og_description', 'og_url', 'relative_ads', 'meta_title', 'meta_description', 'meta_keywords', 'meta_image'));
         } else {
             return redirect()->route('frontend.index');
         }
